@@ -1,0 +1,2 @@
+constant=tr_dismount
+kind=0

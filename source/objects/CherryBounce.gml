@@ -1,0 +1,35 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_inherited()
+image_speed=1/15
+image_index=1
+
+destroy_outside=1
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+good_bounce()
+#define Other_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (destroy_outside) instance_destroy()
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field hspeed: number
+//field vspeed: number
+//field gravity: number
+//field depth: number

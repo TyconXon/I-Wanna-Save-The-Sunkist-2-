@@ -1,0 +1,95 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (instance_exists(Player)) alarm[0]=40/(global.slomo*dt)
+else alarm[0]=40/dt
+dead=instance_place(x,y,BulletBlock)
+
+storex=1
+storey=1
+storea=0
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+instance_destroy()
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///stretch bullet mask
+image_angle=direction+180
+storex=image_xscale
+storey=image_yscale
+storea=image_angle
+image_xscale=speed
+image_yscale=2
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//reset bullet mask
+image_xscale=storex
+image_yscale=storey
+image_angle=storea
+
+//we schedule bullet destroy to make sure it hits things on the frame it hits a wall
+if (dead) instance_destroy()
+#define Collision_BulletBlock
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=self
+invert=0
+*/
+#define Collision_Block
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (other.solid) {
+    dead=1
+    xprevious=x+hspeed
+    yprevious=y+vspeed
+
+    sound_play_auto("concrete_impact_bullet1")
+    repeat (5)
+    {
+        if (hspeed > 0)
+        {
+        eff = instance_create(x, y, PropShrapnel);
+            eff.speed = random_range(1, 3);
+            eff.direction = random_range(100, 190);
+            eff.gravity = random_range(0.1, 0.2);
+        }
+
+        if (hspeed < 0)
+        {
+            eff = instance_create(x, y, PropShrapnel);
+            eff.speed = random_range(1, 3);
+            eff.direction = random_range(-10, 80);
+            eff.gravity = random_range(0.1, 0.2);
+        }
+    }
+
+
+}
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//set this to image_angle if you want the bullets to follow the player's angle ------v
+draw_sprite_ext(sprite_index,floor(image_index),floor(x),floor(y),image_xscale,image_yscale,0,image_blend,image_alpha)

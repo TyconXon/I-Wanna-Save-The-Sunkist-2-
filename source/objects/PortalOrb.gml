@@ -1,0 +1,85 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (instance_exists(Player)) alarm[0]=40/(global.slomo*dt)
+else alarm[0]=40/dt
+dead=instance_place(x,y,BulletBlock)
+
+storex=1
+storey=1
+storea=0
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///stretch bullet mask
+image_angle=direction+180
+storex=image_xscale
+storey=image_yscale
+storea=image_angle
+image_xscale=speed
+image_yscale=2
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//reset bullet mask
+image_xscale=storex
+image_yscale=storey
+image_angle=storea
+
+//we schedule bullet destroy to make sure it hits things on the frame it hits a wall
+if (dead) instance_destroy()
+#define Collision_BulletBlock
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=self
+invert=0
+*/
+#define Collision_Block
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (other.solid) {
+    dead=1
+    xprevious=x+hspeed
+    yprevious=y+vspeed
+    newPortal = instance_create(other.x, floorto(y,32), Portal)
+    newPortal.orangeNotBlue = self.orangeNotBlue
+
+    if (x>=other.bbox_right) {
+        newPortal.leftNotRight = true;
+        newPortal.image_xscale = -1
+        newPortal.x = other.bbox_right + ( 32)
+    } else {
+        newPortal.leftNotRight = false;
+        newPortal.x = other.bbox_left - ( 32)
+    }
+
+    with (newPortal){
+        if(orangeNotBlue){sprite_index = sprOrangePortal}else{sprite_index = sprBluePortal}
+        with (Portal) {
+             if (self.id == other.id || self.orangeNotBlue != other.orangeNotBlue) {continue}
+             instance_destroy()
+        }
+    }
+}
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//set this to image_angle if you want the bullets to follow the player's angle ------v
+draw_sprite_ext(sprite_index,floor(image_index),floor(x),floor(y),image_xscale,image_yscale,0,image_blend,image_alpha)

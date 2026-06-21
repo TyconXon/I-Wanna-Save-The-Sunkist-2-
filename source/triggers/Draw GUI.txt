@@ -1,0 +1,2 @@
+constant=tr_draw_gui
+kind=2

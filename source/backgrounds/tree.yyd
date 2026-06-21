@@ -1,0 +1,84 @@
+|tile_IWBTG
+|tile_Colors
+|tile_Rainbow
+|tile_CrimsonFixed
+|tile_Crimson
+|tile_corner
+|tile_IanExtendedSlope
+|tile_GameMakerBlock
++IWBTG
+	|bgMegaman
+	|bgFortress
+	|bgTree
+	|bgTree2
+	|bgTree3
+	|bgBackdrop1
+	|bgBackdrop2
+	|bgBackdrop3
++thumbs
+	|bgThumbDefault
+	|bgThumbClear
+	|bgThumbBroken
++autotiler
+	|bgMarkMazes32
+	|bgMarkMazes16
+	|bgBrownBlock32
+	|bgUntextured
+	|bgGreyBlock32
+	|bgGuyPipes32
+	|bgFunnySlopeFill
+	|bgFunnySlopeTop
+	|bgFreeformRedblock
+	|bgFreeformGrasstop
+	|bgExtendedGuyRock
+	|bgExtendedGuyRock16
++shader stuff
+	|bgFire
+	|bgTeapot
+	|bgPerlin
++Sunkist
+	+image
+		+small
+			|background_avonya
+			|background_badger
+			|background128_Heavily_Armored_Pokey_EB_sprite
+			|backgroundCrowbar
+			|background_sophie
+			|background_sunkpfp
+		+big
+			|background_marketplace-gradient
+			|background_google
+			|background_marketplace
+			|background_miracle
+			|background_sunkist-gradient
+			|background_hqsunkist
+			|background_MiracleMusical
+			|backgroundLloyd
+			|background98_CAttttter
+			|background134_omniball_4486141
+			|background_rorwater
+			|background_sunkist
+			|background_directory-gradient
+			|divine
+	+tile
+		|tile_changed
+		|tile_pizza
+		|tile_Portal
+		|tile_portal32
+		|tile_offgreen
+		|tile_tower
+		|background_gradient
+		|tile_offpurple
+		|tile_offblack
+		|tile_ror
+		|tile_rorgrass
+		|tile_rorwater
+		|tile_rorforest
+		|tile_rorpurple
+		|tile_sunkist
+		|tile_white_off
+|bulletbroken
+|background_tein
+|background_white_off
+|background_purple_off
+|background_Stars

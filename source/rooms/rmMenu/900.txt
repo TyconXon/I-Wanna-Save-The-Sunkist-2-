@@ -1,0 +1,12 @@
+bgFreeformGrasstop,96,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,128,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,160,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,192,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,336,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,368,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,400,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,432,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,576,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,608,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,640,112,0,0,32,32,0,1,1,4294967295
+bgFreeformGrasstop,672,112,0,0,32,32,0,1,1,4294967295

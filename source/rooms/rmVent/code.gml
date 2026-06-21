@@ -1,0 +1,9 @@
+/*gm82room flag*/background_blend[0]=3145983
+/*gm82room flag*/background_blend[1]=13762564
+/*gm82room flag*/background_alpha[1]=0.25
+/*gm82room flag*/background_xscale[1]=5
+/*gm82room flag*/background_yscale[1]=5
+/*gm82room flag*/background_blend[2]=255
+/*gm82room flag*/background_alpha[2]=0.26
+/*gm82room flag*/background_blend[3]=255
+/*gm82room flag*/background_blend[4]=7368816

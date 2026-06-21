@@ -1,0 +1,32 @@
+|rmInit
+|rmTitle
+|rmMenu
+|rmOptions
+|rmTemplate
++Game
+	|rmDifficulty
+	|rmHub
+	+Example Rooms
+		|rmDemo
+		|rmDemo2
+		|rmBoss1
+		|rmClassic
+		|rmClassic2
+		|rmMiku
+		|rmMikuNew
+		|rmExtra
+		|rmExBoss
+		|rmShaders
+		|rmClear
++Sunkist
+	|rmOriginal
+	|rmOriginal2
+	|rmPalace
+	|rmS1
+	|rmRoR
+	|rmChanged
+	|rmExp
+	|rmOFF
+	|rmGuyFuture
+	|rmSunkistSavior
+	|rmVent

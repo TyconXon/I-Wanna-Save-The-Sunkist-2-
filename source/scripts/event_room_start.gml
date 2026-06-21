@@ -1,0 +1,61 @@
+//set up the room
+
+room_speed=global.game_speed
+
+global.warping=false
+
+if (is_ingame()) {
+    update_caption_deathtime()
+
+    if (!savedata("saved")) {
+        savedata_save(true,"new file@"+room_get_name(room))
+        show_message_left()
+        show_message_right()
+    }
+    camera_angle(savedata("viewangle"))
+
+    if (global.gameover_music==2) sound_kind_resume(1)
+
+    if (global.warp_id!="") with (PlayerStart) {
+        if (warpid=global.warp_id) {
+            with (savedata("obj")) {
+                move_player(other.x+17*other.image_xscale,other.y+23,0)
+                facing=other.image_xscale
+            }
+        }
+    }
+
+    with (SectionWarp) event_user(0)
+
+    with (Player) if (!place_free(x,y)) if (!try_unstuck()) with (instance_nearest(x,y,PlayerStart)) move_player(x,y,0)
+
+    event_world_endstep()
+} else {
+    room_caption=global.game_title
+    sound_kind_pitch(0,1)
+    sound_kind_pitch(1,1)
+    sound_kind_pitch(3,1)
+}
+
+window_set_caption(room_caption)
+
+if (sound_isplaying(global.death_music)) {
+    global.formerPosition = sound_get_pos(global.death_music_id)
+    sound_stop(global.death_music_id)
+}
+if global.music_instance!=noone sound_resume(global.music_instance)
+
+caption_opacity=1
+
+load_persistent_objects()
+
+camera_default()
+
+key_clear()
+
+if (global.onload_trigger) {
+    global.onload_trigger=false
+    with (all) event_perform(ev_trigger,tr_onload)
+}
+
+check_engine_parenting()
