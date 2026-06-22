@@ -2,7 +2,7 @@
 
 switch (argument0) {
     case opt_inpause: {
-        return true
+        return false
     }break
     case opt_step:{
         h=key_jump(vi_pressed)+macro_leftright(vi_pressed)

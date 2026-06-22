@@ -8,6 +8,7 @@ sprite_index = spr1x1b
 image_xscale *= 32
 image_yscale *= 32
 firsthand = false
+nolink = noone
 
 //surf=surface_set("focuszones",global.width,global.height)
 #define Destroy_0
@@ -31,14 +32,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(other.firsthand and !other.visible) visible=false
+if(other.firsthand and !other.visible and other != nolink) visible=false
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-//field linked: instance
+//field nolink: instance
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

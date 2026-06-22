@@ -51,6 +51,14 @@ action_id=203
 applies_to=self
 invert=0
 */
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+other.image_alpha = 1
+other.alarm[0] = 50
+sound_play_auto("flashlight1")
 #define Collision_Block
 /*"/*'/**//* YYD ACTION
 lib_id=1

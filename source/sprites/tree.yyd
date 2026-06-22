@@ -132,6 +132,7 @@
 	|sprAfterimage
 +Cherries
 	|sprCherry
+	|sprTransperry
 	|sprCherryOrange
 	|sprCherryYellow
 	|sprCherryChartreuse
@@ -219,6 +220,7 @@
 	|sprNekoronAir
 	|sprPlatformWater
 	|sprIWBTGWater
+	|sprIWBTGWater9slice
 	|sprPastelWater2
 	|sprWallJUmpLEditor
 	|sprWallJumpL
@@ -239,6 +241,10 @@
 		|sprBlade
 		|sprSpikeWall
 		|sprGuyTrap
+		|sprCursedSpikeBR
+		|sprCursedSpikeLB
+		|sprCursedSpikeLT
+		|sprCursedSpikeTR
 	|sprSpike
 	|sprSpikeAnimated
 	|sprSpikeLeft

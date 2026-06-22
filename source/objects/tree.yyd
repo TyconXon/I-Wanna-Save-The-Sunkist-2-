@@ -51,6 +51,7 @@
 		|BulletBlock
 	+Cherries
 		|Cherry
+		|BlinkingCherry
 		+more cherry colors
 			|CherryOrange
 			|CherryYellow
@@ -548,3 +549,10 @@
 |SpikeL
 |SpikeR
 |SpikeU
++Cursed spikes
+	|SpikeTR
+	|SpikeLT
+	|SpikeLB
+	|SpikeBR
+	|SpikeTall
+	|sprKiller

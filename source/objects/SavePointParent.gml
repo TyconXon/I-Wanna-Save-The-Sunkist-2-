@@ -106,7 +106,10 @@ applies_to=self
 */
 ///schedule save
 if (image_index==0) {
-    with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
+    with (Player) if (instance_place(x,y,AntiSoftlockBlock)) {
+        sound_play_auto("failure")
+        exit
+    }
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
         save=1
     }

@@ -8,11 +8,11 @@ if (!landed_on_platform) vspeed=0
 walljumpboost=0
 djump=1
 if (!onGround) {
-   if landed_on_platform or instance_place(x+hspeed,y+gravity,Ladder) sound_play_auto("wood"+string(irandom(3)+1))
-   else if instance_place(x+hspeed,y+gravity,ShootBlock) sound_play_auto("glassstep")
-   else if instance_place(x+hspeed,y+gravity, StickyBlock) sound_play_auto("rubber_tire_impact_soft1")
-   else if instances_place(x+hspeed,y+gravity, Pauser, Conveyor, MovingSolid) sound_play_auto("metal"+string(irandom(3)+1))
-   else if instance_place(x+hspeed,y+gravity,SlipBlock) sound_play_auto("mud"+string(irandom(3)+1))
+   if landed_on_platform or instance_place(x+hspeed,y+1,Ladder) sound_play_auto("wood"+string(irandom(3)+1))
+   else if instance_place(x+hspeed,y+1,ShootBlock) sound_play_auto("glassstep")
+   else if instance_place(x+hspeed,y+1, StickyBlock) sound_play_auto("rubber_tire_impact_soft1")
+   else if instances_place(x+hspeed,y+1, Pauser, Conveyor, MovingSolid) sound_play_auto("metal"+string(irandom(3)+1))
+   else if instance_place(x+hspeed,y+1,SlipBlock) sound_play_auto("mud"+string(irandom(3)+1))
    else sound_play_auto("concrete"+string(irandom(3)+1))
 }
 onGround=true

@@ -22,5 +22,6 @@ settings("killer_tint",false)
 settings("caption visible",true)
 
 settings("focuszones", false)
+settings("afterimage", false)
 
 input_default()

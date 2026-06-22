@@ -1,5 +1,3 @@
 //gm82 fields begin
-text="The room"
-font=fntROR
-depth=20
+nolink=rmOriginal_2D6F939B
 //gm82 fields end

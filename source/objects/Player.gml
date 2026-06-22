@@ -362,6 +362,7 @@ if (!frozen) {
                     } else {
                         //move normally
                         hspeed=maxSpeed*input_h
+                        
                     }
                 }
             }
@@ -835,10 +836,7 @@ if (iframes) {
     flashing=iframes
     iframes-=1
 } else {
-    with (instance_place(x,y,PlayerKiller)) {
-        if ( not variable_local_exists("murderer") ) kill_player()
-        else if murderer kill_player()
-    }
+    with (instance_place(x,y,PlayerKiller)) kill_player()
     if(distance_to_object(PlayerKiller)<2 and !sound_isplaying(graze)) graze = sound_play_auto("snd_graze")
     with (instance_place(x,y,PlayerKillerActive)) {
         if (active) kill_player()
@@ -869,6 +867,8 @@ applies_to=self
 script_execute(global.player_skin,"step")
 
 player_update_sprite()
+
+if(settings("afterimage") and (vspeed!=0 or hspeed!=0)) make_afterimage()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424

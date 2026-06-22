@@ -546,3 +546,10 @@ MoveSwitchBlockOff
 CherryNoInput
 CherryNoVerticle
 FocusZone
+BlinkingCherry
+SpikeTR
+SpikeLT
+SpikeLB
+SpikeBR
+SpikeTall
+sprKiller

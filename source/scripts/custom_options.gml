@@ -18,6 +18,7 @@ add_option(opt_blood_amount)
 add_option(opt_blood_collision)
 add_option(opt_killer_tint)
 add_option(opt_focuszones)
+add_option(opt_pausesounds)
 
 //option for saving valign
 //add_option(opt_savevalign)

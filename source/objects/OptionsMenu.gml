@@ -74,7 +74,7 @@ for (i=0;i<numoptions;i+=1) {
     draw_text(xdraw+xsep,ydraw+(ysep*i),script_execute(ds_list_find_value(global.optlist,i),opt_value))
 }
 
-if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
+if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,image_blend,1)
 
 //button info
 draw_set_font(fntFileSmall)

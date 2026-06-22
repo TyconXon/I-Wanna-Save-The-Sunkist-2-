@@ -527,3 +527,11 @@ sprShadow
 sprFocusZone
 spr1x1b
 sprSpikeAnimated
+sprTransperry
+
+
+sprCursedSpikeBR
+sprCursedSpikeLB
+sprCursedSpikeLT
+sprCursedSpikeTR
+sprIWBTGWater9slice
