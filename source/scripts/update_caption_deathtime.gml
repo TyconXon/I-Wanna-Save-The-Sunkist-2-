@@ -7,7 +7,7 @@ if (global.show_deathtime && room!=global.difficulty_room) {
         diff,
         " - "+lang("deaths")+": ",savedatap("deaths"),
         " - "+lang("time")+": ",format_time(savedatap("time")),
-        " - "+room_name,
+        " - "+room_get_name(room),
         pick(global.lastjoyname!="",""," - "+global.lastjoyname),
         pick(savedatap("clear"),""," - "+lang("fileclear"))
     )

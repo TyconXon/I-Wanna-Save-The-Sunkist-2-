@@ -74,6 +74,8 @@ variables_defined=true
 
 xOffset = 0
 yOffset = 0
+
+notVisibleTillThen=false
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -140,6 +142,7 @@ if (scaling) {
 if (rotating) {
     image_angle+=rotate
 }
+if(notVisibleTillThen) visible=true
 
 if (execute_code!="") {
     if (execute_code_timer==0) {
@@ -341,6 +344,7 @@ applies_to=self
     //field sprite_index: sprite
     //field bounceOffWalls: false
     //field deathMessage: string
+    //field notVisibleTillThen: false
     //field randomize_field: string
             //field rand_range: xy
 
@@ -363,6 +367,7 @@ if(variable_local_exists("weld_parent")){
         other.yOffset = self.y - other.y
     }
 }
+if(notVisibleTillThen) visible=false
 if (trigger_on_create) sound=""
 
 if (trigger_on_create and object_index!=AddTrigger) event_trigger(tr_traptriggered)

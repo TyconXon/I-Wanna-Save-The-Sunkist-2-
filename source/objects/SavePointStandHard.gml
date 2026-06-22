@@ -4,4 +4,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound="sndSpikeTrap"
+mydifficulty=1
+event_inherited()
+standingsave=true

@@ -169,6 +169,8 @@
 	+Saves
 		|sprSaveMedium
 		|sprSaveHard
+		|sprSaveTouchHard
+		|sprSaveTouchMedium
 		|sprSaveButton
 		|sprSaveVeryHard
 		|sprSaveVeryHardEditor

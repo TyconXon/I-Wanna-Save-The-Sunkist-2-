@@ -8,6 +8,7 @@ image_speed=0
 vflip=1
 save=0
 angle=0
+standingsave=false
 
 name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 
@@ -37,7 +38,7 @@ applies_to=self
 if (save) {
     save=0
     
-    if (global.press_shoot_saves) {
+    if (global.press_shoot_saves || standingsave) {
         //disallow saving outside of contact saves
         if (!instance_place(x,y,Player)) exit
     }
@@ -75,7 +76,7 @@ applies_to=self
 */
 if (global.contact_saves) {
     event_user(0)
-} else if (global.press_shoot_saves) {
+} else if (global.press_shoot_saves || standingsave) {
     notice=1
 }
 
@@ -88,7 +89,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!global.contact_saves && !global.press_shoot_saves && !other.dead) event_user(0)
+if (!global.contact_saves && !global.press_shoot_saves && !other.dead and not standingsave) event_user(0)
 instance_destroy_other()
 #define Other_7
 /*"/*'/**//* YYD ACTION
