@@ -542,6 +542,7 @@
 	|ShootBlock
 	|ConveyerStick
 	|AirStop
+	|IceField
 |PlayerStart
 |Block
 |Platform

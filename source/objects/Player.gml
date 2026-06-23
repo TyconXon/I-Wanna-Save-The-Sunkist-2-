@@ -599,6 +599,11 @@ if (instance_place(x,y,Water1) || instance_place(x,y,Water3) || swt=="Water1" ||
 if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater) || swt=="Water2" || swt=="CatharsisWater") {
     if (vspeed*vflip>2) vspeed=2*vflip
 }
+with(instance_place(x,y,IceField)){
+   if(savedvspeed==999) continue;
+   other.vspeed=savedvspeed
+   other.hspeed=savedhspeed
+}
 
 //one way gates
 coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (x+1-hspeed<=coll.bbox_left+2) {move_player(x+coll.bbox_left-(bbox_right+1),y,1) hspeed=0}
