@@ -1,4 +1,4 @@
-color=4278190104
+color=8421440
 new_window=1
 caption=Game Information
 left=-1

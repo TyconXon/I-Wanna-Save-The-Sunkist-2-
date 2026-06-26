@@ -69,6 +69,7 @@ preactiveMovement = false
 trap_delay=0
 
 trg=0
+em = 0
 
 variables_defined=true
 
@@ -345,6 +346,7 @@ applies_to=self
     //field bounceOffWalls: false
     //field deathMessage: string
     //field notVisibleTillThen: false
+    //field emotion: enum(em_suprise,em_question,em_sing,em_love,em_mad,em_sad,em_bad,em_dots,em_idea,em_sleep)
     //field randomize_field: string
             //field rand_range: xy
 
@@ -401,6 +403,11 @@ if (trap_delay>0) exit
 move_t=0
 
 if (sound!="") sound_play_auto(sound)
+
+if(variable_local_exists("emotion")){
+   em = instance_create(x,y,Emotion)
+   em.image_index = emotion
+}
 
 if (path!=noone) {
     path_start(path,path_speed,path_endaction,path_absolute)

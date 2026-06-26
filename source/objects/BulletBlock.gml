@@ -12,3 +12,4 @@ action_id=603
 applies_to=self
 */
 image_alpha=0
+make_afterimage()

@@ -438,7 +438,7 @@ sprLamb
 sprSpamton
 
 sprNode
-sprRain
+
 sprFavi
 sprSunk
 sprAfton
@@ -500,7 +500,7 @@ sprOcean
 sprSticky
 sprDrawText
 
-sprAmbientGeneric
+
 sprEnvShooter
 sprRelay
 sprInfoTarget
@@ -526,7 +526,7 @@ sprStopSwitchOff
 sprShadow
 sprFocusZone
 spr1x1b
-sprSpikeAnimated
+
 sprTransperry
 
 
@@ -542,3 +542,20 @@ sprIce
 
 
 sprIceOne
+sprEnvSoundscape
+sprAmbientGeneric
+sprSaveDeny
+sprSpikeBlurry
+sprSpikeBlurry2
+
+
+
+sprWarpVisited
+
+sprEmotion
+sprFence
+sprFence2
+sprCursorPaw
+sprCursorPaw2
+sprCursorPortal
+sprCrowbar

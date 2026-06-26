@@ -38,6 +38,53 @@ if (warpToPlayerstart) {
     if (autosave) autosave_asap()
     global.warp_id=warpid
 }
+#define Mouse_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=601
+applies_to=self
+invert=0
+arg0=kill_player
+arg1=0
+arg2=0
+arg3=0
+arg4=0
+arg5=0
+*/
+#define Mouse_10
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=801
+invert=0
+arg0=sprCursorPaw2
+arg1=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=541
+applies_to=self
+invert=0
+arg0=sprWarpVisited
+arg1=0
+arg2=0
+*/
+#define Mouse_11
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=541
+applies_to=self
+invert=0
+arg0=sprWarp
+arg1=0
+arg2=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=801
+invert=0
+arg0=sprCursorPaw
+arg1=0
+*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

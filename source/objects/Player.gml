@@ -601,8 +601,8 @@ if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_p
 }
 with(instance_place(x,y,IceField)){
    if(savedvspeed==999) continue;
-   other.vspeed=savedvspeed
-   other.hspeed=savedhspeed
+   if(!noy)other.vspeed=savedvspeed
+   if(!nox)other.hspeed=savedhspeed
 }
 
 //one way gates

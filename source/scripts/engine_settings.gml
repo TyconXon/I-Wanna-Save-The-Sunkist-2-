@@ -78,8 +78,8 @@ global.release_mode=false
     global.fullscreen_cursor_visible=false
     //fullscreen caption options
     global.fullscreen_caption_visible=true
-    global.fullscreen_caption_color=$ffff
-    global.fullscreen_caption_font=fntSignpost
+    global.fullscreen_caption_color=$ffffff
+    global.fullscreen_caption_font=fntFullscreen
     //don't go back to the menu - quit the game immediately when pressing esc
     global.esc_always_quits=false
     //automatically updates the window caption with deathtime

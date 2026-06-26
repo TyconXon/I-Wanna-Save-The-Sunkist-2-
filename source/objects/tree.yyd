@@ -504,12 +504,14 @@
 		|PlayerClip
 		|NoKillZone
 		|FocusZone
+		|AmbientGeneric
 	+Component
 		|KnifeProjectile
 		|PortalOrb
 		|Portal
 		|StopSwitchBlockOff
 		|MoveSwitchBlockOff
+		|Emotion
 	+Prefabs
 		|Dog
 		|RiskOfRain

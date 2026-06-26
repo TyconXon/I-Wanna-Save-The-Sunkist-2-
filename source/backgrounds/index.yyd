@@ -180,3 +180,6 @@ background_Stars
 tile_portal32
 
 bgUntextured
+background_changed_special
+bgHDBrownBlock32
+bgHDBrownBlock16

@@ -13,14 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-alarm[0]=-1
-#define Step_2
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-image_angle=-camera_angle()
+active=true
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -45,8 +38,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (active) draw_self()
+if (active) {
+    image_alpha = 1
+    draw_self()
+}
 else {
-    draw_self_as(spr32x32)
     image_alpha = (alarm[0] / refreshTime)
+    draw_self_as(spr32x32)
 }

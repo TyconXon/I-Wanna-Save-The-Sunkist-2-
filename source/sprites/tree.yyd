@@ -11,7 +11,6 @@
 	|sprLamb
 	|sprSpamton
 	|sprNode
-	|sprRain
 	|sprFavi
 	|sprSunk
 	|sprAfton
@@ -170,6 +169,7 @@
 	+Saves
 		|sprSaveMedium
 		|sprSaveHard
+		|sprSaveDeny
 		|sprSaveTouchHard
 		|sprSaveTouchMedium
 		|sprSaveButton
@@ -183,6 +183,7 @@
 	|sprFocusZone
 	|sprDemoBlock
 	|sprWarp
+	|sprWarpVisited
 	|sprSectionWarp
 	|sprWarpTransparent
 	|sprDynamicPlatform
@@ -248,8 +249,9 @@
 		|sprCursedSpikeLB
 		|sprCursedSpikeLT
 		|sprCursedSpikeTR
+		|sprSpikeBlurry
+		|sprSpikeBlurry2
 	|sprSpike
-	|sprSpikeAnimated
 	|sprSpikeLeft
 	|sprSpikeRight
 	|sprSpikeUp
@@ -517,7 +519,6 @@
 	|sprConveyerNone
 	|sprAirConvNone
 	|sprSticky
-|sprAmbientGeneric
 |sprEnvShooter
 |sprRelay
 |sprInfoTarget
@@ -531,3 +532,12 @@
 |sprShadow
 |sprIce
 |sprIceOne
+|sprEnvSoundscape
+|sprAmbientGeneric
+|sprEmotion
+|sprFence
+|sprFence2
+|sprCursorPaw
+|sprCursorPaw2
+|sprCursorPortal
+|sprCrowbar

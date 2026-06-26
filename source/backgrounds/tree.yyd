@@ -23,6 +23,8 @@
 	|bgMarkMazes32
 	|bgMarkMazes16
 	|bgBrownBlock32
+	|bgHDBrownBlock32
+	|bgHDBrownBlock16
 	|bgUntextured
 	|bgGreyBlock32
 	|bgGuyPipes32
@@ -77,6 +79,7 @@
 		|tile_rorpurple
 		|tile_sunkist
 		|tile_white_off
+		|background_changed_special
 |bulletbroken
 |background_tein
 |background_white_off

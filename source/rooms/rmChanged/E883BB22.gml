@@ -1,5 +1,5 @@
 //gm82 fields begin
-type="extended"
-tileset=bgExtendedGuyRock16
+type="grass"
+tileset=bgUntextured
 grid=16
 //gm82 fields end

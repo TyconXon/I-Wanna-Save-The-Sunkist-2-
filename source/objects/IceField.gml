@@ -6,6 +6,13 @@ applies_to=self
 */
 savedhspeed = 999
 savedvspeed = 999
+
+nox= false
+noy= false
+nojump= false
+nodjump= false
+
+slip = 11344
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -27,6 +34,17 @@ if(savedhspeed==999 or savedvspeed == 999){
                     savedhspeed=other.hspeed
                     savedvspeed=other.vspeed-gravity
 }
+if ((!sound_isplaying(slip) or slip == 11344) and (other.vspeed!=0 or other.hspeed!=0)) slip = sound_play_auto("Jump1")
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field nox: false
+//field noy: false
+//field nojump: false
+//field nodjump: false
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -40,6 +58,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if(nojump) exit
 savedhspeed=999
 savedvspeed=999
 #define Trigger_On Player Djump
@@ -48,5 +67,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if(nodjump) exit
 savedhspeed=999
 savedvspeed=999

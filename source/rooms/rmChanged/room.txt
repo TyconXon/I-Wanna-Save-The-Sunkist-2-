@@ -6,13 +6,13 @@ snap_y=16
 isometric=0
 roomspeed=30
 roompersistent=0
-bg_color=8016471
+bg_color=8421504
 clear_screen=1
 clear_view=1
 
-bg_visible0=0
+bg_visible0=1
 bg_is_foreground0=0
-bg_source0=background98_CAttttter
+bg_source0=bgMegaman
 bg_xoffset0=0
 bg_yoffset0=0
 bg_tile_h0=1

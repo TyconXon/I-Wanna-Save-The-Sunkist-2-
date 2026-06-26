@@ -10,6 +10,13 @@ order_test=2
 //we also hide the window here since game start takes a hot minute
 window_delayed_center()
 window_set_showborder(1)
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=801
+invert=0
+arg0=sprCursorPaw
+arg1=0
+*/
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
