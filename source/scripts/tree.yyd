@@ -4,6 +4,8 @@
 	|dialog_sophie1
 	|death_messages
 	|emit_prop_shrapnel
+	|sound_play_auto_range
+	|splashtexts
 +CUSTOM
 	+game options
 		|custom_options

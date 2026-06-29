@@ -603,6 +603,7 @@ with(instance_place(x,y,IceField)){
    if(savedvspeed==999) continue;
    if(!noy)other.vspeed=savedvspeed
    if(!nox)other.hspeed=savedhspeed
+   gravity = 0
 }
 
 //one way gates

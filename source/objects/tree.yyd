@@ -537,6 +537,7 @@
 		|StopSwitchBlock
 		|MoveSwitchBlock
 	|Jumper
+	|ShootPusher
 	|StickyBlock
 	|Pauser
 	|SquareRefresher

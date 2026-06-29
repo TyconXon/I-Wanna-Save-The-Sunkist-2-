@@ -18,7 +18,7 @@ memspd=room_speed
 alarm[0]=room_speed
 
 if (settings("pause sounds")) sound_pause_all()
-sound_play_auto("trasncribe open")
+sound_play("trasncribe open")
 
 //options
 xdraw=60
@@ -45,6 +45,8 @@ xcursor=xdraw-18
 ycursor=ydraw+9
 sprite=sprPlayerIdle
 image_speed=0.2*50/room_speed
+
+chosenSplash = splashtexts()
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -63,7 +65,7 @@ input_clear()
 visible=0
 
 if (settings("pause sounds")) sound_resume_all()
-sound_play_auto("transcribe close")
+sound_play("transcribe close")
 
 room_speed=memspd
 
@@ -144,9 +146,9 @@ d3d_set_projection_ortho(0,0,global.width,global.height,0)
 draw_set_font(fntFileBig)
 draw_set_halign(1)
 draw_text(global.width/2,36,lang("pausemenu"));
-draw_set_halign(0)
-
 draw_set_font(fntFileSmall)
+draw_text(global.width/2,36+30,chosenSplash);
+draw_set_halign(0)
 if (sel==-1) {
     draw_text(40,ydraw,string_replace(lang("pauseoptions"),"%",key_jump(vi_name)))
 } else {

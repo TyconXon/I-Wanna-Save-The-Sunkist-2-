@@ -21,9 +21,9 @@ global.release_mode=false
     global.width=800
     global.height=608
     //first room that's actually part of the game
-    global.first_room=rmS1
+    global.first_room=rmVent
     //room to return to when using WarpToHub object
-    global.hub_room=rmS1
+    global.hub_room=rmVent
     //password for encrypting saves
     //if you don't want a password, use "" for the save files to be unencrypted dsmaps
     global.encrypt_save_password=""

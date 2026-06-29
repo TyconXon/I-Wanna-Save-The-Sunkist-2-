@@ -8,7 +8,7 @@ warpCoord[0]=noone
 warpCoord[1]=noone
 warpToPlayerstart=noone
 warpid=""
-warpsound=""
+warpsound="lowtele"
 autosave=false
 roomTo=room
 transparent=0
@@ -38,19 +38,6 @@ if (warpToPlayerstart) {
     if (autosave) autosave_asap()
     global.warp_id=warpid
 }
-#define Mouse_4
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=601
-applies_to=self
-invert=0
-arg0=kill_player
-arg1=0
-arg2=0
-arg3=0
-arg4=0
-arg5=0
-*/
 #define Mouse_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

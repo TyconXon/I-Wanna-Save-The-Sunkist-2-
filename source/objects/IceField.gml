@@ -13,6 +13,8 @@ nojump= false
 nodjump= false
 
 slip = 11344
+
+floorlessgravity = false
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -22,6 +24,7 @@ applies_to=self
 if(savedhspeed != 999){ if(!instance_place(x,y,Player)) {
     savedhspeed = 999
     savedvspeed = 999
+    Player.gravity = Player.baseGravDefault
     }
 }
 #define Collision_Player
@@ -32,7 +35,8 @@ applies_to=self
 */
 if(savedhspeed==999 or savedvspeed == 999){
                     savedhspeed=other.hspeed
-                    savedvspeed=other.vspeed-gravity
+                    if(!floorlessgravity || !Player.onGround) savedvspeed=other.vspeed
+                    else if(Player.onGround) savedvspeed=-other.gravity
 }
 if ((!sound_isplaying(slip) or slip == 11344) and (other.vspeed!=0 or other.hspeed!=0)) slip = sound_play_auto("Jump1")
 #define Other_4
@@ -45,6 +49,7 @@ applies_to=self
 //field noy: false
 //field nojump: false
 //field nodjump: false
+//field floorlessgravity: true
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

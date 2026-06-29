@@ -15,3 +15,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+chosenSplash = splashtexts()
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_set_halign(1)
+draw_set_font(fntFileSmall)
+draw_text(global.width/2,40,chosenSplash);

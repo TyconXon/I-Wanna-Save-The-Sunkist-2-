@@ -12,6 +12,7 @@ if (!instance_exists(savedata("obj"))) {
 
 warpid=""
 deathMessage = "GAME OVER"
+instantRestart = false
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -20,5 +21,5 @@ applies_to=self
 */
 //field warpid: string
 //field deathMessage: string
-
+//field instantRestart: false
 Player.deathMessage = deathMessage

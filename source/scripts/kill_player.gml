@@ -7,6 +7,12 @@ else if (!dead) {
             exit
         }
     }
+    if(PlayerStart.instantRestart) {
+        if(global.death_music_id) global.formerPosition = sound_get_pos(global.death_music_id)
+        global.wasDead = Player.dead
+        savedata_load()
+        exit
+    }
 
     if (global.debug_god or instance_place(Player.x,Player.y,NoKillZone) ) {
         if (!flashing) {

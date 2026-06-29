@@ -11,3 +11,8 @@ sound_set_loop_points("ddpboss",0.121,70.517)
 sound_set_starting_volume("m-r-tight",0.7)
 sound_set_starting_volume("tile2",0.4)
 sound_set_starting_volume("snd_graze",0.4)
+
+sound_set_starting_volume("concrete_impact_bullet1",0.4)
+sound_set_starting_volume("concrete_impact_bullet2",0.4)
+sound_set_starting_volume("concrete_impact_bullet3",0.4)
+sound_set_starting_volume("concrete_impact_bullet4",0.4)

@@ -71,12 +71,12 @@ if (other.solid) {
     xprevious=x+hspeed
     yprevious=y+vspeed
 
-    sound_play_auto("concrete_impact_bullet1")
+    sound_play_auto_range("concrete_impact_bullet",3)
     repeat (5)
     {
         if (hspeed > 0)
         {
-        eff = instance_create(x, y, PropShrapnel);
+        eff = instance_create(xprevious, yprevious, PropShrapnel);
             eff.speed = random_range(1, 3);
             eff.direction = random_range(100, 190);
             eff.gravity = random_range(0.1, 0.2);
@@ -84,7 +84,7 @@ if (other.solid) {
 
         if (hspeed < 0)
         {
-            eff = instance_create(x, y, PropShrapnel);
+            eff = instance_create(xprevious, yprevious, PropShrapnel);
             eff.speed = random_range(1, 3);
             eff.direction = random_range(-10, 80);
             eff.gravity = random_range(0.1, 0.2);

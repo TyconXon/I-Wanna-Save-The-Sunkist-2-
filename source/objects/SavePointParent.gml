@@ -8,6 +8,7 @@ image_speed=0
 vflip=1
 save=0
 angle=0
+oldsprite=sprite_index
 standingsave=false
 
 name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
@@ -26,6 +27,13 @@ if (difficulty>mydifficulty) {
 time_display=""
 showtime=savedata("showtime "+name)
 if (showtime) time_display=format_time(showtime)
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//sprite_index=oldsprite
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -108,7 +116,10 @@ applies_to=self
 ///schedule save
 if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) {
+        oldsprite = sprite_index
         sound_play_auto("failure")
+        sprite_index=sprSaveDeny
+        alarm[0]=50
         exit
     }
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
