@@ -178,6 +178,7 @@ draw_set_halign(2)
         lang("deaths")+": "+string(savedata("deaths"))+"#"+
         lang("time")+": "+format_time(savedata("time"))+"#"+
         lang("systime")+": "+date_time_string(date_current_time())+"#"+
+        "Song: " + string(global.music) +"#" +
         batt_info
     )
 draw_set_valign(0)

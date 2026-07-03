@@ -429,13 +429,13 @@ sprDefaultGameOverLine
 sprAfterimage
 
 sprRainmaker
-sprMrSaturn
+
 sprSunkist
 sprDog
 sprBunny
 sprCube
-sprLamb
-sprSpamton
+
+
 
 sprNode
 
@@ -446,7 +446,7 @@ sprAvonya
 sprSophie
 sprDir
 
-sprWayned
+
 
 
 
@@ -458,9 +458,9 @@ sprWayned
 
 
 sprSunkistDescription
-sprite460_batter
-sprite461_ELSEN
-sprFox
+
+sprElsen
+sprFoxSavior
 sprKnife
 sprRat
 sprOmniball
@@ -469,7 +469,7 @@ sprPortalOrbBlue
 sprPortalOrbOrange
 sprBluePortal
 sprOrangePortal
-sprite471
+sprPortalgun
 
 
 sprShrapnel
@@ -560,3 +560,24 @@ sprCursorPaw2
 sprCursorPortal
 sprCrowbar
 sprPlatSlashPusher
+sprEndlessOcean
+
+sprKitsuneTail
+sprMagicalglass
+sprKanbanMedium
+sprTestChamberPanel
+sprWarningSigns
+sprFox
+sprGehirn
+sprHammer
+sprSlugma
+sprPokerChip
+sprCompanion
+sprK9
+sprLightningChip
+sprAnnoying
+sprFennix
+sprBatter
+
+sprJake
+

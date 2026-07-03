@@ -1,3 +1,3 @@
 //gm82 fields begin
-hspeed=1
+hspeed=2
 //gm82 fields end

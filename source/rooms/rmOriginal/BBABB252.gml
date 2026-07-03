@@ -1,3 +1,3 @@
 //gm82 fields begin
-spd=8
+spd=4
 //gm82 fields end

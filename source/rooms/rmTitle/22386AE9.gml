@@ -1,5 +1,5 @@
 //gm82 fields begin
-text="afton (cyan rey)"
+text="cyan rey"
 font=fntIsaac
 halign=fa_left
 filter=false

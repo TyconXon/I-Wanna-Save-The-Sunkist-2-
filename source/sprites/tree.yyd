@@ -1,39 +1,94 @@
 |sprController
 +Sunkist
-	|sprRainmaker
-	|sprMrSaturn
-	|sprSunkist
+	+Aiwana
+		|sprPauseblock
+		|sprBlockJumpRefresher
+		|sprJumper
+		|sprGlass
+		|TallSpike
+		|sprKillerBlock
+		|sprConveyerRight
+		|sprConveyerLeft
+		|sprConveyerNone
+		|sprAirConvNone
+		|sprSticky
+		|sprRealApple
+		|sprShadow
+	+Palace
+		|sprFavi
+		|sprSunk
+		|sprAfton
+		|sprAvonya
+		|sprSophie
+		|sprDir
+		|sprTechBorder
+		|sprWaterBorder
+		|sprPaw
+		|sprNode
+		|sprCursorPaw
+		|sprCursorPaw2
+		|sprCursorPortal
+		|sprCrowbar
+		|sprPokerChip
+	+Savior
+		|sprKnife
+		|sprFoxSavior
+		|sprRat
+		|sprDog
+		|sprBunny
+		|sprCube
+	+Hammer
+		|sprInfoTarget
+		|sprLogicCase
+		|sprRelay
+		|sprEnvShooter
+		|sprAmbientGeneric
+		|sprEnvSoundscape
+	+Portal
+		|sprPortalgun
+		|sprBluePortal
+		|sprOrangePortal
+		|sprPortalOrbBlue
+		|sprPortalOrbOrange
+		|sprCompanion
+	+Deltarune
+		|sprPlatSlashPusher
+		|sprKitsuneTail
+		|sprFox
+		|sprMagicalglass
+		|sprAnnoying
+	+Sunkigimmick
+		|sprIce
+		|sprIceOne
+		|sprThrowHook
+		|sprHook
+		|sprMoveSwitchOn
+		|sprMoveSwitchOff
+		|sprStopSwitchOn
+		|sprStopSwitchOff
+	+Decor
+		|sprTeleporterFinished
+		|sprOcean
+		|sprEndlessOcean
+		|sprTestChamberPanel
+		|sprWarningSigns
+		|sprEmotion
+		|sprFence2
+		|sprFence
+		|sprLightningChip
+	+Creature
+		|sprElsen
+		|sprSunkist
+		|sprRainmaker
+		|sprJake
+		|sprBatter
+		|sprOmniball
+		|sprGehirn
+		|sprFennix
+		|sprK9
+		|sprSlugma
 	|sprSunkistDescription
-	|sprDog
-	|sprTeleporterFinished
-	|sprBunny
-	|sprCube
-	|sprLamb
-	|sprSpamton
-	|sprNode
-	|sprFavi
-	|sprSunk
-	|sprAfton
-	|sprAvonya
-	|sprSophie
-	|sprDir
-	|sprWayned
-	|sprRat
-	|sprFox
-	|sprKnife
-	|sprite471
-	|sprite460_batter
-	|sprPaw
-	|sprite461_ELSEN
-	|sprOmniball
-	|sprPortalOrbBlue
-	|sprPortalOrbOrange
-	|sprBluePortal
-	|sprTechBorder
-	|sprOrangePortal
-	|sprHook
-	|sprWaterBorder
-	|sprOcean
+	|sprHammer
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
@@ -216,6 +271,7 @@
 	|sprHashigo_tate
 	|sprHashigo_yoko
 	|sprKanban
+	|sprKanbanMedium
 	|sprWater1
 	|sprWater2
 	|sprWater3
@@ -507,38 +563,3 @@
 	|sprPlayerPortrait
 	|sprNpcPortrait
 	|sprNpc
-+Aiwana
-	|sprPauseblock
-	|sprBlockJumpRefresher
-	|sprJumper
-	|sprGlass
-	|TallSpike
-	|sprKillerBlock
-	|sprConveyerRight
-	|sprConveyerLeft
-	|sprConveyerNone
-	|sprAirConvNone
-	|sprSticky
-|sprEnvShooter
-|sprRelay
-|sprInfoTarget
-|sprLogicCase
-|sprRealApple
-|sprThrowHook
-|sprMoveSwitchOn
-|sprMoveSwitchOff
-|sprStopSwitchOn
-|sprStopSwitchOff
-|sprShadow
-|sprIce
-|sprIceOne
-|sprEnvSoundscape
-|sprAmbientGeneric
-|sprEmotion
-|sprFence
-|sprFence2
-|sprCursorPaw
-|sprCursorPaw2
-|sprCursorPortal
-|sprCrowbar
-|sprPlatSlashPusher

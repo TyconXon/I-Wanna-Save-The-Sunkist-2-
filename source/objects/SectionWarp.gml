@@ -27,11 +27,11 @@ applies_to=self
 if (global.lastroom==roomTo && global.sectionwarp) {
     global.sectionwarp=false
 
-    dx=x-global.warpfromx
-    dy=y-global.warpfromy
+    dx=x
+    dy=y
 
-    Player.x+=dx
-    Player.y+=dy
+    Player.x=x
+    Player.y=y
     Player.drawx=Player.x
     Player.drawy=Player.y
 

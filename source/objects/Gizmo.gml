@@ -76,7 +76,19 @@ variables_defined=true
 xOffset = 0
 yOffset = 0
 
+lastGridX=0
+lastGridY=0
+
 notVisibleTillThen=false
+extWithDimen[0] = 0
+extWithDimen[1] = 0
+extCreatePos[0] = 0
+extCreatePos[1] = 0
+extMiddle[0] = 0
+extMiddle[1] = 0
+extendingDontCopy=false
+
+extFollowerer = noone
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -143,7 +155,55 @@ if (scaling) {
 if (rotating) {
     image_angle+=rotate
 }
-if(notVisibleTillThen) visible=true
+if(variable_local_exists("notVisibleTillThen")) visible=true
+if(variable_local_exists("extending")) {
+
+    if(variable_local_exists("extendingMiddle")){
+
+       if (vsp) extCreatePos[0] = x - extMiddle[0] - (extWithDimen[0])
+       else extCreatePos[0] = x
+
+       if (hsp) extCreatePos[1] = y - extMiddle[1] - (extWithDimen[1])
+       else extCreatePos[1] = y
+    }else{
+       extCreatePos[0] = x; extCreatePos[1] = y
+    }
+    extCreatePos[0] -= (extWithDimen[0]*sign(hsp)) - hspeed
+    extCreatePos[1] -= (extWithDimen[1]*sign(vsp)) - vspeed
+
+
+     extFollowerer.x = extCreatePos[0]
+     extFollowerer.y = extCreatePos[1]
+     if(hspeed!=0 and lastGridX != roundto_unbiased(extCreatePos[0],extWithDimen[0]) ){
+                  lastGridX=roundto_unbiased(extCreatePos[0],extWithDimen[0])
+
+                   with(instance_create(extCreatePos[0],extCreatePos[1],extendingWith)){
+                       if(!other.extendingDontCopy){
+                           image_blend = other.image_blend
+                           image_xscale = other.image_xscale
+                           image_yscale = other.image_yscale
+                           image_angle = other.image_angle
+                       }
+                       depth = other.depth+1
+                       if(variable_local_exists("childCreationCode")) execute_string(childCreationCode)
+                   }
+
+     }
+     if (vspeed!=0 and lastGridY != roundto_unbiased(extCreatePos[1],extWithDimen[1]) ){
+                   lastGridY=roundto_unbiased(extCreatePos[1],extWithDimen[1])
+                with(instance_create(extCreatePos[0],extCreatePos[1],extendingWith)){
+                    if(!other.extendingDontCopy){
+                       image_blend = other.image_blend
+                       image_xscale = other.image_xscale
+                       image_yscale = other.image_yscale
+                       image_angle = other.image_angle
+                   }
+                   depth = other.depth+1
+                   if(variable_local_exists("childCreationCode")) execute_string(childCreationCode)
+               }
+
+     }
+}
 
 if (execute_code!="") {
     if (execute_code_timer==0) {
@@ -299,9 +359,8 @@ applies_to=self
 */
 ///fields definition
 
-//field depth: number
 //field sound: string
-//field preactiveMovement: false
+//field preactiveMovement: false - Will move before activation.
     //field hspeed: number
     //field vspeed: number
 //field movement: false
@@ -309,18 +368,18 @@ applies_to=self
     //field spd: number
     //field hsp: number
     //field vsp: number
-    //field grav: number
-        //field grav_dir: angle
+    //field grav: number - Use low numbers, like 0.2
+        //field grav_dir: angle - is defined by default.
 //field scaling_rotation: false
-    //field scaleh: number
-    //field scalev: number
-    //field rotate: number
+    //field scaleh: number - scales from corner
+    //field scalev: number - scales from corner
+    //field rotate: number - tip: direction is influenced by rotation
 //field advanced_movement: false
     //field path: path
         //field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
         //field path_absolute: true
         //field path_scaling: number
-        //field path_speed: number
+        //field path_speed: number - remember to set this!
     //field move_to_xy: xy
         //field move_spd: number
         //field move_relative: false
@@ -338,17 +397,21 @@ applies_to=self
     //field execute_code: string
         //field         execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
 //field sunkist: false
-    //field weld_parent: instance
-    //field blinking_interval: number
-    //field triggerOnDeath: instance
+    //field weld_parent: instance - Follows this instance as if it were welded from this position
+    //field triggerOnDeath: instance - When this instance dies, the selected instance will activate
     //field followCoordinate: enum("offlineX","offlineY","onlineX","onlineY","onceX","onceY")
     //field sprite_index: sprite
     //field bounceOffWalls: false
-    //field deathMessage: string
-    //field notVisibleTillThen: false
+    //field extending: false - Make sure to define extendingWith too. Continously yet efficiently create a trail of objects.
+            //field extendingWith: object
+            //field extendingDontCopy: false - The objects don't copy the properties of the parent.
+            //field extendingMiddle: false - Attempts to center objects.
+    //field childCreationCode: string - Code to be executed upon all children created from this instance.
+    //field deathMessage: string - If the player is killed by this, show this message.
+    //field notVisibleTillThen: false - Visible is false until activation.
     //field emotion: enum(em_suprise,em_question,em_sing,em_love,em_mad,em_sad,em_bad,em_dots,em_idea,em_sleep)
-    //field randomize_field: string
-            //field rand_range: xy
+    //field randomize_field: string - Numeric field to randomize
+            //field rand_range: xy - The limites of said field
 
 if (!variable_local_exists("variables_defined")) {
     show_error("Error in instance "+string(id)+" of object "+object_get_name(object_index)+": Gizmo parent variables are not defined. Please use event_inherited()/Call Event on your object's Create event to correctly set up "+object_get_name(object_get_parent(object_index))+" inheritance.",1)
@@ -356,6 +419,17 @@ if (!variable_local_exists("variables_defined")) {
 }
 if (variable_local_exists("randomize_field") && variable_local_exists("rand_range")){
    variable_local_set(randomize_field,random_range(rand_range[0],rand_range[1]))
+}
+if(variable_local_exists("extendingWith")){
+                extWithDimen[0] = sprite_get_width(object_get_sprite(extendingWith))*image_xscale
+                extWithDimen[1] = sprite_get_height(object_get_sprite(extendingWith))*image_yscale
+                if(image_angle == 90||image_angle=270) {
+                               extMiddle[1] = ( (image_xscale * sprite_get_width(image_index))  )
+                               extMiddle[0] = ( (image_yscale * sprite_get_height(image_index))  )
+                }else{
+                               extMiddle[1] = ( (image_yscale * sprite_get_height(image_index))  )
+                               extMiddle[0] = ( (image_xscale * sprite_get_width(image_index))  )
+                }
 }
 
 if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd) {
@@ -437,6 +511,32 @@ if (grav_dir!=noone) {
     gravity_direction=grav_dir
 }
 
+if(variable_local_exists("extending")){
+    if(variable_local_exists("extendingMiddle")){
+       
+       if (vsp) extCreatePos[0] = x - extMiddle[0] - (extWithDimen[0]/2)
+       else extCreatePos[0] = x
+       
+       if (hsp) extCreatePos[1] = y - extMiddle[1] - (extWithDimen[1]/2)
+       else extCreatePos[1] = y
+    }else{
+       extCreatePos[0] = x; extCreatePos[1] = y
+    }
+    extCreatePos[0] -= (extWithDimen[0]*sign(hsp)) - hspeed
+    extCreatePos[1] -= (extWithDimen[1]*sign(vsp)) - vspeed
+    
+    extFollowerer = instance_create(extCreatePos[0],extCreatePos[1],extendingWith)
+    with(extFollowerer){
+        if(!other.extendingDontCopy){
+           image_blend = other.image_blend
+           image_xscale = other.image_xscale
+           image_yscale = other.image_yscale
+           image_angle = other.image_angle
+        }
+       depth = other.depth-1
+       if(variable_local_exists("childCreationCode")) execute_string(childCreationCode)
+   }
+}
 
 if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     move_towards_gravity(move_to_xy_grav[0],move_to_xy_grav[1],move_grav)

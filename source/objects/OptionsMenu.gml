@@ -7,7 +7,7 @@ applies_to=self
 sel=0
 
 xdraw=global.width/2-276
-ydraw=132
+ydraw=80
 xsep=550
 ysep=24
 

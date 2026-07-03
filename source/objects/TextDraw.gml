@@ -139,6 +139,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if(!visible) exit
 draw_set_font(font)
 draw_set_color(image_blend)
 draw_set_alpha(image_alpha)

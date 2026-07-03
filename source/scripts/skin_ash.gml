@@ -41,8 +41,11 @@ if (argument0=="step") {
         }
     } else if (input_h!=0) {
             sprite_index=sprPlayerRunningAsh
+            image_speed=mmf_animspeed(70,80)
     } else {
        sprite_index=sprPlayerIdleAsh
+
+       image_speed=0.2
     }
 
     if (global.angle_slopes) sprite_angle+=angle_difference(sprite_angle,slope_angle)*0.4
@@ -63,7 +66,7 @@ if (argument0=="draw") {
 
     if (bow) {
         dy=floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1))
-        if ((drawspr=sprPlayerIdleAsh || drawspr=sprPlayerIdleOld) && floor(drawframe)==3) dy+=vflip //bobbing
+        if ((drawspr==sprPlayerIdleAsh || drawspr==sprPlayerIdleOld) && floor(drawframe)==3) dy+=vflip //bobbing
         draw_sprite_ext(sprBow,0,floor(bowx),dy,xs,ys,drawangle,image_blend,image_alpha)
     }
 

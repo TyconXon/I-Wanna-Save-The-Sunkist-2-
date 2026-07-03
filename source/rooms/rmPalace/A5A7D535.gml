@@ -1,4 +1,4 @@
 //gm82 fields begin
 text="Sunkist's Palace"
-font=fntFileBig
+font=fntIsaac
 //gm82 fields end

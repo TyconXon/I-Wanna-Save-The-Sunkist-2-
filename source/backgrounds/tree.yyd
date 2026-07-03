@@ -8,7 +8,9 @@
 |tile_GameMakerBlock
 +IWBTG
 	|bgMegaman
+	|background_Stars
 	|bgFortress
+	|bgFortressInverted
 	|bgTree
 	|bgTree2
 	|bgTree3
@@ -44,15 +46,17 @@
 			|background_avonya
 			|background_badger
 			|background128_Heavily_Armored_Pokey_EB_sprite
-			|backgroundCrowbar
 			|background_sophie
 			|background_sunkpfp
+			|backgroundCrowbar
+			|bulletbroken
+			|bgTheFriendlyGoodWay
+			|bgTheBadWay
+			|bg_dw_fox_statue_0
 		+big
-			|background_marketplace-gradient
 			|background_google
 			|background_marketplace
 			|background_miracle
-			|background_sunkist-gradient
 			|background_hqsunkist
 			|background_MiracleMusical
 			|backgroundLloyd
@@ -60,8 +64,11 @@
 			|background134_omniball_4486141
 			|background_rorwater
 			|background_sunkist
-			|background_directory-gradient
 			|divine
+			|bgVariations
+			|bgFountainOcean
+			|bgBigPlant
+			|bgPinkroll
 	+tile
 		|tile_changed
 		|tile_pizza
@@ -80,8 +87,21 @@
 		|tile_sunkist
 		|tile_white_off
 		|background_changed_special
-|bulletbroken
-|background_tein
-|background_white_off
-|background_purple_off
-|background_Stars
+		|bgDangerSigns
+	+background
+		|bgHylics
+		|background_tein
+		|background_white_off
+		|background_purple_off
+		|background_sunkist-gradient
+		|background_marketplace-gradient
+		|background_directory-gradient
+		|bgSeamlessSpace
+		|bgSeamlessWaves
+		|bgHouse
+		|bgSkybox
+		|bgFoliage
+		|bgPinkFlowers
+		|bgBlackFlowers
+		|bgFlowerBacking
+		|bg_sunrise_back_color

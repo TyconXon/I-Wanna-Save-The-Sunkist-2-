@@ -58,3 +58,4 @@ action_id=603
 applies_to=self
 */
 draw_sprite(sprite_index,image_index,xstart,ystart)
+if active draw_self_as(sprCameraBlock)

@@ -1,4 +1,9 @@
-if (!object_is_child_of(Player)) with (Player) kill_player()
+if (!object_is_child_of(Player)) {
+   with (Player) {kill_player()}
+   if(settings("killer_tint")){
+        image_blend = c_red
+    }
+}
 else if (!dead) {
     if (room==global.difficulty_room) {
         if (global.diffroom_instantrestart) {

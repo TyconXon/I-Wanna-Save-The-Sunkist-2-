@@ -10,7 +10,6 @@ switch (argument0) {
             //option ticked/changed
             sound_play_option("sndDJump")
             settings("killer_tint",!settings("killer_tint"))
-            global.bow_lag = settings("killer_tint")
         }
     }break
     case opt_text: {

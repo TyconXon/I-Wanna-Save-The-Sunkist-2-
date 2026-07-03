@@ -38,7 +38,7 @@ global.release_mode=false
     global.filemenu_color=$ffffff
     //enable test mode in exe builds
     //do not forget to disable this when publishing your game
-    global.always_test_mode=false
+    global.always_test_mode=true
     //disable the player delta time system (see Player step event action 1)
     global.disable_delta_time=false
     //disable the global settings repository
@@ -121,7 +121,7 @@ global.release_mode=false
     //clear inputs on touching a warp
     global.clear_inputs_on_warp=false
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
-    global.valign05_vdiet=true
+    global.valign05_vdiet=false
     //allow fractionary x coordinates while not moving
     global.allow_frac_x_coordinate=false
     //save the player's fractionary valign

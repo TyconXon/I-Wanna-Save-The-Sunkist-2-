@@ -45,6 +45,7 @@
 		|SavePointMedium
 		|SavePointHard
 		|SavePointStandHard
+		|SavePointStandMedium
 		|SavePointVeryHard
 		|AntiSoftlockBlock
 		|AutoSaver
@@ -505,6 +506,9 @@
 		|NoKillZone
 		|FocusZone
 		|AmbientGeneric
+		|MusicPlayerActivated
+		|TriggerCode
+		|TimerTimerTimer
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -517,6 +521,8 @@
 		|RiskOfRain
 		|GuyTrap
 		|GuySpikeWall
+		|RiskOfOcean
+		|OceanWaters
 	+Ability
 		|hook
 		|ThrowHook
@@ -546,6 +552,7 @@
 	|ConveyerStick
 	|AirStop
 	|IceField
+	|IceFieldGizmo
 |PlayerStart
 |Block
 |Platform

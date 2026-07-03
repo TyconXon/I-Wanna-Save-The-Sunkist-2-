@@ -1266,6 +1266,9 @@ if (!dead) {
     //don't draw player if a fireball is active
     if (cherried_fireball) exit
 
+    draw_sprite_ext(sprKitsuneTail,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+
+
     script_execute(global.player_skin,"draw")
 
     //draw hp bar if the setting to draw it on the player is on

@@ -16,6 +16,7 @@ name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 //used when global.press_shoot_saves
 notice=0
 idolmaster=0
+failuresound = noone
 font=fntSignpost
 color=$ffffff
 msg=key_shoot(vi_name)+lang("presstosave")
@@ -33,7 +34,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//sprite_index=oldsprite
+sprite_index=oldsprite
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -116,10 +117,9 @@ applies_to=self
 ///schedule save
 if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) {
-        oldsprite = sprite_index
         sound_play_auto("failure")
-        sprite_index=sprSaveDeny
-        alarm[0]=50
+        other.alarm[0]=25
+        other.sprite_index=sprSaveDeny
         exit
     }
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
