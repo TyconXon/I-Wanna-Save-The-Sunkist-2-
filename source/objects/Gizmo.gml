@@ -88,6 +88,8 @@ extMiddle[0] = 0
 extMiddle[1] = 0
 extendingDontCopy=false
 
+trap_shake=false
+
 extFollowerer = noone
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
@@ -120,6 +122,15 @@ if(variable_local_exists("followCoordinate")){
 
 if (!trg) exit
 else if (trap_delay) {
+    if(trap_shake){
+        if (trap_delay mod 4 < 2) {
+            if(vsp) x=xstart-1
+            if(hsp) y=ystart-1
+        } else {
+            if(vsp) x=xstart+1
+            if(hsp) y=ystart+1
+        }
+    }
     trap_delay-=1
     if (trap_delay<=0) event_trigger(tr_traptriggered)
     exit
@@ -391,6 +402,7 @@ applies_to=self
     //field trigger_on_create: false
     //field trigger_on_touch: false
     //field trap_delay: number
+            //field trap_shake: false
     //field trap_redir_index: number
     //field trap_stop_index: number
     //field trap_destroy_index: number

@@ -16,6 +16,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (instance_place(x,y,TriggerLock)) exit
 if (user_event!=noone)
     with (inst) event_user(other.user_event)
 else

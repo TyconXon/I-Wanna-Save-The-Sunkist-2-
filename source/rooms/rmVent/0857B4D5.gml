@@ -1,3 +1,3 @@
 //gm82 fields begin
-msg="Welcome, playtester. Levels are to the bottom left."
+msg="Welcome to the directory. Levels are to the bottom left."
 //gm82 fields end

@@ -26,6 +26,8 @@ if (tile) {
     i.bg=tile_get_background(tile)
     i.l=tile_get_left(tile)
     i.t=tile_get_top(tile)
+    i.image_xscale = tile_get_width(tile)
+    i.image_yscale = tile_get_yscale(tile)
     i.hspeed=hspeed+random(hspeed)
     i.vspeed=vspeed+random(vspeed)
     tile_delete(tile)

@@ -25,6 +25,11 @@
 	|bgMarkMazes32
 	|bgMarkMazes16
 	|bgBrownBlock32
+	|bgDeepFriedBlocks
+	|bgSharpBlocks
+	|bgWireBricks
+	|bgWhiteBlock32
+	|bgBrownBlurry
 	|bgHDBrownBlock32
 	|bgHDBrownBlock16
 	|bgUntextured
@@ -35,6 +40,8 @@
 	|bgFreeformRedblock
 	|bgFreeformGrasstop
 	|bgExtendedGuyRock
+	|bgInvertedExtended
+	|bgWireExtended
 	|bgExtendedGuyRock16
 +shader stuff
 	|bgFire
@@ -77,6 +84,7 @@
 		|tile_offgreen
 		|tile_tower
 		|background_gradient
+		|background_gradient2
 		|tile_offpurple
 		|tile_offblack
 		|tile_ror
@@ -105,3 +113,5 @@
 		|bgBlackFlowers
 		|bgFlowerBacking
 		|bg_sunrise_back_color
+|bgGranite
+|bgEasy

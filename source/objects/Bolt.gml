@@ -22,7 +22,7 @@ applies_to=self
 visible=false
 other.image_blend = c_yellow
 
-if(instance_place(Player.x,Player.y,AnyWater)){
+if(instance_place(Player.x,Player.y,other)){
    kill_player()
 }else{
       other.image_blend = c_white

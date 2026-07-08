@@ -12,6 +12,14 @@ action_id=603
 applies_to=self
 */
 destroyOnTouch = false
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -23,16 +31,37 @@ arg0=Gizmo
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=604
 invert=0
 */
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=604
 invert=0
 */
 #define Collision_Player
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

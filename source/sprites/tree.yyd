@@ -30,6 +30,7 @@
 		|sprCursorPortal
 		|sprCrowbar
 		|sprPokerChip
+		|sprAntlion
 	+Savior
 		|sprKnife
 		|sprFoxSavior
@@ -37,6 +38,12 @@
 		|sprDog
 		|sprBunny
 		|sprCube
+		|sprFoxpaw
+		|sprLock
+		|sprKnifepack
+		|sprEgg
+		|sprIdol
+		|sprDoor
 	+Hammer
 		|sprInfoTarget
 		|sprLogicCase
@@ -51,12 +58,15 @@
 		|sprPortalOrbBlue
 		|sprPortalOrbOrange
 		|sprCompanion
+		|sprTestChamberPanel
+		|sprWarningSigns
 	+Deltarune
 		|sprPlatSlashPusher
 		|sprKitsuneTail
 		|sprFox
 		|sprMagicalglass
 		|sprAnnoying
+		|sprKitsuneBigTail
 	+Sunkigimmick
 		|sprIce
 		|sprIceOne
@@ -70,12 +80,11 @@
 		|sprTeleporterFinished
 		|sprOcean
 		|sprEndlessOcean
-		|sprTestChamberPanel
-		|sprWarningSigns
 		|sprEmotion
 		|sprFence2
 		|sprFence
 		|sprLightningChip
+		|sprSunkistSoda
 	+Creature
 		|sprElsen
 		|sprSunkist
@@ -87,8 +96,15 @@
 		|sprFennix
 		|sprK9
 		|sprSlugma
+		|sprNOTsunkist
+		|sprRoaring
+		|sprGreenGaster
+		|sprRem
 	|sprSunkistDescription
 	|sprHammer
+	|sprExplosion
+	|sprASingleRain
+	|sprLuckBeACoin
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
@@ -245,6 +261,7 @@
 	|sprUpPlatform
 	|sprJumpThrough
 	|sprPlatform9slice
+	|sprPlatformWhite
 	|sprBlock
 	|sprClipBlock
 	|sprSlipBlock
@@ -307,6 +324,7 @@
 		|sprCursedSpikeTR
 		|sprSpikeBlurry
 		|sprSpikeBlurry2
+		|sprStellaRough
 	|sprSpike
 	|sprSpikeLeft
 	|sprSpikeRight
@@ -537,6 +555,18 @@
 	|sprGenericTrigger
 	|sprTrapStop
 	|sprTrapRedirect
++Avoidance/Miku
+	|sprMiku
+	|sprMikuFront
+	|sprAvoidanceBulletSmall
+	|sprAvoidanceBulletBig
+	|sprAvoidanceBulletMedium
+	|sprMoonBullet
+	|sprMikuLeek
++Dialog
+	|sprPlayerPortrait
+	|sprNpcPortrait
+	|sprNpc
 +Items
 	|sprItem1
 	|sprItem2
@@ -551,15 +581,10 @@
 	|sprGlobalItem3
 	|sprGlobalItem4
 	|sprCoin
-+Avoidance/Miku
-	|sprMiku
-	|sprMikuFront
-	|sprAvoidanceBulletSmall
-	|sprAvoidanceBulletBig
-	|sprAvoidanceBulletMedium
-	|sprMoonBullet
-	|sprMikuLeek
-+Dialog
-	|sprPlayerPortrait
-	|sprNpcPortrait
-	|sprNpc
+|sprEarthboundSnake
+|sprHylicsHeart
+|sprStemCell
+|sprTarget
+|sprBomb
+|sprIsaacKnife
+|sprIsaacSpikes

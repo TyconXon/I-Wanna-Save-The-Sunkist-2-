@@ -35,6 +35,8 @@ applies_to=self
 //field font: font
 //field color: color
 //field sprite_index: sprite
+        //field image_speed: number
+        //field image_index: number
 #define Trigger_Draw End
 /*"/*'/**//* YYD ACTION
 lib_id=1

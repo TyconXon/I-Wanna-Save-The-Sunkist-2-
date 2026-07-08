@@ -3,5 +3,5 @@ visible=0
 solid=1
 persistent=0
 depth=100
-parent=Block
+parent=
 mask=

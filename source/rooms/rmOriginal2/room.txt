@@ -1,12 +1,12 @@
 caption=
-width=3200
+width=2400
 height=608
-snap_x=16
-snap_y=16
+snap_x=32
+snap_y=32
 isometric=0
 roomspeed=50
 roompersistent=0
-bg_color=12503766
+bg_color=16711680
 clear_screen=1
 clear_view=1
 

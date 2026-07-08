@@ -39,6 +39,7 @@ applies_to=self
 //field speed
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
 //field path_absolute: false
+//field sprite_index: sprite
 //field hspeed
 //field vspeed
 

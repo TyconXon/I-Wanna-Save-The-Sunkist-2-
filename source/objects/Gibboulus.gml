@@ -12,6 +12,7 @@ applies_to=self
 triggerOnDeath = noone
 blood=settings("blood")
 setting=settings("bloodcoll")
+nodie=false
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -30,17 +31,17 @@ invert=0
 #define Collision_PlayerKiller
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=203
+action_id=603
 applies_to=self
-invert=0
 */
+if(!nodie) instance_destroy()
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=203
+action_id=603
 applies_to=self
-invert=0
 */
+if(!nodie) instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -50,6 +51,7 @@ applies_to=self
 //field sprite_index: sprite
 //field dialogue: script
 //field triggerOnDeath: instance
+//field nodie: false
 #define Trigger_Draw End
 /*"/*'/**//* YYD ACTION
 lib_id=1

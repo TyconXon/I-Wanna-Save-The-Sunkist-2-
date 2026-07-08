@@ -360,6 +360,7 @@
 		|DepthHueShift
 		|DepthTint
 		|DepthRainbow
+		|BalatroShader
 		|DepthShaderReset
 		|HeatEffect
 		|SnowEffect
@@ -509,6 +510,8 @@
 		|MusicPlayerActivated
 		|TriggerCode
 		|TimerTimerTimer
+		|SunkitRain
+		|SunkistHimself
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -516,6 +519,8 @@
 		|StopSwitchBlockOff
 		|MoveSwitchBlockOff
 		|Emotion
+		|Explosion
+		|aSingleRain
 	+Prefabs
 		|Dog
 		|RiskOfRain
@@ -527,6 +532,7 @@
 		|hook
 		|ThrowHook
 		|AshGive
+		|AshTake
 		|PortalGunEnable
 	+KTG
 		|JumpSwitchBlock

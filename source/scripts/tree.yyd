@@ -6,6 +6,7 @@
 	|emit_prop_shrapnel
 	|sound_play_auto_range
 	|splashtexts
+	|dialog_sunkist1
 +CUSTOM
 	+game options
 		|custom_options
@@ -333,6 +334,7 @@
 		|vs3_snow
 		|ps3_snow
 		|ps2_9slice
+		|ps2_balatroshader
 	|shader_hueshift
 	|shader_tint
 	|shader_rainbow

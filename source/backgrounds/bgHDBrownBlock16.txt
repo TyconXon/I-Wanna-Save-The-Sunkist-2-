@@ -1,5 +1,5 @@
 exists=1
-tileset=0
+tileset=1
 tile_width=16
 tile_height=16
 tile_hoffset=0

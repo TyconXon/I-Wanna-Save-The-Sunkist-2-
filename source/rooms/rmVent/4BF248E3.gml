@@ -1,4 +1,4 @@
 //gm82 fields begin
-text="&"
+text="infos..."
 font=fntBalatro
 //gm82 fields end

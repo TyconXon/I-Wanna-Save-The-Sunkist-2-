@@ -36,6 +36,7 @@ applies_to=self
 //field unfaderate: number
 //field fadecol: color
 //field time_to_wait: number
+//field sprite_index: sprite
 event_inherited()
 
 if (room!=roomTo && room!=origin) instance_destroy()

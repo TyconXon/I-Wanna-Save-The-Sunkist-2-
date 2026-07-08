@@ -43,3 +43,5 @@ with (TriggerRelay)
     if (group==instance_place(x,y,TriggerGroup) and index==other.index)
         if (x>=l && x<r && y>=t && y<b) or (!group)
             event_trigger(tr_traptriggered)
+
+with (TriggeredFree) if (index==other.index) instance_destroy()
