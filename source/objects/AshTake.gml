@@ -15,5 +15,4 @@ if (other.theendisnigh) {
     sound_play_auto("sndVCoin")
     other.theendisnigh=false
     change_skin(skin_default)
-    instance_destroy()
 }

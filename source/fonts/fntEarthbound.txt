@@ -1,4 +1,4 @@
-name=Earthbound Menu Extended
+name=StatusPlz
 size=20
 bold=0
 italic=0

@@ -442,7 +442,7 @@ if (!frozen) {
                 i.orangeNotBlue = true
                 
                 
-                sound_play_auto("sndShoot")
+                sound_play_auto("portalgun_shoot_red1")
             }
             if(key_blue(vi_pressed)){
             
@@ -453,7 +453,7 @@ if (!frozen) {
                 i.orangeNotBlue = false
                 
                 
-                sound_play_auto("sndShoot")
+                sound_play_auto("portalgun_shoot_blue1")
             }
         }
     }
@@ -592,11 +592,11 @@ if (instance_place(x,y,GuyWater)) {
     djump=maxjumps
     onfire=false
 }
-if (instance_place(x,y,Water1) || instance_place(x,y,Water3) || swt=="Water1" || swt=="Water3") {
+if (instance_place(x,y,Water3) || swt=="Water1" || swt=="Water3") {
     if (vspeed*vflip>2) vspeed=2*vflip
     djump=1
 }
-if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater) || swt=="Water2" || swt=="CatharsisWater") {
+if (instance_place(x,y,Water1) || instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater) || swt=="Water2" || swt=="CatharsisWater") {
     if (vspeed*vflip>2) vspeed=2*vflip
 }
 with(instance_place(x,y,IceField)){

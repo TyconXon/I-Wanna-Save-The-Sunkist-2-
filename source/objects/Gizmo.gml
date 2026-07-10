@@ -89,6 +89,7 @@ extMiddle[1] = 0
 extendingDontCopy=false
 
 trap_shake=false
+trigger_on_view=false
 
 extFollowerer = noone
 #define Destroy_0
@@ -310,17 +311,8 @@ with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-othe
     }
 }
 if(variable_local_exists("bounceOffWalls")){
-    with (Block) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
-        x+=hspeed y+=vspeed
-        if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
-        if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
-        if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
-        if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
-
-        hspeed*=-1
-        vspeed*=-1
-
-    }
+    if (hspeed!=0) if (!place_free(x+hspeed,y)){ hspeed=-hspeed }
+    if (vspeed!=0) if (!place_free(x,y+vspeed)){ vspeed=-vspeed }
 }
 
 
@@ -400,6 +392,7 @@ applies_to=self
 //field control: false
     //field no_destroy_outside: false
     //field trigger_on_create: false
+    //field trigger_on_view: false
     //field trigger_on_touch: false
     //field trap_delay: number
             //field trap_shake: false

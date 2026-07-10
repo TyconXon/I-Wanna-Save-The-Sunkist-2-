@@ -5,6 +5,6 @@ action_id=603
 applies_to=self
 */
 if (!other.portalgun) {
-    sound_play_auto("sndGrow")
+    sound_play_auto("portalgun_powerup1")
     other.portalgun=true
 }

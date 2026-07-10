@@ -13,6 +13,7 @@ if(background_index[indx]){
     texture_set_repeat(2)
     draw_primitive_begin_texture(pr_trianglestrip,background_get_texture( background_index[indx] ))
 
+
     draw_vertex_texture_color(0,0,0,0, background_blend[indx], background_alpha[indx])
     draw_vertex_texture_color(width,0,1,0, background_blend[indx], background_alpha[indx])
     draw_vertex_texture_color(0,height,0,1, background_blend[indx], background_alpha[indx])

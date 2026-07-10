@@ -146,8 +146,11 @@ d3d_set_projection_ortho(0,0,global.width,global.height,0)
 draw_set_font(fntFileBig)
 draw_set_halign(1)
 draw_text(global.width/2,36,lang("pausemenu"));
-draw_set_font(fntFileSmall)
+draw_set_font(fntTommy)
+draw_set_color(c_yellow)
 draw_text(global.width/2,36+30,chosenSplash);
+draw_set_color(global.text_color)
+draw_set_font(fntFileSmall)
 draw_set_halign(0)
 if (sel==-1) {
     draw_text(40,ydraw,string_replace(lang("pauseoptions"),"%",key_jump(vi_name)))

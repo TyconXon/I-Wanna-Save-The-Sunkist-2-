@@ -7,3 +7,11 @@ applies_to=self
 sound_play_auto("sndKey")
 key_add(object_index)
 instance_destroy()
+#define Collision_TrapStop
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+speed = 0
+gravity=0

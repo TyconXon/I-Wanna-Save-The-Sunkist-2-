@@ -43,6 +43,7 @@ image_yscale=storey
 image_angle=storea
 
 //we schedule bullet destroy to make sure it hits things on the frame it hits a wall
+if (instance_place(x,y,Portal)) exit;
 if (dead) instance_destroy()
 #define Collision_BulletBlock
 /*"/*'/**//* YYD ACTION
@@ -66,6 +67,7 @@ action_id=603
 applies_to=self
 */
 if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (instance_place(x,y,Portal)) exit;
 if (other.solid) {
     dead=1
     xprevious=x+hspeed

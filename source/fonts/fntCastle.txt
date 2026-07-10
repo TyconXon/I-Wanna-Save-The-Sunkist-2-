@@ -1,5 +1,5 @@
 name=CastleCrashers
-size=50
+size=20
 bold=0
 italic=0
 charset=1

@@ -33,6 +33,7 @@ if (current_speed!=target_speed) {
     sound_kind_pitch(0,room_speed/global.game_speed)
     sound_kind_pitch(1,room_speed/global.game_speed)
     sound_kind_pitch(3,room_speed/global.game_speed)
+
 }
 
 if (is_ingame()) {

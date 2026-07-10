@@ -33,6 +33,7 @@
 	|bgHDBrownBlock32
 	|bgHDBrownBlock16
 	|bgUntextured
+	|bgUntexturedInv
 	|bgGreyBlock32
 	|bgGuyPipes32
 	|bgFunnySlopeFill

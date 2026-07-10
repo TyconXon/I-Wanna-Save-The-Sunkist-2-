@@ -258,6 +258,7 @@
 	|sprSectionWarp
 	|sprWarpTransparent
 	|sprDynamicPlatform
+	|sprDynamicPlatformWhite
 	|sprUpPlatform
 	|sprJumpThrough
 	|sprPlatform9slice
@@ -298,6 +299,7 @@
 	|sprPlatformWater
 	|sprIWBTGWater
 	|sprIWBTGWater9slice
+	|sprRefreshingWater9slice
 	|sprPastelWater2
 	|sprWallJUmpLEditor
 	|sprWallJumpL
@@ -588,3 +590,8 @@
 |sprBomb
 |sprIsaacKnife
 |sprIsaacSpikes
+|sprSpikeyGateUp
+|sprSpikeyGateDown
+|sprSpikeyGateRight
+|sprSpikeyGateLeft
+|sprWowoOrb

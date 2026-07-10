@@ -371,5 +371,6 @@ skin_ash
 opt_focuszones
 sound_play_auto_range
 splashtexts
-ps2_balatroshader
+st_balatroshader
 dialog_sunkist1
+weapon_wowozela

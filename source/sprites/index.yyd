@@ -619,3 +619,11 @@ sprBomb
 sprIsaacKnife
 sprIsaacSpikes
 sprPlatformWhite
+sprRefreshingWater9slice
+
+sprDynamicPlatformWhite
+sprSpikeyGateUp
+sprSpikeyGateDown
+sprSpikeyGateRight
+sprSpikeyGateLeft
+sprWowoOrb

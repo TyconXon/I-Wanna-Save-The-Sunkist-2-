@@ -7,6 +7,7 @@ applies_to=self
 if (instance_exists(Player)) alarm[0]=40/(global.slomo*dt)
 else alarm[0]=40/dt
 dead=instance_place(x,y,BulletBlock)
+image_speed=0
 
 storex=1
 storey=1
@@ -82,4 +83,4 @@ action_id=603
 applies_to=self
 */
 //set this to image_angle if you want the bullets to follow the player's angle ------v
-draw_sprite_ext(sprite_index,floor(image_index),floor(x),floor(y),image_xscale,image_yscale,0,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,floor(!self.orangeNotBlue),floor(x),floor(y),image_xscale,image_yscale,0,image_blend,image_alpha)

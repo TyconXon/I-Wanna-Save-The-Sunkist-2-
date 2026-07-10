@@ -511,7 +511,6 @@
 		|TriggerCode
 		|TimerTimerTimer
 		|SunkitRain
-		|SunkistHimself
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -521,6 +520,7 @@
 		|Emotion
 		|Explosion
 		|aSingleRain
+		|WowoOrb
 	+Prefabs
 		|Dog
 		|RiskOfRain
@@ -528,6 +528,7 @@
 		|GuySpikeWall
 		|RiskOfOcean
 		|OceanWaters
+		|SunkistHimself
 	+Ability
 		|hook
 		|ThrowHook
@@ -574,3 +575,7 @@
 	|SpikeBR
 	|SpikeTall
 	|sprKiller
+	|SpikeyGateUp
+	|SpikeyGateRight
+	|SpikeyGateLeft
+	|SpikeyGateDown

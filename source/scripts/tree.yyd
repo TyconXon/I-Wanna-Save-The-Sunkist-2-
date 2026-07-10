@@ -281,6 +281,7 @@
 	|change_weapon
 	|weapon_default
 	|weapon_8dir
+	|weapon_wowozela
 	|weapon_telekid
 +sound
 	|load_sounds
@@ -334,7 +335,7 @@
 		|vs3_snow
 		|ps3_snow
 		|ps2_9slice
-		|ps2_balatroshader
+		|st_balatroshader
 	|shader_hueshift
 	|shader_tint
 	|shader_rainbow

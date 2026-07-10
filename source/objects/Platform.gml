@@ -21,6 +21,7 @@ phase=false
 hdeficit=0
 
 t=-1
+pulledSprite=sprPlatformWhite
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -97,6 +98,7 @@ applies_to=self
 //field hspeed: number
 //field vspeed: number
 //field destroy_time: number - frames to destroy platform after player walks off
+//field pulledSprite: sprite
 
 if (snap=="yuuutu") snap_type=0
 if (snap=="always") snap_type=1
@@ -112,12 +114,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (sprite_index=sprDynamicPlatform && global.platform_9slice) {
+if (global.platform_9slice) {
     if (image_xscale==1 && image_yscale==1) {
         draw_self()
     } else {
         //i feel like renex has better things to do with their time than make an
         //auto platform script that only like, 2 people will use for practical uses
-        draw_sprite_9slice(sprPlatform9slice,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
+        draw_sprite_9slice(pulledSprite,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
     }
 } else if (sprite_index!=-1) draw_self()

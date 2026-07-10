@@ -1,4 +1,4 @@
-name=Comic Sans MS
+name=Cambria
 size=13
 bold=0
 italic=0

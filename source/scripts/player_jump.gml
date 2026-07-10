@@ -26,7 +26,6 @@ if (vvvvvv) {
     }
 
     if (player_can_jump()
-        || instance_place(x,y+vflip,Water1)
         || instance_place(x,y+vflip,PlatformWater)
         || instance_place(x,y+vflip,GuyWater)
         || swt=="Water1"
@@ -47,12 +46,15 @@ if (vvvvvv) {
     } else if (instance_place(x,y+buffer_range,Block) && vspeed>0 && !instance_place(x,y+buffer_range,PlayerKiller)) {
         jump_timer=global.jump_buffering
     } else if (global.debug_jump
-        || (djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
+        || (instance_place(x,y+1*vflip,Water1) || djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
         || infjump
         && !(beamstate&beam_onejump)) {
             //double jump
             vspeed=-jump2*vflip
-            sound_play_auto("sndDJump")
+
+            if(instance_place(x,y+1*vflip,AnyWater)) sound_play_auto_range("wade",7)
+            else sound_play_auto("sndDJump")
+
             if (djump<maxjumps) djump+=1
             if (djump>2) {
                 repeat (5) instance_create(random_range(x-5,x+5),random_range(y+4,y+4),TripleJumpEffect)

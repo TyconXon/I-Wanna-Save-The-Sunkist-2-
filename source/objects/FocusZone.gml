@@ -9,6 +9,7 @@ image_xscale *= 32
 image_yscale *= 32
 firsthand = false
 nolink = noone
+visible=true
 
 //surf=surface_set("focuszones",global.width,global.height)
 #define Destroy_0

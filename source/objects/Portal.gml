@@ -6,6 +6,7 @@ applies_to=self
 */
 orangeNotBlue = false
 leftNotRight = false
+bulletIndex = noone
 global.teleSickness = 0
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -18,6 +19,21 @@ if(global.teleSickness == 0){
     with(Portal){
         if (self.id == other.id) continue;
         move_player(self.x + (16*image_xscale), self.y + 16, 1)
+    }
+}
+global.teleSickness = 5
+#define Collision_Bullet
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+bulletIndex=other.id
+if(global.teleSickness == 0){
+    with(Portal){
+        if (self.id == other.id) continue;
+        other.bulletIndex.x = self.x + (16*image_xscale)
+        other.bulletIndex.y = self.y - (other.y-other.bulletIndex.y)
     }
 }
 global.teleSickness = 5

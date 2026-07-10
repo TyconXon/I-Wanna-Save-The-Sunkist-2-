@@ -3,7 +3,30 @@
 |rmMenu
 |rmOptions
 |rmTemplate
-+Game
++Sunkist
+	|rmPalace
+	|rmPathToTheDirectory
+	|rmVent
+	+CrowbarPath
+		|rmOriginal
+		|rmOriginal2
+		|rmReoriginal
+	+StevenPath
+		|rmChanged
+		|rmWhiteKnuckle
+		|rmExp
+		|rmGuyFuture
+	+KnifePath
+		|rmS1
+		|rmRoR
+		|rmSunkistSavior
+	+Continuations
+		|rmPortal
+		|rmOFF
+		|rmHawaii
+	|rmHallway
+	|rmFinale
++Examples
 	|rmDifficulty
 	|rmHub
 	+Example Rooms
@@ -16,16 +39,3 @@
 		|rmExtra
 		|rmShaders
 		|rmClear
-+Sunkist
-	|rmPalace
-	|rmOriginal
-	|rmOriginal2
-	|rmS1
-	|rmRoR
-	|rmChanged
-	|rmExp
-	|rmWhiteKnuckle
-	|rmOFF
-	|rmGuyFuture
-	|rmSunkistSavior
-	|rmVent
