@@ -1,0 +1,12 @@
+background_changed_special,768,480,0,224,32,32,0,1,1,4294967295
+background_changed_special,768,512,0,224,32,32,0,1,1,4294967295
+background_changed_special,768,544,0,224,32,32,0,1,1,4294967295
+background_changed_special,768,576,0,224,32,32,0,1,1,4294967295
+background_changed_special,768,608,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,480,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,512,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,544,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,576,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,608,0,224,32,32,0,1,1,4294967295
+background_changed_special,416,640,0,224,32,32,0,1,1,4294967295
+tile_portal32,64,864,0,96,32,32,0,1,1,4294967295

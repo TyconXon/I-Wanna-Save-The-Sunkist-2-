@@ -4,10 +4,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-life=irandom_range(30,40)
+life=irandom_range(30,40)/dt
 time=0
 
-speed=random_range(0.1,0.2)
+speed=random_range(0.1,0.2)*dt
 direction=random(360)
 #define Step_0
 /*"/*'/**//* YYD ACTION

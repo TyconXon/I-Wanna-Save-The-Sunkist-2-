@@ -10,5 +10,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_speed=0.1
+image_speed=0.1*dt
 instance_create(x,y,Bolt)

@@ -37,7 +37,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (murderer) with (instance_place(x,y,Player)) kill_player()
+if (murderer) if (instance_place(x,y,Player)) kill_player()
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

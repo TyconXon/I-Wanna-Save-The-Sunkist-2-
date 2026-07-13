@@ -20,9 +20,9 @@ image_yscale = image_xscale;
 attach=noone
 t=0
 anglechange=0
-grav=1
+grav=1*dt*dt
 
-alarm[0]=500
+alarm[0]=250/dt
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -39,15 +39,15 @@ applies_to=self
 ///blood step
 t+=1
 if (t mod 3!=0) exit
-if (anglechange && speed) image_angle=random(360)
+if (anglechange && speed) image_angle+=random(360)*dt
 
-image_alpha -= 0.02;
+image_alpha -= 0.02*dt;
 
 if (image_alpha <= 0)
     instance_destroy();
 
 
-gravity=0.2+random(0.2)
+gravity=(0.2+random(0.2))*dt*dt
 
 
 

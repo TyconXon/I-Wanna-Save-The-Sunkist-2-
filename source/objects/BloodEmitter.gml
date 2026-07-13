@@ -25,7 +25,7 @@ if (!blood) {
         image_blend=Player.image_blend
         image_alpha=Player.image_alpha
         if (Player.bow) {
-            i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.gravity=(0.1+random(0.2))*sign(Player.gravity)
+            i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.gravity=(0.1+random(0.2))*sign(Player.gravity)*dt
         }
     } else {
         sprite_index=sprPlayerIdle

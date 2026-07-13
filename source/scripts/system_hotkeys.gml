@@ -18,8 +18,7 @@ if (key_restart(vi_pressed) && !global.no_restart) {
 if(!global.pause){
     if( mouse_check_button(mb_left) ){
         if(instance_number(WowoOrb)==0){
-            i=instance_create(mouse_x,mouse_y-32,WowoOrb)
-            i.speed=16
+            i=instance_create(mouse_x,mouse_y,WowoOrb)
             i.direction=point_direction(0,0,mouse_x,mouse_y)
             i.doPlayer=false
         }

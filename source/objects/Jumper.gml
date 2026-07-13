@@ -19,7 +19,7 @@ applies_to=self
 */
 if(other.dead == true) exit
 sound_play_auto("sndBoing")
-other.vspeed=-gSpeed*dt
+other.vspeed=-gSpeed
 if addJump {other.djump=1}
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -53,8 +53,8 @@ if (save) {
     }
     
     image_index=1
-    image_speed=1/room_speed
-    if (room==rmChanged or room==rmExp) sound_play_auto("changedsave")
+    image_speed=(1/room_speed)
+    if (room==rmChanged or room==rmReChanged or room==rmExp) sound_play_auto("changedsave")
     else sound_play_auto("sndSave")
     
     showtime=savedata("showtime "+name)
@@ -66,7 +66,7 @@ if (save) {
     }
     
     if (global.idolmaster_saves) {
-        idolmaster=50
+        idolmaster=50/dt
     }
     
     savedata_save(false,name)
@@ -90,7 +90,7 @@ if (global.contact_saves) {
 }
 
 if (global.idolmaster_saves) {
-    idolmaster=50
+    idolmaster=50/dt
 }
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
@@ -118,7 +118,7 @@ applies_to=self
 if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) {
         sound_play_auto("failure")
-        other.alarm[0]=25
+        other.alarm[0]=25*dt
         other.sprite_index=sprSaveDeny
         exit
     }

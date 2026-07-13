@@ -92,13 +92,18 @@ trap_shake=false
 trigger_on_view=false
 
 extFollowerer = noone
+explodeOnDeath=false
+allowChaining=false
+trigger_on_bullet=false
+trigger_on_view=false
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-with (triggerOnDeath) event_trigger(tr_traptriggered)
+with (triggerOnDeath) {event_trigger(tr_traptriggered)}
+if(explodeOnDeath) explode_me()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -157,15 +162,15 @@ if (scaling) {
     sw=sprite_get_width(sprite_index)
     sh=sprite_get_height(sprite_index)
 
-    if (scaleh>0) {image_xscale+=scaleh/sw x+=scaleh*(sprite_xoffset/sw/image_xscale)}
-    if (scalev>0) {image_yscale+=scalev/sh y+=scalev*(sprite_yoffset/sh/image_yscale)}
+    if (scaleh>0) {image_xscale+=(scaleh*dt)/sw x+=scaleh*(sprite_xoffset/sw/image_xscale)}
+    if (scalev>0) {image_yscale+=(scalev*dt)/sh y+=scalev*(sprite_yoffset/sh/image_yscale)}
 
-    if (scaleh<0) {image_xscale+=-scaleh/sw x+=scaleh*(1-sprite_xoffset/sw/image_xscale)}
-    if (scalev<0) {image_yscale+=-scalev/sh y+=scalev*(1-sprite_yoffset/sh/image_yscale)}
+    if (scaleh<0) {image_xscale+=-(scaleh*dt)/sw x+=scaleh*(1-sprite_xoffset/sw/image_xscale)}
+    if (scalev<0) {image_yscale+=-(scalev*dt)/sh y+=scalev*(1-sprite_yoffset/sh/image_yscale)}
 }
 
 if (rotating) {
-    image_angle+=rotate
+    image_angle+=rotate*dt
 }
 if(variable_local_exists("notVisibleTillThen")) visible=true
 if(variable_local_exists("extending")) {
@@ -245,8 +250,8 @@ if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     }
 }
 
-with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
-    x+=hspeed y+=vspeed
+with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hspeed*dt,y-other.vspeed*dt,other.id)) with (other) {
+    x+=hspeed*dt y+=vspeed*dt
     if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
     if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
     if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
@@ -280,27 +285,27 @@ with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hsp
 }
 
 with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
-    x+=hspeed y+=vspeed
+    x+=hspeed*dt y+=vspeed*dt
     if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
     if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
     if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
     if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
-    gravity=other.grav
+    gravity=other.grav*dt
     if (other.hsp==0 && other.vsp==0 && other.spd==0 && other.dir==0) {
         hspeed*=-1
         vspeed*=-1
     } else if (other.spd==0 && other.dir==0) {
-        hspeed=other.hsp
-        vspeed=other.vsp
+        hspeed=other.hsp*dt
+        vspeed=other.vsp*dt
     } else if (other.hsp==0 && other.vsp==0) {
-        speed=other.spd
+        speed=other.spd*dt
         direction=other.dir
     } else {
-        speed=other.spd
+        speed=other.spd*dt
         direction=other.dir
-        hspeed+=other.hsp
-        vspeed+=other.vsp
+        hspeed+=other.hsp*dt
+        vspeed+=other.vsp*dt
     }
 
     if (other.sound!=""){
@@ -340,6 +345,22 @@ applies_to=self
 */
 if(!variable_local_exists("trigger_on_touch") or !trigger_on_touch)exit;
 event_trigger(tr_traptriggered)
+#define Collision_Bullet
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(!variable_local_exists("trigger_on_bullet") or !trigger_on_bullet)exit;
+event_trigger(tr_traptriggered)
+#define Collision_Explosion
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(!allowChaining) exit
+instance_destroy()
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -381,6 +402,8 @@ applies_to=self
     //field path: path
         //field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
         //field path_absolute: true
+        //field guess_position: false
+                //field path_position: number - 0 through 1
         //field path_scaling: number
         //field path_speed: number - remember to set this!
     //field move_to_xy: xy
@@ -393,6 +416,7 @@ applies_to=self
     //field no_destroy_outside: false
     //field trigger_on_create: false
     //field trigger_on_view: false
+    //field trigger_on_bullet: false
     //field trigger_on_touch: false
     //field trap_delay: number
             //field trap_shake: false
@@ -414,6 +438,8 @@ applies_to=self
     //field childCreationCode: string - Code to be executed upon all children created from this instance.
     //field deathMessage: string - If the player is killed by this, show this message.
     //field notVisibleTillThen: false - Visible is false until activation.
+    //field explodeOnDeath: false
+    //field allowChaining: false
     //field emotion: enum(em_suprise,em_question,em_sing,em_love,em_mad,em_sad,em_bad,em_dots,em_idea,em_sleep)
     //field randomize_field: string - Numeric field to randomize
             //field rand_range: xy - The limites of said field
@@ -450,6 +476,8 @@ if(variable_local_exists("weld_parent")){
 }
 if(notVisibleTillThen) visible=false
 if (trigger_on_create) sound=""
+
+trap_delay/=dt
 
 if (trigger_on_create and object_index!=AddTrigger) event_trigger(tr_traptriggered)
 #define Other_8
@@ -489,15 +517,18 @@ if(variable_local_exists("emotion")){
 }
 
 if (path!=noone) {
-    path_start(path,path_speed,path_endaction,path_absolute)
+    path_start(path,path_speed*dt,path_endaction,path_absolute)
     path_scale=path_scaling
+    if(variable_local_exists("guess_position")) if(guess_position==true){
+       path_position = 1-(point_distance(xstart,ystart,path_get_x(path_index,1),path_get_y(path_index,1))/point_distance(path_get_x(path_index,0),path_get_y(path_index,0),path_get_x(path_index,1),path_get_y(path_index,1)))
+    }
     path_xstart=x
     path_ystart=y
 } else {
-    speed=spd
+    speed=spd*dt
     direction=dir
-    hspeed+=hsp
-    vspeed+=vsp
+    hspeed+=hsp*dt
+    vspeed+=vsp*dt
 }
 
 if (scaleh!=0 || scalev!=0) {
@@ -509,7 +540,7 @@ if (rotate!=0) {
 }
 
 if (grav!=0) {
-    gravity=grav
+    gravity=grav*dt*dt
 }
 
 if (grav_dir!=noone) {

@@ -16,7 +16,7 @@ global.release_mode=false
     global.game_title="I Wanna Save the Sunkist! 2!"
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation
-    global.game_speed=50
+    global.game_speed=100
     //game screen+window size
     global.width=800
     global.height=608

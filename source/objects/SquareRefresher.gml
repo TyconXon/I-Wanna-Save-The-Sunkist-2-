@@ -23,7 +23,7 @@ applies_to=self
 if (active and !other.dead) {
     other.djump=max(1,other.djump-1)
     active=0
-    alarm[0]=refreshTime
+    alarm[0]=refreshTime*dt
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

@@ -255,6 +255,8 @@ custom_traps()
 //let's go away
 if (settings("volcheck")) {
     room_goto_next()
+    if(settings("hundredfps")) global.game_speed=100
+    else global.game_speed=50
 } else {
     instance_create(0,0,VolCheck)
 }

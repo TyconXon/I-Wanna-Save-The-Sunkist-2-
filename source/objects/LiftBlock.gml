@@ -43,6 +43,10 @@ applies_to=self
 //field hspeed
 //field vspeed
 
+hspeed*=dt
+vspeed*=dt
+speed*=dt
+
 if (path!=noone) {
     path_start(path,speed,path_action,path_absolute)
 }

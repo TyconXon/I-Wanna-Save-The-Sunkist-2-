@@ -112,7 +112,11 @@ applies_to=self
 //field doHealth: false
     //field health: number
 
-alarm_set(0,interval)
+interval*=dt
+deviation*=dt
+knife_speed*=dr
+
+alarm_set(0,interval*dt)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604

@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-vspeed=random_range(5,15)
+vspeed=random_range(5,15)*dt
 x=random_range(0,room_width)
 y=-16
 image_yscale=random_range(0.5,2.5)

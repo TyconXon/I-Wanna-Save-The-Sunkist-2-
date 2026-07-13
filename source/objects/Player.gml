@@ -78,8 +78,8 @@ baseGrav=baseGravDefault
 slope_angle=0
 sprite_angle=0
 
-image_speed=0.2
-gravity=baseGrav
+image_speed=0.2*dt
+gravity=baseGrav*dt
 walljump=0
 checkdeath=0
 walljumpboost=0
@@ -843,7 +843,7 @@ if (iframes) {
     iframes-=1
 } else {
     with (instance_place(x,y,PlayerKiller)) kill_player()
-    if(distance_to_object(PlayerKiller)<2 and !sound_isplaying(graze)) graze = sound_play_auto("snd_graze")
+    if(distance_to_object(PlayerKiller)<2 and !sound_isplaying(graze) and (vspeed or hspeed)) graze = sound_play_auto("snd_graze")
     with (instance_place(x,y,PlayerKillerActive)) {
         if (active) kill_player()
     }
@@ -873,6 +873,7 @@ applies_to=self
 script_execute(global.player_skin,"step")
 
 player_update_sprite()
+
 
 if(settings("afterimage") and (vspeed!=0 or hspeed!=0)) make_afterimage()
 /*"/*'/**//* YYD ACTION

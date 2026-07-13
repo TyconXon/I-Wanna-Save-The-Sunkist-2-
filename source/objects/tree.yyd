@@ -229,6 +229,7 @@
 	|TriggerTransformer
 	|TriggeredFree
 	|TriggerInstance
+	|TrapTrigger
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable

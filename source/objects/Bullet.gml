@@ -11,6 +11,7 @@ dead=instance_place(x,y,BulletBlock)
 storex=1
 storey=1
 storea=0
+image_speed=dt
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -79,17 +80,17 @@ if (other.solid) {
         if (hspeed > 0)
         {
         eff = instance_create(xprevious, yprevious, PropShrapnel);
-            eff.speed = random_range(1, 3);
+            eff.speed = random_range(1, 3)*dt;
             eff.direction = random_range(100, 190);
-            eff.gravity = random_range(0.1, 0.2);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
         }
 
         if (hspeed < 0)
         {
             eff = instance_create(xprevious, yprevious, PropShrapnel);
-            eff.speed = random_range(1, 3);
+            eff.speed = random_range(1, 3)*dt;
             eff.direction = random_range(-10, 80);
-            eff.gravity = random_range(0.1, 0.2);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
         }
     }
 

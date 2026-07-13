@@ -47,9 +47,9 @@ else if (!dead) {
         } else {
             trigger_broadcast(tr_playerdeath)
             songToPlay = global.death_music
-            if (instance_exists(MusicPlayer) and MusicPlayer.unsyncedDeathSong!="" ) songToPlay = MusicPlayer.unsyncedDeathSong
+            if (instance_exists(MusicPlayer)) if(MusicPlayer.unsyncedDeathSong!="") songToPlay = MusicPlayer.unsyncedDeathSong
 
-            if (MusicPlayer.deathSong!=""){
+            if (instance_exists(MusicPlayer)) if (MusicPlayer.deathSong!=""){
                formerPosition = sound_get_pos(global.music_instance)
                sound_pause(global.music_instance)
 

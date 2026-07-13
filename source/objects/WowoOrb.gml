@@ -37,6 +37,8 @@ else xcenter=view_xview+view_wview/2
 
 sound_pan(soundInd, median(-1,(x-xcenter)/view_wview,1))
 image_blend=make_color_hsv(255*((direction+90)/360),255,255)
+image_xscale=random(2)
+image_yscale=image_xscale
 
 if(doPlayer){
     speed=speed * (1-(dtp/32))
@@ -48,7 +50,7 @@ if(doPlayer){
     if(speed) make_afterimage()
 }else{
     speed=0
-    make_afterimage()
+    make_afterimage(1,0.01,-0.01,-0.01,1)
     x=mouse_room_x()
     y=mouse_y
 }

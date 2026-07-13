@@ -12,7 +12,31 @@ applies_to=self
 invert=0
 arg0=Gizmo
 */
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
 #define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
+#define Collision_Bullet
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/
+#define Collision_Explosion
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=902

@@ -34,10 +34,10 @@ with(IceField){
 savedhspeed=999
 savedvspeed=999
 }
-Player.vspeed=-gSpeed*dt
+Player.vspeed=-gSpeed
 active=false
 image_alpha = 0.5
-alarm[0]=timeout
+alarm[0]=timeout*dt
 if addJump {Player.djump=1}
 /*"/*'/**//* YYD ACTION
 lib_id=1

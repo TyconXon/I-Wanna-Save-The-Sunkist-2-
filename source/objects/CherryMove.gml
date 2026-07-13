@@ -11,6 +11,7 @@ applies_to=self
 */
 murderer=false
 color=$00a5ff
+falseLastFrame=false
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -22,10 +23,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(Player.hspeed == 0 or Player.vspeed == 0){
+if(Player.hspeed == 0){
+      if(!falseLastFrame){
       murderer = true
       image_alpha = 1.0
+      }
+      falseLastFrame=false
 }else{
+      falseLastFrame=true
       murderer = false
       image_alpha = 0.5
 }
@@ -35,4 +40,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (murderer) with (instance_place(x,y,Player)) kill_player()
+if (murderer) if (instance_place(x,y,Player)) kill_player()

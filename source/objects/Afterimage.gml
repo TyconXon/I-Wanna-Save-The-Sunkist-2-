@@ -18,12 +18,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_alpha-=alpha_reduction
+image_alpha-=alpha_reduction*dt
 
-image_xscale+=xscale_increase*(sign(image_xscale)*follow_scale_sign)
-image_yscale+=yscale_increase*(sign(image_yscale)*follow_scale_sign)
+image_xscale+=(xscale_increase*dt)*(sign(image_xscale)*follow_scale_sign)
+image_yscale+=(yscale_increase*dt)*(sign(image_yscale)*follow_scale_sign)
 
 if (image_alpha<=0) instance_destroy()
+if((xscale_increase!=0 or yscale_increase!=0) and (abs(image_xscale)<=0.01||abs(image_yscale)<=0.01)) instance_destroy()
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

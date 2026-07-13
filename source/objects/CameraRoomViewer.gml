@@ -51,6 +51,7 @@ applies_to=self
 */
 
 //field spd: number
+spd*=dt
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -2,7 +2,7 @@
 //returns whether the player was killed
 var d1,d2,relative_speed;
 
-if (!object_is_child_of(Player)) with (Player) check_crush()
+if (!object_is_child_of(Player)) with (Player) {if(check_crush())other.image_blend=c_red}
 else {
     if (dead) exit
 

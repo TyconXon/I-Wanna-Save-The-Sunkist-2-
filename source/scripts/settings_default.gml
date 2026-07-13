@@ -23,5 +23,6 @@ settings("caption visible",true)
 
 settings("focuszones", false)
 settings("afterimage", false)
+settings("hundredfps", false)
 
 input_default()

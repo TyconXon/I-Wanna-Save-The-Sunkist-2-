@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-gravity=0.4
+gravity=0.4*dt*dt
 dif=irandom_range(5,20)*choose(-1,1)
 angle=0
 #define Step_0
@@ -13,7 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-angle+=dif
+angle+=dif*dt
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

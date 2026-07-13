@@ -10,12 +10,13 @@
 	+CrowbarPath
 		|rmOriginal
 		|rmOriginal2
-		|rmReoriginal
+		|rmReOriginal
 	+StevenPath
 		|rmChanged
 		|rmWhiteKnuckle
 		|rmExp
 		|rmGuyFuture
+		|rmReChanged
 	+KnifePath
 		|rmS1
 		|rmRoR

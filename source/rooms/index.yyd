@@ -104,4 +104,6 @@ rmFinale
 
 rmPathToTheDirectory
 rmHallway
-rmReoriginal
+rmReOriginal
+
+rmReChanged

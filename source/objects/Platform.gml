@@ -100,6 +100,9 @@ applies_to=self
 //field destroy_time: number - frames to destroy platform after player walks off
 //field pulledSprite: sprite
 
+hspeed*=dt
+vspeed*=dt
+
 if (snap=="yuuutu") snap_type=0
 if (snap=="always") snap_type=1
 if (snap=="top") snap_type=2

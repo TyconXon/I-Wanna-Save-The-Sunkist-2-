@@ -23,7 +23,7 @@ if (!slowing && !instance_exists(PauseMenu)) {
 if (is_ingame())
     dt=(50*global.slomo)/global.game_speed
 else
-    dt=1
+    dt=50/global.game_speed
 
 //blood updates
 stepcount+=50/room_speed

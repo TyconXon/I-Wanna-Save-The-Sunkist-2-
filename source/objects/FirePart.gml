@@ -4,9 +4,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_speed=1/6
+image_speed=(1/6)*dt
 hs=random_range(-0.05,0.05)
-gravity=-random_range(0.15,0.2)
+gravity=-random_range(0.15,0.2)*dt*dt
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

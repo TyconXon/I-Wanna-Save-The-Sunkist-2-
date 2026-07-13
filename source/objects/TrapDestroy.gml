@@ -8,6 +8,7 @@ index=0
 sound=""
 soundPlayOnce=false
 objectFilter=noone
+doExplosion=false
 #define Collision_Platform
 /*"/*'/**//* YYD ACTION
 lib_id=1

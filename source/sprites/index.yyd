@@ -627,3 +627,5 @@ sprSpikeyGateDown
 sprSpikeyGateRight
 sprSpikeyGateLeft
 sprWowoOrb
+sprShard
+sprObjectCollider

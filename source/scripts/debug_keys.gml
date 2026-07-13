@@ -15,7 +15,8 @@ if (keyboard_check_pressed(vk_backspace)) {
 //execute code
 if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control)) {
     debug_execute_code=get_string("Enter code to execute:",debug_execute_code)
-    execute_string(debug_execute_code)
+    if(Player != noone) with(Player) {execute_string(other.debug_execute_code)}
+    else execute_string(debug_execute_code)
 }
 
 target_speed=global.game_speed
@@ -93,7 +94,9 @@ if (is_ingame()) {
     }
 
     if (mouse_check_button_pressed(mb_right)) {
-        func=show_menu("Debug Menu|-|Go to...|Infinite Jump|Godmode|Hitboxes|Autofire|Save Here",0)
+        var thething; thething = instance_position(mouse_room_x(),mouse_room_y(),all)
+        if(thething==noone) thething=instance_find(Player,0)
+        func=show_menu("Debug Menu|-|Go to...|Infinite Jump|Godmode|Hitboxes|Autofire|Save Here|Copy id of "+object_get_name(thething.object_index) ,0)
         if (func=1) {
             s="Select room:|-"
             r=room_next(room_first)
@@ -121,6 +124,7 @@ if (is_ingame()) {
         }
         if (func=5) {global.debug_autofire=!global.debug_autofire}
         if (func=6) {savedata_save(true,"debug")}
+        if (func==7) {clipboard_set_text(string(thething.id))}
     }
 
     if (global.debug_autofire) {

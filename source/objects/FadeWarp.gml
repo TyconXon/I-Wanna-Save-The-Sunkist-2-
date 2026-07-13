@@ -39,6 +39,9 @@ applies_to=self
 //field time_to_wait: number
 //field sprite_index: sprite
 event_inherited()
+faderate*=dt
+unfaderate*=dt
+time_to_wait*=dt
 
 if (room!=roomTo && room!=origin) instance_destroy()
 #define Other_5
