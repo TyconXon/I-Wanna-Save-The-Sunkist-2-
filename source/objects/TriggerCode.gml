@@ -19,20 +19,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-trg=true
-#define Step_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if(!trg) exit
-if (execute_code!="") {
-    if (execute_code_timer==0) {
-        if (!executed) {executed=1 with(context){execute_string(other.execute_code)}}
-    } else if (execute_code_t mod execute_code_timer==0) with(context){execute_string(other.execute_code)}
-    execute_code_t+=1
-}
+with(context){execute_string(other.execute_code)}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -44,8 +31,9 @@ Define code to be executed upon triggering
 */
 
 //field execute_code: string
-//field execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
-//field context: instance
+//f/i/e/l/d execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
+//field context: instance - inst
+//field context: object - object
 //field delay: number
 #define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION
@@ -53,5 +41,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(!delay) trg=true
+if(!delay) with(context){execute_string(other.execute_code)}
 else alarm[0]=delay/dt

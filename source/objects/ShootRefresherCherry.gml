@@ -14,6 +14,13 @@ action_id=603
 applies_to=self
 */
 active=true
+#define Collision_Player
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+kill_player()
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1

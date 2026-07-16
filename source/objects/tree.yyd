@@ -211,6 +211,7 @@
 		|LockedTrigger12
 	+Switches
 		|SwitchRed
+		|SwitchAny
 		|SwitchRedWL
 		|SwitchRedWR
 		|SwitchYellow
@@ -229,6 +230,7 @@
 	|TriggerTransformer
 	|TriggeredFree
 	|TriggerInstance
+	|TriggerMultiple
 	|TrapTrigger
 +Gimmicks
 	+White Dot
@@ -561,6 +563,7 @@
 	|AirStop
 	|IceField
 	|IceFieldGizmo
+	|ExcursionFunnel
 |PlayerStart
 |Block
 |Platform

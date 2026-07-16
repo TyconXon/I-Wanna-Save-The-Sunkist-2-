@@ -319,6 +319,7 @@
 		|sprSpikeEmpty
 		|sprBlade
 		|sprSpikeWall
+		|sprSpikeWallMask
 		|sprGuyTrap
 		|sprCursedSpikeBR
 		|sprCursedSpikeLB
@@ -529,6 +530,7 @@
 	+Switches
 		|sprSwitchYellow
 		|sprSwitchYellowWL
+		|sprSwitchWhite
 		|sprSwitchYellowWR
 		|sprSwitchGreen
 		|sprSwitchGreenWL
@@ -597,3 +599,5 @@
 |sprWowoOrb
 |sprShard
 |sprObjectCollider
+|sprTractorEmitter
+|sprTriggerSource

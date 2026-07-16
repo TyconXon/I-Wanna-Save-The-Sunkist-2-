@@ -1,1 +1,1 @@
-/*gm82room flag*/background_blend[0]=7123455
+/*gm82room flag*/background_blend[0]=5197647

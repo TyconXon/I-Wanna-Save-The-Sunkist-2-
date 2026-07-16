@@ -1,8 +1,8 @@
 caption=
 width=2400
 height=608
-snap_x=16
-snap_y=16
+snap_x=32
+snap_y=32
 isometric=0
 roomspeed=30
 roompersistent=0
@@ -12,7 +12,7 @@ clear_view=1
 
 bg_visible0=1
 bg_is_foreground0=0
-bg_source0=bgFortressInverted
+bg_source0=bgGranite
 bg_xoffset0=0
 bg_yoffset0=0
 bg_tile_h0=1

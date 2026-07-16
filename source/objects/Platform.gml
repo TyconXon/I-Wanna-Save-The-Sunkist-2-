@@ -117,12 +117,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
 if (global.platform_9slice) {
     if (image_xscale==1 && image_yscale==1) {
+        if(!sprite_exists(sprite_index)) exit
         draw_self()
     } else {
         //i feel like renex has better things to do with their time than make an
         //auto platform script that only like, 2 people will use for practical uses
         draw_sprite_9slice(pulledSprite,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
     }
-} else if (sprite_index!=-1) draw_self()
+} else if (sprite_index!=-1) {
+if(!sprite_exists(sprite_index)) exit
+draw_self()
+}

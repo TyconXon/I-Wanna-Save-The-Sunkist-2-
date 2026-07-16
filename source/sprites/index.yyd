@@ -629,3 +629,8 @@ sprSpikeyGateLeft
 sprWowoOrb
 sprShard
 sprObjectCollider
+sprTractorEmitter
+sprSwitchWhite
+sprTriggerSource
+sprSpikeWallMask
+

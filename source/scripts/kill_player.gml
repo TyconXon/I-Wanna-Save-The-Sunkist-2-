@@ -102,9 +102,19 @@ else if (!dead) {
                 if(variable_local_exists("deathMessage")){
                     Player.deathMessage = deathMessage
                 }
-                if(self.object_index ==  Cherry and !irandom(10)){
+                if(self.object_index == Cherry and !irandom(10)){
                     sound_play_auto("item_use_fruit_v2_01")
-                    instance_destroy()
+                    sprite_index = sprTransperry
+                    Player.deathMessage = "Yum!"
+                    repeat(5){
+                        eff = instance_create(x, y, PropShrapnel);
+                        eff.speed = random_range(1, 3)*dt;
+                        eff.direction = random_range(180, 360);
+                        eff.gravity = random_range(0.1, 0.2)*dt*dt;
+                        eff.sprite_index=sprBlood
+                        eff.image_index=irandom(eff.image_number-1)
+                        eff.image_speed=0
+                    }
                 }
             }
 

@@ -7,6 +7,7 @@ applies_to=self
 //default jump refreshers respawn time - if set to zero, it only respawns when you land
 refreshTime=100
 active=1
+preventRedundancy=false
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -21,6 +22,7 @@ action_id=603
 applies_to=self
 */
 if (active and !other.dead) {
+    if(other.djump == max(1,other.djump-1)) exit
     other.djump=max(1,other.djump-1)
     active=0
     alarm[0]=refreshTime*dt
@@ -32,6 +34,7 @@ action_id=603
 applies_to=self
 */
 //field refreshTime: number
+//field preventRedundancy: false
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

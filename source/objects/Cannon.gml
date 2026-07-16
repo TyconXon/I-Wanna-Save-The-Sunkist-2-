@@ -114,7 +114,7 @@ applies_to=self
 
 interval*=dt
 deviation*=dt
-knife_speed*=dr
+knife_speed*=dt
 
 alarm_set(0,interval*dt)
 /*"/*'/**//* YYD ACTION

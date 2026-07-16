@@ -45,6 +45,9 @@ if (instance_exists(Player)) {
     if (Player.bow) {
         i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.image_xscale=Player.facing
     }
+    if(Player.fox) {
+        i=instance_create(Player.bowx,Player.bowy,GibParticle) i.sprite_index=sprKitsuneTail i.image_xscale=Player.facing
+    }
 }
 
 if (blood==3) {

@@ -113,6 +113,8 @@ input_h=0 input_v=0
 
 drawhp=0
 
+fox=false
+
 input_clear()
 input_consume()
 
@@ -603,7 +605,10 @@ with(instance_place(x,y,IceField)){
    if(savedvspeed==999) continue;
    if(!noy)other.vspeed=savedvspeed
    if(!nox)other.hspeed=savedhspeed
-   gravity = 0
+   if(floorlessgravity) other.gravity = 0
+}
+with(instance_place(x,y,ExcursionFunnel)){
+                                          other.hspeed=spd
 }
 
 //one way gates
@@ -1267,7 +1272,7 @@ if (!dead) {
     //don't draw player if a fireball is active
     if (cherried_fireball) exit
 
-    draw_sprite_ext(sprKitsuneTail,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+    if(fox)draw_sprite_ext(sprKitsuneTail,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 
 
     script_execute(global.player_skin,"draw")

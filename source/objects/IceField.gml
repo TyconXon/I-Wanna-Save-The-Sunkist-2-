@@ -7,14 +7,18 @@ applies_to=self
 savedhspeed = 999
 savedvspeed = 999
 
+var savedObjH, savedObjV, indexes;
+
 nox= false
 noy= false
 nojump= false
 nodjump= false
 
+wallstop=true
+
 slip = 11344
 
-floorlessgravity = false
+floorlessgravity = true
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -49,7 +53,8 @@ applies_to=self
 //field noy: false
 //field nojump: false
 //field nodjump: false
-//field floorlessgravity: true
+//field wallstop: true
+//field floorlessgravity: true - don't apply gravity while in field
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

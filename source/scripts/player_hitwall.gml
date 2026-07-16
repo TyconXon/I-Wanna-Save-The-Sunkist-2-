@@ -21,6 +21,9 @@ if(instance_place(x+hspeed,y,StickyBlock)){
     if key_jump() {vspeed = 0}
     else {vspeed = min(vspeed, 1)}
 }
+with(instance_place(x,y,IceField)){
+   if(wallstop) savedhspeed=0
+}
 
 hspeed=0
 with (AlignIndicator) {

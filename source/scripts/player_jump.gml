@@ -51,9 +51,11 @@ if (vvvvvv) {
         && !(beamstate&beam_onejump)) {
             //double jump
             vspeed=-jump2*vflip
+            if(instance_place(x,y,IceField)) if(instance_place(x,y-1,Block)) vspeed*=-1
 
-            if(instance_place(x,y+1*vflip,AnyWater)) sound_play_auto_range("wade",7)
-            else sound_play_auto("sndDJump")
+            //if(instance_place(x,y+1*vflip,AnyWater)) sound_play_auto_range("wade",7)
+
+            sound_play_auto("sndDJump")
 
             if (djump<maxjumps) djump+=1
             if (djump>2) {

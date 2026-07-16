@@ -20,6 +20,11 @@ coyoteTime=global.coyote_time
 
 if (onfire) kill_player()
 
+
+with(instance_place(x,y,IceField)) {
+    if(wallstop) savedvspeed=0
+}
+
 with (JumpRefresher) active=1
 
 //jump buffering checks

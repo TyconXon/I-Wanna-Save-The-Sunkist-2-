@@ -8,6 +8,7 @@ with (Player) {
     savedata("vvvvvv",vvvvvv)
     savedata("theendisnigh",theendisnigh)
     savedata("beamstate",beamstate)
+    savedata("fox",fox)
 }
 
 savedata("dialog",de_save())
