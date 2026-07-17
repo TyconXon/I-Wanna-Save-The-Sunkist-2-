@@ -2,6 +2,7 @@
 +Sunkist
 	+Aiwana
 		|sprPauseblock
+		|sprPauser9slice
 		|sprBlockJumpRefresher
 		|sprJumper
 		|sprGlass
@@ -37,7 +38,6 @@
 		|sprRat
 		|sprDog
 		|sprBunny
-		|sprCube
 		|sprFoxpaw
 		|sprLock
 		|sprKnifepack
@@ -60,6 +60,7 @@
 		|sprCompanion
 		|sprTestChamberPanel
 		|sprWarningSigns
+		|sprCube
 	+Deltarune
 		|sprPlatSlashPusher
 		|sprKitsuneTail
@@ -601,3 +602,4 @@
 |sprObjectCollider
 |sprTractorEmitter
 |sprTriggerSource
+|sprCoralPixels

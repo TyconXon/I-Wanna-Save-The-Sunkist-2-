@@ -19,3 +19,12 @@ if(left) {
          sprite_index = sprUpWater
          spd=-spd
 }
+#define Trigger_Trap is Triggered
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+left=!left
+spd=-spd
+if(left) sprite_index = sprUpWater

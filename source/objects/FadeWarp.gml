@@ -80,6 +80,9 @@ if (alp>0) {
         draw_set_valign(fa_center)
         draw_set_color(c_gray)
         draw_text((global.width/2)+random_range(-1,1),(global.height/2)+random_range(-1,1),"I wanna save the sunkist. two.")
+        draw_set_blend_mode_ext(bm_inv_src_color, bm_inv_dest_color);
+        draw_text((global.width/2)+random_range(-1,1),(global.height/2)+random_range(-1,1),"I wanna save the sunkist. two.")
+        draw_set_blend_mode(bm_normal);
     }
     draw_reset()
 } else if (fadestate==2) {

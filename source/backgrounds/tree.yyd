@@ -112,8 +112,11 @@
 		|bgSkybox
 		|bgFoliage
 		|bgPinkFlowers
-		|bgBlackFlowers
 		|bgFlowerBacking
 		|bg_sunrise_back_color
+		|bgDeepCave1_0
+		|bgDeepCave2_0
+		|bgSpace
+		|bMCave_4_0
 |bgGranite
 |bgEasy

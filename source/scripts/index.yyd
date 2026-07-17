@@ -375,3 +375,5 @@ st_balatroshader
 dialog_sunkist1
 weapon_wowozela
 explode_me
+add_coral_pixels
+draw_self_inverted

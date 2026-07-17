@@ -8,6 +8,8 @@
 	|splashtexts
 	|dialog_sunkist1
 	|explode_me
+	|add_coral_pixels
+	|draw_self_inverted
 +CUSTOM
 	+game options
 		|custom_options

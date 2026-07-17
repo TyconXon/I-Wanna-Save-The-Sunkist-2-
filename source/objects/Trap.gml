@@ -76,3 +76,11 @@ applies_to=self
 invert=0
 arg0=Gizmo
 */
+#define Trigger_Trap Deactivated
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=902
+applies_to=self
+invert=0
+arg0=Gizmo
+*/

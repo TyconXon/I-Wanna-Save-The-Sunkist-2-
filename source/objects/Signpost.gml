@@ -37,6 +37,7 @@ applies_to=self
 //field sprite_index: sprite
         //field image_speed: number
         //field image_index: number
+//field visible: true
 #define Trigger_Draw End
 /*"/*'/**//* YYD ACTION
 lib_id=1

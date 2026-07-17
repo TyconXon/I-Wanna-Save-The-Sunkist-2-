@@ -1,4 +1,3 @@
 //gm82 fields begin
-hsp=0
-vsp=2
+msg="Jumping off ceilings works too."
 //gm82 fields end

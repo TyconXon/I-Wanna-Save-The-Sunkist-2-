@@ -96,6 +96,12 @@ explodeOnDeath=false
 allowChaining=false
 trigger_on_bullet=false
 trigger_on_view=false
+
+deactivate_behavior="default"
+deactivation_code=""
+returning=false
+
+initialInstance = object_index
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -123,6 +129,12 @@ if(variable_local_exists("followCoordinate")){
     }
     if(followCoordinate == "offlineY"){
         with(Player){other.y = y}
+    }
+}
+if(variable_local_exists("deactivate_behavior")){
+    if(deactivate_behavior=="return" and !trg and returning){
+
+        move_towards_fixed(xstart,ystart,abs(speed))
     }
 }
 
@@ -423,6 +435,8 @@ applies_to=self
     //field trap_redir_index: number
     //field trap_stop_index: number
     //field trap_destroy_index: number
+    //field deactivate_behavior: enum("default", "stop", "return", "safify", "destroy", "goaway")
+            //field deactivation_code: string
     //field execute_code: string
         //field         execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
 //field sunkist: false
@@ -479,6 +493,7 @@ if (trigger_on_create) sound=""
 
 trap_delay/=dt
 
+if(deactivate_behavior == "destroy") deactivation_code = "instance_destroy()" 
 if (trigger_on_create and object_index!=AddTrigger) event_trigger(tr_traptriggered)
 #define Other_8
 /*"/*'/**//* YYD ACTION
@@ -502,6 +517,8 @@ action_id=603
 applies_to=self
 */
 ///get movin'
+
+
 
 trg=1
 
@@ -577,4 +594,36 @@ if(variable_local_exists("extending")){
 if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     move_towards_gravity(move_to_xy_grav[0],move_to_xy_grav[1],move_grav)
     vspeed-=gravity/2
+}
+
+if(deactivate_behavior=="safify" and returning){
+   image_alpha = 1
+   instance_change(initialInstance, false)
+}
+#define Trigger_Trap Deactivated
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+trg=0
+returning=true
+if(deactivate_behavior=="default"){
+    x=xstart
+    y=ystart
+    speed=0
+}else if(deactivate_behavior=="return"){
+    if(speed==0) speed=3
+}else if(deactivate_behavior=="goaway"){
+ x=-sprite_width
+ y=-sprite_height
+ speed=0
+}
+
+
+execute_string(deactivation_code)
+
+if(deactivate_behavior=="safify"){
+    image_alpha = 0.25
+    instance_change(Gizmo, false)
 }

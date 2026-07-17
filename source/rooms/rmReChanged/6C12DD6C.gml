@@ -1,5 +1,5 @@
 //gm82 fields begin
-mytarget=rmReChanged_E3CFA8B7
+mytarget=rmReChanged_B38C32DD
 timer=30
-mytargetwhenoff=rmReChanged_5AEFE36B
+mytargetwhenoff=rmReChanged_B38C32DD
 //gm82 fields end

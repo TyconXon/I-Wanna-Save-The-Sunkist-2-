@@ -11,12 +11,14 @@ ys=argument3
 ang=argument4
 
 if(image_blend==$ffffff) {
-    black = 0
+    if(instance_place(x,y,Player)) black = c_gray
+    else black = 0
     col=argument5
 }else{
     col=merge_color(image_blend,argument5,0.5)
     black=image_blend
 }
+
 
 c1=merge_color(0,col,0.39)
 c2=merge_color(col,$ffffff,0.39)

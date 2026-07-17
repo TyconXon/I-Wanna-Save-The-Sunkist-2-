@@ -27,7 +27,8 @@ if( (instance_place(x,y,Player) and doPlayer) or (instance_place(x,y,Bullet) and
   exit
 }
 image_index=0
-with(mytargetwhenoff) event_trigger(tr_traptriggered)
+if(mytargetwhenoff==mytarget) {with(mytarget) { event_trigger(tr_trapuntriggered)}}
+else{ with(mytargetwhenoff) event_trigger(tr_traptriggered) }
 sound_play_auto(unpressSound)
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -90,7 +91,7 @@ applies_to=self
 */
 if (!image_index) {
     image_index=1
-    sound_play_auto(pressSound)
+    if(other!=MovingSolid) sound_play_auto(pressSound)
     with (mytarget) event_trigger(tr_traptriggered)
     if(mytrig!=noone) event_perform_object(Trigger,ev_other,ev_user0)
     if(timer) alarm[0] = timer/dt

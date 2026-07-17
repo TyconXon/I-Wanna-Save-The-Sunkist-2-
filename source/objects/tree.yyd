@@ -211,7 +211,6 @@
 		|LockedTrigger12
 	+Switches
 		|SwitchRed
-		|SwitchAny
 		|SwitchRedWL
 		|SwitchRedWR
 		|SwitchYellow
@@ -232,6 +231,7 @@
 	|TriggerInstance
 	|TriggerMultiple
 	|TrapTrigger
+	|SwitchAny
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -514,6 +514,7 @@
 		|TriggerCode
 		|TimerTimerTimer
 		|SunkitRain
+		|Piston
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -564,6 +565,7 @@
 	|IceField
 	|IceFieldGizmo
 	|ExcursionFunnel
+	|DoorBlock
 |PlayerStart
 |Block
 |Platform

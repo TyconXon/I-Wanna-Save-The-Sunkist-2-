@@ -607,9 +607,8 @@ with(instance_place(x,y,IceField)){
    if(!nox)other.hspeed=savedhspeed
    if(floorlessgravity) other.gravity = 0
 }
-with(instance_place(x,y,ExcursionFunnel)){
-                                          other.hspeed=spd
-}
+with(instance_place(x,y,ExcursionFunnel)) other.hspeed=spd
+with(instance_place(x,y,AirStop)) {if(image_angle=0)other.hspeed=0 else other.vspeed=0}
 
 //one way gates
 coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (x+1-hspeed<=coll.bbox_left+2) {move_player(x+coll.bbox_left-(bbox_right+1),y,1) hspeed=0}

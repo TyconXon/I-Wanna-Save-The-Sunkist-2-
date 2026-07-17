@@ -197,7 +197,7 @@ bgFoliage
 bgPinkFlowers
 bgBigPlant
 bgPinkroll
-bgBlackFlowers
+
 bgFlowerBacking
 bg_sunrise_back_color
 
@@ -217,3 +217,8 @@ bgEasy
 
 bgUntexturedInv
 bgMoon
+bgDeepCave1_0
+bgDeepCave2_0
+bgSpace
+bMCave_4_0
+

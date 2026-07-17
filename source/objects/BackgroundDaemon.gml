@@ -8,6 +8,12 @@ on=0
 
 user_draw_begin=1
 user_draw_end=2
+
+i=0
+repeat(8){
+    background_angle[i] = 0
+    i+=1
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -60,7 +66,7 @@ for (i=0;i<8;i+=1) {
             background_y[i],
             background_xscale[i],
             background_yscale[i],
-            0,
+            background_angle[i],
             background_blend[i],
             background_alpha[i],
             !background_htiled[i],
@@ -88,7 +94,7 @@ for (i=0;i<8;i+=1) {
             background_y[i],
             background_xscale[i],
             background_yscale[i],
-            0,
+            background_angle[i],
             background_blend[i],
             background_alpha[i],
             !background_htiled[i],

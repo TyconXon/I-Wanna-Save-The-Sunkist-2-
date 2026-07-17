@@ -433,7 +433,7 @@ sprRainmaker
 sprSunkist
 sprDog
 sprBunny
-sprCube
+
 
 
 
@@ -634,3 +634,7 @@ sprSwitchWhite
 sprTriggerSource
 sprSpikeWallMask
 
+sprCube
+
+sprPauser9slice
+sprCoralPixels
