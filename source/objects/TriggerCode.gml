@@ -6,7 +6,7 @@ applies_to=self
 */
 ///instructions
 
-execute_code=""
+execute_code="event_trigger(tr_traptriggered)"
 trg=false
 execute_code_timer=0
 execute_code_t=0
@@ -31,9 +31,9 @@ applies_to=self
 Define code to be executed upon triggering
 */
 
-//field execute_code: string
+//field execute_code: string - by default, this activates the context
 //field deactivation_code: string - by default, this deactivates the context
-//f/i/e/l/d execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
+//f/ield execute_code_timer: number - (0=once, 1=every frame, 2=every 2 frames, etc)
 //field context: instance - inst
 //field context: object - object
 //field delay: number

@@ -50,6 +50,9 @@ onfire=false
 vvvvvv=false
 portalgun=false
 theendisnigh=false
+fox=false
+
+custom_load()
 
 cherried=false
 cherried_antigrav=false
@@ -113,7 +116,6 @@ input_h=0 input_v=0
 
 drawhp=0
 
-fox=false
 
 input_clear()
 input_consume()
@@ -520,6 +522,24 @@ if (!vvvvvv) if (!onGround || global.floor_vines) {
         }
     }
 }
+
+if(theendisnigh){
+  hitthing = instance_place(x+1,y,Block)
+  if(hitthing==noone) hitthing = instance_place(x-1,y,Block)
+  if(hitthing==noone) {hanging=false; exit}
+
+  if(!key_jump() and instance_place(approach(x,hitthing.x,1),hitthing.bbox_top-15,Block) == noone and
+     ((hanging and hspeed==0) )
+  ){
+        if(bbox_top < hitthing.bbox_top){
+            y=hitthing.y
+            vspeed = 0
+            djump=1
+            hanging = true
+            gravity=0
+        }else{hanging=false; }
+    }else{hanging=false; }
+}else{hanging=false; }
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -692,7 +712,6 @@ applies_to=self
 */
 ///solid collision
 var land,a,s;
-hanging = false
 if (dotkid) {
     image_xscale=1
 } else if (walljumpboost<=0) {

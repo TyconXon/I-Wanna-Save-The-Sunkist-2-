@@ -14,6 +14,10 @@ ygoal=0
 width=16
 stretch=false
 murderer=false
+weld_parent = noone
+
+xOffset=0
+yOffset=0
 
 var thisx, thisy;
 #define Step_0
@@ -22,27 +26,39 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+
+with (weld_parent) {
+    other.x = self.x - other.xOffset
+    other.y = self.y - other.yOffset
+}
+
 thisx=x
 thisy=y
 
  if(center=="x" || center=="both"){
     xgoal=inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2);
-    xgoal+=sprite_width/2
-    thisx-=sprite_width/2
+    if(method!="line") xgoal+=sprite_width/2
+    if(method!="line")thisx-=sprite_width/2
  }
  else xgoal=inst.x
 
  if(center=="y" || center=="both") {
     ygoal= inst.bbox_top + ((inst.bbox_bottom - inst.bbox_top) / 2);
-    ygoal+=sprite_height/2
-    thisy-=sprite_height/2
+    if(method!="line")ygoal+=sprite_height/2
+    if(method!="line")thisy-=sprite_height/2
  }
  else ygoal=inst.y
 
 if(!murderer) exit;
 
-if(collision_rectangle(thisx,thisy,xgoal,ygoal,Player,false,true) != noone){
-    kill_player()
+if(method=="line"){
+    if(collision_line(thisx,thisy,xgoal,ygoal,Player,false,true) != noone){
+        kill_player()
+    }
+}else if(method=="strip"){
+    if(collision_rectangle(thisx,thisy,xgoal,ygoal,Player,false,true) != noone){
+        kill_player()
+    }
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION
@@ -61,6 +77,12 @@ Connects an instance to this position visually
 //field stretch: false
 //field image_xscale: number
 //field murderer: false
+//field weld_parent: instance - Follows this instance as if it were welded from this position
+
+with (weld_parent) {
+    other.xOffset = self.x - other.x
+    other.yOffset = self.y - other.y
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -515,7 +515,7 @@ DoubleJumpEffect
 CherryHoming
 PlatformGizmo
 AshGive
-hook
+Hook
 Jumper
 
 NoKillZone
@@ -584,3 +584,16 @@ SwitchAny
 TriggerMultiple
 DoorBlock
 Piston
+
+TriggerDrawCode
+
+CherryFuture
+sprCherryAsh
+
+onEventSave
+onEventLoad
+
+TriggerCodeInterval
+AshGrowth
+AshGrowthChild
+TimedBreakable

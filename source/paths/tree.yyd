@@ -19,7 +19,6 @@
 |path28_SolidSprite_27D7371F
 |path29_RiskOfRain_ED3AC81D
 |path30_SpikeD_01E805A6
-|path31_MoveBlock_A897AC1C
 |path33_CheryStop_B1A757EC
 |path34_CheryStop_D4CE2315
 |path35_AddTrigger_ED90D0D4
@@ -30,3 +29,7 @@
 |path_cherry_screen
 |path_watercherries
 |path47_CheryStop_3D4BF089
+|path49_Pauser_0CE2F17D
+|path50_MoveBlock_207CBCB6
+|path51_CherryFuture_741E0D49
+|path52_AddTrigger_20AC3EC0

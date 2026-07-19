@@ -1,0 +1,10 @@
+background_changed_special,768,480,0,256,32,32,0,1,1,4294967295
+background_changed_special,416,480,0,256,32,32,0,1,1,4294967295
+background_changed_special,736,576,0,256,32,16,0,1,1,4294967295
+background_changed_special,1408,864,384,480,32,32,0,1,1,4294967295
+background_changed_special,1440,672,352,416,32,32,0,1,1,4294967295
+background_changed_special,1440,384,384,416,32,32,0,1,1,4294967295
+background_changed_special,1440,416,384,448,32,32,0,1,1,4294967295
+background_changed_special,1440,192,416,416,32,32,0,1,1,4294967295
+background_changed_special,1440,224,416,480,32,32,0,1,1,4294967295
+background_changed_special,416,528,160,192,32,32,0,1,1,4294967295

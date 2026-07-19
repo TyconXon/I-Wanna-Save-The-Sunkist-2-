@@ -17,6 +17,9 @@
 		|rmExp
 		|rmGuyFuture
 		|rmReChanged
+		|rmReChangedA
+		|rmReChangedB
+		|rmReChangedC
 	+KnifePath
 		|rmS1
 		|rmRoR

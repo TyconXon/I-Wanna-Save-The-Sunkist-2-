@@ -13,10 +13,11 @@ applies_to=self
 */
 //field surface: false - wavy water surface
 //field depth: number
-
+/*
 if (surface) {
     with (instance_create(x,y,WaterSurface)) {
         find=other.id
         construct()
     }
 }
+*/

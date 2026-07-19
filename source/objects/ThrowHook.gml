@@ -5,7 +5,7 @@ action_id=603
 applies_to=other
 */
 
-if(!key_jump() && ((key_left() and other.image_xscale < 0) || ( key_right()) and other.image_xscale > 0 ) ){
+if(!key_jump() ){
     if(bbox_top < other.bbox_top ){
         hanging = true
     }
@@ -24,7 +24,7 @@ if( key_jump() && ((key_left() and other.image_xscale > 0) || ( key_right()) and
         hanging = false
         hspeed=3
         vspeed=-9*vflip
-        walljumpboost=2
+        walljumpboost=4
         walljumpdir=facing
 
 }

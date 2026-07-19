@@ -377,3 +377,7 @@ weapon_wowozela
 explode_me
 add_coral_pixels
 draw_self_inverted
+ps2_invert
+
+draw_self_inverted2
+alert

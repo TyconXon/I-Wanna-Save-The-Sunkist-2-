@@ -19,6 +19,6 @@ applies_to=self
 */
 if (!settings(itemid)) {
     if (room=rmMenu) instance_destroy()
-    image_blend=0
+    image_blend=c_dkgray
     image_alpha=0.5
 }

@@ -9,6 +9,7 @@ with (Player) {
     savedata("theendisnigh",theendisnigh)
     savedata("beamstate",beamstate)
     savedata("fox",fox)
+    savedata("portalgun", portalgun)
 }
 
 savedata("dialog",de_save())

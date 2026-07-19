@@ -69,6 +69,8 @@
 			|CherryWhite
 			|CherryGray
 			|CherryBlack
+			|CherryFuture
+			|sprCherryAsh
 			|CherryRainbow
 		|MegaCherry
 		|CherryBounce
@@ -219,6 +221,9 @@
 		|SwitchGreen
 		|SwitchGreenWL
 		|SwitchGreenWR
+	+Events
+		|onEventSave
+		|onEventLoad
 	|TrapStop
 	|TriggerGroup
 	|TrapRedirect
@@ -512,9 +517,12 @@
 		|AmbientGeneric
 		|MusicPlayerActivated
 		|TriggerCode
+		|TriggerCodeInterval
+		|TriggerDrawCode
 		|TimerTimerTimer
 		|SunkitRain
 		|Piston
+		|TimedBreakable
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -525,6 +533,7 @@
 		|Explosion
 		|aSingleRain
 		|WowoOrb
+		|AshGrowthChild
 	+Prefabs
 		|Dog
 		|RiskOfRain
@@ -534,7 +543,7 @@
 		|OceanWaters
 		|SunkistHimself
 	+Ability
-		|hook
+		|Hook
 		|ThrowHook
 		|AshGive
 		|AshTake
@@ -566,6 +575,7 @@
 	|IceFieldGizmo
 	|ExcursionFunnel
 	|DoorBlock
+	|AshGrowth
 |PlayerStart
 |Block
 |Platform

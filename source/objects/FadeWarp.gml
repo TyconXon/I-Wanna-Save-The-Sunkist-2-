@@ -23,7 +23,7 @@ applies_to=self
 if (room!=roomTo && fadestate==0) {
     fadestate=1
     persistent=1
-    sound_play_music("logosfx",false)
+    if(room==rmPathToTheDirectory) sound_play_music("logosfx",false)
     lock_controls()
     freeze_player()
 }
@@ -74,7 +74,7 @@ if (alp>0) {
     } else if (time_to_wait) time_to_wait-=1
     draw_set1(fadecol,alp)
     draw_rectangle(0,0,w,h,0)
-    if(room==rmVent||room==rmPalace){
+    if(room==rmVent||room==rmPathToTheDirectory){
         draw_set_font(fntCoral)
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)

@@ -5,7 +5,7 @@ hitthing = instance_place(x+hspeed,y,Block)
 hanging = false
 
 if(theendisnigh){
-    if(!key_jump() and instance_place(x+hspeed,hitthing.bbox_top-16,Block) == noone){
+    if(!key_jump() and instance_place(x+hspeed,hitthing.bbox_top-15,Block) == noone){
         if(bbox_top < hitthing.bbox_top){
             y=hitthing.y
             vspeed = 0

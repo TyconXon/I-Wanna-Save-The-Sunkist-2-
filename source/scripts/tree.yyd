@@ -10,6 +10,8 @@
 	|explode_me
 	|add_coral_pixels
 	|draw_self_inverted
+	|draw_self_inverted2
+	|alert
 +CUSTOM
 	+game options
 		|custom_options
@@ -331,6 +333,7 @@
 			|ps2_hueshift
 			|ps2_tint
 			|ps3_rainbow
+			|ps2_invert
 		+lighting engine
 			|vs2_shadow
 			|ps3_light
