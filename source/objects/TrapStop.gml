@@ -15,7 +15,7 @@ applies_to=self
 */
 /*desc
 Will completely stop any trap that touches this object, by default.
-Ignores any traps with a different stop index.
+Ignores any traps with a different stop index. The index for falling blocks is 9
 */
 //field index: number
 //field sound: string

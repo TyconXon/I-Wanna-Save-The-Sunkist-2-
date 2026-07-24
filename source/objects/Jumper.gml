@@ -18,7 +18,7 @@ action_id=603
 applies_to=self
 */
 if(other.dead == true) exit
-sound_play_auto("sndBoing")
+sound_play_auto("sndBoing", random_range(0.95,1.05))
 other.vspeed=-gSpeed
 if addJump {other.djump=1}
 /*"/*'/**//* YYD ACTION

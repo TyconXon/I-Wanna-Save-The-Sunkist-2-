@@ -17,6 +17,7 @@ if (instance_exists(Player)) {
 }
 
 vol=min(1,1+((view_wview*2/3)-point_distance(x,y,xcenter,ycenter))/(view_wview*2/3))
+if(sound=="explode_distance") vol+=1
 pitch=1
 pan=median(-1,(x-xcenter)/view_wview,1)
 

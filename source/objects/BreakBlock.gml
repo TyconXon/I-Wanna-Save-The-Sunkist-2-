@@ -41,7 +41,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play_auto(global.break_sfx)
+sound_play_auto(global.break_sfx, random_range(0.8,1.2))
 hspeed=other.hspeed/2
 vspeed=other.vspeed/2
 instance_destroy()

@@ -106,7 +106,7 @@ else if (!dead) {
                     sound_play_auto("item_use_fruit_v2_01")
                     sprite_index = sprTransperry
                     Player.deathMessage = "Yum!"
-                    repeat(5){
+                    repeat(5*settings("blood")){
                         eff = instance_create(x, y, PropShrapnel);
                         eff.speed = random_range(1, 3)*dt;
                         eff.direction = random_range(180, 360);
@@ -121,6 +121,12 @@ else if (!dead) {
 
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
+            var ghost;
+            ghost = instance_create(x,y,KidGhost)
+            ghost.hspeed = hspeed
+            ghost.vspeed = vspeed
+            ghost.djump = djump
+
 
             with (FireballCherry) if (active) instance_destroy()
 

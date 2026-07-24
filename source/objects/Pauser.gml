@@ -51,11 +51,14 @@ action_id=603
 applies_to=self
 */
 active=!active
+var pitch;
+pitch = 0.8
 if(active){
     hspeed = hsp
     vspeed = vsp
+    pitch = 1
 }
-sound_play_auto("talk")
+sound_play_auto("switch",pitch)
 #define Collision_TrapDestroy
 /*"/*'/**//* YYD ACTION
 lib_id=1

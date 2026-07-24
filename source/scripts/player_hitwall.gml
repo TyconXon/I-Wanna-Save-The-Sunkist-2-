@@ -4,7 +4,7 @@
 hitthing = instance_place(x+hspeed,y,Block)
 hanging = false
 
-if(theendisnigh){
+if(theendisnigh and hitthing != noone){
     if(!key_jump() and instance_place(x+hspeed,hitthing.bbox_top-15,Block) == noone){
         if(bbox_top < hitthing.bbox_top){
             y=hitthing.y
@@ -15,6 +15,8 @@ if(theendisnigh){
         }
     }
 }
+
+if(hitthing) with(instance_place(hitthing.x,hitthing.y,TimedBreakable)) event_perform(ev_collision,Player)
 
 if(instance_place(x+hspeed,y,StickyBlock)){
     //other.vsp = vkUp?0:Math.min(other.vsp, 1);

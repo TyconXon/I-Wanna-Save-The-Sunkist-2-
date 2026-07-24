@@ -18,7 +18,7 @@ applies_to=self
 
 c=0
 
-if (instance_number(aSingleRain)==0) repeat (80/dt) {
+if (instance_number(aSingleRain)==0) repeat (settings("blood")*20/dt) {
     c+=dt
     if (c>1) {
         c-=1

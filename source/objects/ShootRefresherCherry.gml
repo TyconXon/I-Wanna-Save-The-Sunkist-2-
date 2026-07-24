@@ -28,7 +28,7 @@ action_id=603
 applies_to=self
 */
 if (alarm[0]==-1) {
-    sound_play_auto("item_use_fruit_v2_01")
+    sound_play_auto("item_use_fruit_v2_01", random_range(0.8,1.2))
     with (Player) djump=min(djump,maxjumps-1)
     alarm[0]=50*dt
     active=false

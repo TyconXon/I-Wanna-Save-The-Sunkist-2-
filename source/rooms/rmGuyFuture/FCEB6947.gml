@@ -1,6 +1,6 @@
 //gm82 fields begin
-type="grass"
-tileset=bgGreyBlock32
+type="extended"
+tileset=bgExtendedGuyRock16
 grid=16
-depth=1500
+depth=1040
 //gm82 fields end

@@ -29,6 +29,8 @@ savedatap("slomo",1)
 savedatap("slomoto",1)
 savedatap("slomof",0)
 
+savedatap("numjumps", 2)
+
 ds_map_clear(global.persistmap)
 
 ds_grid_resize(global.statgrid,3,1)

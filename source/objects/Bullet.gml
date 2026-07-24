@@ -67,7 +67,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock) instance_destroy_id(other)
 if (instance_place(x,y,Portal)) exit;
 if (other.solid) {
     dead=1
@@ -75,7 +75,7 @@ if (other.solid) {
     yprevious=y+vspeed
 
     sound_play_auto_range("concrete_impact_bullet",3)
-    repeat (5)
+    repeat (settings("blood")*2)
     {
         if (hspeed > 0)
         {

@@ -26,7 +26,7 @@ switch (argument0) {
         }
     }break
     case opt_text: {
-        return "Blood Amount"
+        return "Particles"
     }break
     case opt_value: {
         return pick(settings("blood"),"Off","Low","Normal","High")

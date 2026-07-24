@@ -31,6 +31,9 @@ with (mytrig)
         if (x>=l && x<r && y>=t && y<b) or (!group)
             if (!instance_place(x,y,TriggerLock))
                 instance_destroy()
+with(TriggerRelay){
+    if(index==real(string_number(object_get_name(other.mytrig)))) event_trigger(tr_traptriggered)
+}
 
 //don't destroy button triggers!
 if (!object_is_child_of(Button))

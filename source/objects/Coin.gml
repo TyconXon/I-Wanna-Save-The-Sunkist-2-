@@ -12,7 +12,7 @@ action_id=603
 applies_to=self
 */
 persist_hash(1)
-sound_play_auto("sndCoin")
+sound_play_auto("CP_Gain", random_range(0.8,1.2))
 instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION

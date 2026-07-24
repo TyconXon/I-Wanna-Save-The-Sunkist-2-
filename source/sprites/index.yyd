@@ -647,3 +647,10 @@ sprFloorButton
 sprPellet
 sprValve
 sprEngineTransparent
+sprBreakable
+sprTEINspikes_small
+sprTEINspikes
+sprHookReal
+sprWallhook
+sprWireBlock
+sprExplosiveCube

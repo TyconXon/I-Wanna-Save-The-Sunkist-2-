@@ -595,10 +595,11 @@ if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     move_towards_gravity(move_to_xy_grav[0],move_to_xy_grav[1],move_grav)
     vspeed-=gravity/2
 }
-
-if(deactivate_behavior=="safify" and returning){
-   image_alpha = 1
-   instance_change(initialInstance, false)
+if variable_local_exists("deactivate_behavior"){
+    if(deactivate_behavior=="safify" and returning){
+       image_alpha = 1
+       instance_change(initialInstance, false)
+    }
 }
 #define Trigger_Trap Deactivated
 /*"/*'/**//* YYD ACTION

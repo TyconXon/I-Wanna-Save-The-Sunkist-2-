@@ -1,5 +1,6 @@
 |World
 |Player
+|KidGhost
 |Bullet
 +Parents
 	|PlayerKiller
@@ -79,8 +80,8 @@
 		|ConveyorLeft
 		|ConveyorRight
 		|PushBlock
-		|LongPushBlock
 		|PushBlockSave
+		|LongPushBlock
 		|LiftBlock
 		|MoveBlock
 		|YokuBlock
@@ -493,6 +494,7 @@
 		|GameOver
 	|Ortho
 	|DestroyedBlock
+	|DestroyedSprite
 	|FirePart
 	|BackgroundDaemon
 	|WaterSurface
@@ -523,6 +525,7 @@
 		|SunkitRain
 		|Piston
 		|TimedBreakable
+		|BuildingBlock
 	+Component
 		|KnifeProjectile
 		|PortalOrb
@@ -569,6 +572,7 @@
 	|SquareRefresher
 	|ShootRefresherCherry
 	|ShootBlock
+	|TriNiTrotoluene
 	|ConveyerStick
 	|AirStop
 	|IceField
@@ -576,6 +580,8 @@
 	|ExcursionFunnel
 	|DoorBlock
 	|AshGrowth
+	|BreakableBlock
+	|PushBlockExplosive
 |PlayerStart
 |Block
 |Platform
