@@ -11,6 +11,7 @@ if (global.gen_thumb) {
             surface_set_target(s)
             texture_set_interpolation(1)
             draw_surface_stretched(application_surface,0,0,128,96)
+            //draw_text_ext(0,0,string_wrap(format_room_name(room),600),-1,600)
             texture_set_interpolation(0)
             surface_reset_target()
             if (global.gen_thumb_cachebg) background_delete(global.gen_thumb_cachebg)

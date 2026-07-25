@@ -1,4 +1,4 @@
 //gm82 fields begin
-text="(Be sure to check options!)"
+text="more ->"
 halign=fa_center
 //gm82 fields end

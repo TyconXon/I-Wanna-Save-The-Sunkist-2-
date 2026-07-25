@@ -203,7 +203,7 @@ global.release_mode=false
     //1 - hard - always snap regardless of vertical movement, also snaps when near the top
     //2 - light - snaps only when near the top
     //3 - none - don't snap at all, act like one-way blocks
-    global.platform_snap_type=0
+    global.platform_snap_type=2
     //allows jumping while inside of platforms
     global.platform_swimming=true
     //disable weird keyboard quirks like cactusing or cancels
@@ -240,10 +240,10 @@ global.release_mode=false
     //look inside of instance_deactivate_all_safe, instance_activate_all_safe,
     //and custom_object_activation to see the rules and options of how this works
     global.instance_deactivation=false
-    //how many screens to keep active, with 20 pixels of margin
+    //how many screens to keep active, with x pixels of margin
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1
-    global.instance_activate_margin_px=20
+    global.instance_activate_margin_px=64
 
 
 //bonus and funny stuff

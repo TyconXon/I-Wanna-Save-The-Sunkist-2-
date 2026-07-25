@@ -20,22 +20,21 @@ switch (argument0) {
         if (h!=0) {
             sound_play_option("sndDJump")
 
-            cur_value=settings("focuszones")
+            cur_value=settings("ghost")
 
-            //toggle true/false option
-            settings("focuszones",!cur_value)
+            //list of 3 options
+            settings("ghost",modwrap(cur_value+h,0,3))
         }
     }break
     case opt_text: {
         //text that draws on the left side of the menu
-        return ">Focus Zones"
+        return ">Player ghost"
     }break
     case opt_value: {
-        //value of the option on the right side
-        //pick one or make your own!
 
-        //true/false
-        return pick(settings("focuszones"),"Disabled","Enabled")
+        //list of options
+        return pick(settings("ghost"),"Off","On","On, no collision")
+
     }break
     case opt_end:{
         //called when the option is deselected

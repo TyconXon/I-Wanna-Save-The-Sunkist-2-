@@ -33,7 +33,7 @@ switch (argument0) {
         image_blend = c_yellow
     }break
     case opt_text: {
-        return "Sound Mode"
+        return "|Sound Mode"
     }break
     case opt_value: {
         return pick(settings("stereomode"),"Mono","Stereo") + pick(settings("iwbtg_sound_mode"),""," (guy)")

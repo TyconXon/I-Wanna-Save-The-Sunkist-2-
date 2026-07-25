@@ -381,3 +381,7 @@ ps2_invert
 
 draw_self_inverted2
 alert
+opt_ghost
+format_room_name
+song_name
+shifting_color

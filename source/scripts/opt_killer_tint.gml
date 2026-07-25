@@ -13,7 +13,7 @@ switch (argument0) {
         }
     }break
     case opt_text: {
-        return "Killer tint"
+        return ">Killer tint"
     }break
     case opt_value: {
         return pick(settings("killer_tint"),"Off","On")

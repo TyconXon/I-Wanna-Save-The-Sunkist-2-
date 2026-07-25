@@ -93,6 +93,8 @@ if (input_anykey()) {
     //break
 }
 
+image_blend=shifting_color(image_blend,2)
+
 image_speed=0.2*50/room_speed
 
 if (sel==-1) {
@@ -130,6 +132,7 @@ applies_to=self
 
 var t,timeText;
 
+
 d3d_set_projection_ortho(0,0,storew,storeh,0)
 draw_clear_alpha(0,1)
 draw_set_color(global.text_color)
@@ -142,6 +145,9 @@ texture_set_interpolation(0)
 d3d_set_alphablend(true)
 
 d3d_set_projection_ortho(0,0,global.width,global.height,0)
+
+draw_sprite_9slice(sprRefreshingWater9slice,image_index,0,0,global.width,global.height,1,1,image_angle,image_blend,image_alpha,32,32,64,64,1)
+
 
 draw_set_font(fntFileBig)
 draw_set_halign(1)
@@ -181,7 +187,7 @@ draw_set_halign(2)
         lang("deaths")+": "+string(savedata("deaths"))+"#"+
         lang("time")+": "+format_time(savedata("time"))+"#"+
         lang("systime")+": "+date_time_string(date_current_time())+"#"+
-        "Song: " + string(global.music) +"#" +
+        "Song: " + song_name(string(global.music)) +"#" +
         batt_info
     )
 draw_set_valign(0)

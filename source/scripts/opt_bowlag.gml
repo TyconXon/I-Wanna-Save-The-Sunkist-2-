@@ -19,7 +19,7 @@ switch (argument0) {
         image_blend = c_yellow
     }break
     case opt_text: {
-        return "Bow lag"
+        return "|Bow lag"
     }break
     case opt_value: {
         return pick(settings("bow_lag"),"Off","On") + pick(settings("afterimage"),""," (player afterimage)")

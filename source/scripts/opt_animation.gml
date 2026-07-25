@@ -26,7 +26,7 @@ switch (argument0) {
         image_blend = c_yellow
     }break
     case opt_text: {
-        return "Animations"
+        return "|Animations"
     }break
     case opt_value: {
         return pick(settings("anim"),"Fangames","Original") + pick(settings("hundredfps"),""," (100fps)")

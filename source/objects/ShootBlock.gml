@@ -1,3 +1,10 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+triggerOnDeath = noone
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -5,6 +12,8 @@ action_id=603
 applies_to=self
 */
 if(test_room_status() != "active") {
+
+   with(triggerOnDeath) event_trigger(tr_traptriggered)
 
    sound_play_auto("sndShatter", random_range(0.95,1.05))
    repeat (5)
@@ -27,3 +36,10 @@ action_id=203
 applies_to=self
 invert=0
 */
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field triggerOnDeath: instance

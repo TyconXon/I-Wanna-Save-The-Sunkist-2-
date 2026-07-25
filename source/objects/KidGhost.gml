@@ -22,6 +22,7 @@ maxVspeed=9
 //turn on bow when difficulty is 0
 bow=(difficulty==0)
 
+image_alpha=0.25
 
 //variables for optional player momentum system
 //check engine_settings() for more information
@@ -123,7 +124,7 @@ action_id=603
 applies_to=self
 */
 ///Does the ghost collide?
-ghostcollision = true
+ghostcollision = (settings("ghost") == 1)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

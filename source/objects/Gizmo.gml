@@ -537,7 +537,7 @@ if (path!=noone) {
     path_start(path,path_speed*dt,path_endaction,path_absolute)
     path_scale=path_scaling
     if(variable_local_exists("guess_position")) if(guess_position==true){
-       path_position = 1-(point_distance(xstart,ystart,path_get_x(path_index,1),path_get_y(path_index,1))/point_distance(path_get_x(path_index,0),path_get_y(path_index,0),path_get_x(path_index,1),path_get_y(path_index,1)))
+       path_position = path_get_approximate_pos(xstart,ystart,path)//1-(point_distance(xstart,ystart,path_get_x(path_index,1),path_get_y(path_index,1))/point_distance(path_get_x(path_index,0),path_get_y(path_index,0),path_get_x(path_index,1),path_get_y(path_index,1)))
     }
     path_xstart=x
     path_ystart=y

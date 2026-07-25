@@ -6,7 +6,7 @@ settings("sfxvol",0.5)
 settings("l+r behavior",lr_last)
 
 settings("blood",3)
-settings("filter",1)
+settings("filter",0)
 settings("anim",true)
 
 settings("makervine",true)
@@ -17,12 +17,14 @@ settings("stereomode",true)
 settings("iwbtg_sound_mode",false)
 
 settings("screenscale",1)
-settings("killer_tint",false)
+settings("killer_tint",true)
 
 settings("caption visible",true)
 
-settings("focuszones", false)
+settings("focuszones", true)
 settings("afterimage", false)
 settings("hundredfps", false)
+settings("ghost", 1)
+settings("pause sounds", false)
 
 input_default()

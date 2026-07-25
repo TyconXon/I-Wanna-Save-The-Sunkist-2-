@@ -121,12 +121,13 @@ else if (!dead) {
 
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
-            var ghost;
-            ghost = instance_create(x,y,KidGhost)
-            ghost.hspeed = hspeed
-            ghost.vspeed = vspeed
-            ghost.djump = djump
-
+            if(settings("ghost") != 0 ){
+                var ghost;
+                ghost = instance_create(x,y,KidGhost)
+                ghost.hspeed = hspeed
+                ghost.vspeed = vspeed
+                ghost.djump = djump
+            }
 
             with (FireballCherry) if (active) instance_destroy()
 

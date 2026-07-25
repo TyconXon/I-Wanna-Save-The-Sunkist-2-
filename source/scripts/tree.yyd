@@ -12,10 +12,14 @@
 	|draw_self_inverted
 	|draw_self_inverted2
 	|alert
+	|format_room_name
+	|song_name
+	|shifting_color
 +CUSTOM
 	+game options
 		|custom_options
 		|opt_template
+		|opt_ghost
 		|opt_focuszones
 		|opt_music_volume
 		|opt_sound_volume

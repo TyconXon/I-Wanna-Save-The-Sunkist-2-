@@ -394,9 +394,11 @@ if (!frozen) {
     }
 
     //vertical speed limit
-    if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
-    else if (vflip==1) vspeed=min(vspeed,maxVspeed)
-
+    if(not (key_down() && theendisnigh)){
+            if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
+            else if (vflip==1) vspeed=min(vspeed,maxVspeed)
+    }
+    
     //update ground and platform detection
     if (onPlatform) {
         if (!instances_place(x,y+4*vflip+vspeed,Platform,PlatformGizmo) && !coyoteTime) {

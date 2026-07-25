@@ -6,11 +6,12 @@ applies_to=self
 */
 select=settings("lastfile")
 image_speed=0.2*dt
+image_blend=c_red
 
 dx=x+240*select+65
 
 asksel=0
-
+selectedCustomSave = 0
 state=""
 
 thumb[0]=noone
@@ -36,6 +37,8 @@ applies_to=self
 */
 h=macro_leftright(vi_pressed)
 v=macro_updown(vi_pressed)
+
+image_blend=shifting_color(image_blend,2)
 
 if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard_check_pressed(vk_f5)) {
     sound_play("sndItem")
@@ -70,11 +73,16 @@ if (key_shoot(vi_pressed)) {
 if (state="") {
     if (h!=0) {
         sound_play("sndJump")
-        select=modwrap(select+h,0,3)
+        if(select!=4) select=clamp(select+h,0,4)
+        else {
+             if(selectedCustomSave==0 and h == -1) select = 3
+             else selectedCustomSave+=h
+        }
     }
     if (key_jump(vi_pressed)) {
         sound_play("sndDJump")
-        savedata_select(select)
+        if(select!=4) savedata_select(select)
+        else savedata_select(selectedCustomSave)
         asksel=0
 
         if (global.difficulty_room!=noone) {
@@ -105,7 +113,10 @@ if (state="continue") {
             askcount+=1
             if (askcount=5) {
                 sound_play("sndDeath")
-                savedata_default(select)
+
+                if(select!=4) savedata_default(select)
+                else savedata_default(selectedCustomSave)
+
                 state=""
                 if (thumb[select]!=noone) {
                     background_delete(thumb[select])
@@ -115,7 +126,8 @@ if (state="continue") {
             } else sound_play("sndShoot")
         } else {
             input_clear()
-            savedata_select(select)
+            if(select!=4) savedata_select(select)
+            else savedata_select(selectedCustomSave)
             savedata_load()
             sound_play_auto("Load")
         }
@@ -125,14 +137,17 @@ if (state="continue") {
 //new file
 if (state="new file") {
     if (global.num_difficulties==1) {
-        instance_destroy_id(TitleParticle)
+        /*instance_destroy_id(TitleParticle)
         instance_destroy_id(TitleMenu)
         input_clear()
-        savedata_newgame(select,global.single_difficulty)
+        if(select!=4) savedata_select(select)
+        else savedata_select(selectedCustomSave)
+        savedata_newgame(select,global.single_difficulty)*/
     } else {
         if (h!=0) {
             sound_play("sndJump")
-            savedata_select(select)
+            if(select!=4) savedata_select(select)
+            else savedata_select(selectedCustomSave)
             savedata("diff",modwrap(savedata("diff")+h,0,global.num_difficulties))
             difficulty=savedata("diff")
         }
@@ -140,7 +155,8 @@ if (state="new file") {
             instance_destroy_id(TitleParticle)
             instance_destroy_id(TitleMenu)
             input_clear()
-            savedata_newgame(select)
+            if(select!=4) savedata_newgame(select)
+            else savedata_newgame(selectedCustomSave)
         }
     }
 }
@@ -178,7 +194,6 @@ var i;
 draw_set_color(global.text_color)
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(global.width/2,64,lang("filemenu"))
 draw_set_color(global.filemenu_color)
 
 for (i=0;i<3;i+=1) {
@@ -247,6 +262,79 @@ for (i=0;i<3;i+=1) {
         else draw_text(x+i*240+64,y+96+48,lang("filenodata"))
     }
 }
+
+if(select==4){
+            draw_set_color(c_black)
+            draw_set_alpha(0.75)
+            draw_rectangle(0,0,global.width,global.height,false)
+            draw_set_alpha(1.0)
+            draw_sprite_9slice(sprRefreshingWater9slice,image_index,0,0,global.width,global.height,1,1,image_angle,image_blend,image_alpha,32,32,64,64,1)
+
+            draw_set_color(global.filemenu_color)
+
+            savedata_select(selectedCustomSave,0)
+            draw_set_halign(1)
+            draw_set_font(fntFileBig)
+            draw_text(x+240+64,y+96,global.savename)
+            draw_set_font(fntFileSmall)
+
+            //if (global.savefile_thumbnails) draw_background_stretched(bgThumbDefault,x+240,y,128,96)
+
+            if (savedata("saved")) {
+                draw_set_halign(0)
+                draw_text(x+240+10,y+70+96,lang("deaths")+":#  "+string(savedata("deaths"))+"#"+lang("time")+":#  "+format_time(savedata("time")))
+
+                draw_set_halign(1)
+                if (state="continue") {
+                    if (!asksel) draw_text(x+240+64,y+32+96,">"+lang("filecontinue")+"<#"+lang("fileerase"))
+                    else draw_text(x+240+64,y+32+96,lang("filecontinue")+"#>"+string_repeat("XX",askcount)+string_copy(lang("fileerase"),1+askcount*2,10-askcount*2)+"<")
+                } else if (global.num_difficulties>1) draw_text(x+240+64,y+48+96,global.name_difficulties[difficulty])
+
+                if (global.savefile_thumbnails) {
+                    if (savedata("room")==global.difficulty_room) {
+                        draw_background(bgThumbDefault,x+240,y)
+                    } else if (savedata("clear")) {
+                        draw_background(bgThumbClear,x+240,y)
+                    } else {
+                        draw_set_halign(0)
+                        draw_text_ext(x+240,y,format_room_name(savedata("room")),-1,128)
+                    }
+                }
+
+                draw_set_font(fntFileBig)
+                draw_set_halign(0)
+
+                if (global.item_number_display) {
+                    draw_set2(1,1)
+                    draw_set_font(fntFileSmall)
+                    draw_text(x+240+64,y+256,"Items:")
+                    draw_text(x+240+64,y+256+24,string(savedata("itemcount")))
+                    draw_set_font(fntFileBig)
+                    draw_set2(0,0)
+                } else if (global.item_percentage_display) {
+                    draw_set2(1,1)
+                    draw_set_font(fntFileSmall)
+                    draw_text(x+240+64,y+256,"Completion:")
+                    draw_text(x+240+64,y+256+24,string((savedata("itemcount")/global.item_total_count)*100)+"%")
+                    draw_set_font(fntFileBig)
+                    draw_set2(0,0)
+                } else {
+                    if (has_item("Item1")) draw_sprite(sprItem1,0,x+240+0,y+256)
+                    if (has_item("Item2")) draw_sprite(sprItem2,0,x+240+32,y+256)
+                    if (has_item("Item3")) draw_sprite(sprItem3,0,x+240+64,y+256)
+                    if (has_item("Item4")) draw_sprite(sprItem4,0,x+240+96,y+256)
+                    if (has_item("Item5")) draw_sprite(sprItem5,0,x+240+0,y+288)
+                    if (has_item("Item6")) draw_sprite(sprItem6,0,x+240+32,y+288)
+                    if (has_item("Item7")) draw_sprite(sprItem7,0,x+240+64,y+288)
+                    if (has_item("Item8")) draw_sprite(sprItem8,0,x+240+96,y+288)
+                }
+            } else {
+                draw_set_halign(1)
+                if (state="new file") draw_text(x+240+64,y+32+96,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")
+                else draw_text(x+240+64,y+96+48,lang("filenodata"))
+            }
+}
+
 draw_set_halign(0)
 
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
@@ -254,6 +342,13 @@ draw_sprite(sprite_index,-1,dx,y+310+64)
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319+64)
 
 //option info
+
+draw_set_color(global.text_color)
+draw_set_halign(1)
+draw_set_font(fntFileBig)
+draw_text(global.width/2,64,lang("filemenu"))
+draw_set_color(global.filemenu_color)
+
 draw_set_color(global.text_color)
 draw_set_font(fntFileSmall)
 draw_set_halign(0)

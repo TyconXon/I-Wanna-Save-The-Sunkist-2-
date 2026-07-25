@@ -13,7 +13,7 @@ switch (argument0) {
         }
     }break
     case opt_text: {
-        return "Celeste Cape"
+        return "Celeste Cape/Bow"
     }break
     case opt_value: {
         return pick(settings("celeste"),"Off","On")
