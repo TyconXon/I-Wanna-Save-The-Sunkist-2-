@@ -654,3 +654,5 @@ sprHookReal
 sprWallhook
 sprWireBlock
 sprExplosiveCube
+sprNotPauser
+sprite657

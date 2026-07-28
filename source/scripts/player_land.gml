@@ -3,6 +3,17 @@
 
 var landed_on_platform;landed_on_platform=argument0
 
+if ((onfire or vspeed>maxVspeed*3.5) and !landed_on_platform and theendisnigh) {
+    var possibility;
+    possibility=instance_place(x+hspeed,y+1,BreakableBlock)
+    if(possibility==noone and onfire) kill_player()
+    else {
+        with(possibility) {instance_destroy()}
+        onGround = false
+        exit
+    }
+}
+
 if (!landed_on_platform) vspeed=0
 
 walljumpboost=0
@@ -18,7 +29,7 @@ if (!onGround) {
 onGround=true
 coyoteTime=global.coyote_time
 
-if (onfire) kill_player()
+
 
 with(instance_place(x,y+1,TimedBreakable)) event_perform(ev_collision,Player)
 

@@ -1,4 +1,3 @@
 //gm82 fields begin
-type="pipes"
-tileset=bgGuyPipes32
+location=rmGuyFuture_9D467A71
 //gm82 fields end

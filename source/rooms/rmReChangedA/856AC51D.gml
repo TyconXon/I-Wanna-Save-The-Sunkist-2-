@@ -1,5 +1,5 @@
 //gm82 fields begin
-sprite_index=sprValve
+sprite_index=sprStemCell
 solid=false
 destroyOnTouch=true
 control=true

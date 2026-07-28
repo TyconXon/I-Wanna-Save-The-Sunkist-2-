@@ -16,6 +16,11 @@ action_id=603
 applies_to=self
 */
 good_bounce()
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -23,6 +28,11 @@ action_id=603
 applies_to=self
 */
 if (destroy_outside) instance_destroy()
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -33,3 +43,8 @@ applies_to=self
 //field vspeed: number
 //field gravity: number
 //field depth: number
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/

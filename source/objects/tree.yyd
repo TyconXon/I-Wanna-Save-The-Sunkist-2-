@@ -1,6 +1,5 @@
 |World
 |Player
-|KidGhost
 |Bullet
 +Parents
 	|PlayerKiller
@@ -75,7 +74,6 @@
 			|CherryRainbow
 		|MegaCherry
 		|CherryBounce
-		|CherryHoming
 	+Special Blocks
 		|ConveyorLeft
 		|ConveyorRight
@@ -252,10 +250,7 @@
 		|DotkidDisable
 		|DotkidKiller
 	+Keypick
-		|KeyDraw
-		|KeyWhite
 		|KeyRed
-		|KeyBlockWhite
 		|KeyBlockRed
 	+Walk the Ceiling
 		|SpinFlip
@@ -346,8 +341,6 @@
 		|OneTimeWater
 		|GravUpBlock
 		|GravDownBlock
-		|DownWater
-		|UpWater
 		|ShootRefresherL
 		|ShootRefresherR
 	|CoinFlip
@@ -505,6 +498,7 @@
 	|SoundEvent
 	|DialogEngine
 	|Afterimage
+	|KidGhost
 +Sunkist
 	+Generic
 		|Gibboulus
@@ -513,6 +507,7 @@
 		|Cannon
 		|AdvancedTeleporter
 		|Marker
+		|Piston
 		|PlayerClip
 		|NoKillZone
 		|FocusZone
@@ -523,20 +518,19 @@
 		|TriggerDrawCode
 		|TimerTimerTimer
 		|SunkitRain
-		|Piston
 		|TimedBreakable
 		|BuildingBlock
+		|BreakableBlock
 	+Component
 		|KnifeProjectile
 		|PortalOrb
 		|Portal
-		|StopSwitchBlockOff
-		|MoveSwitchBlockOff
 		|Emotion
 		|Explosion
 		|aSingleRain
 		|WowoOrb
 		|AshGrowthChild
+		|CherryHoming
 	+Prefabs
 		|Dog
 		|RiskOfRain
@@ -562,9 +556,18 @@
 		|CherryMove
 		|CheryStop
 		|CherryNoInput
+		|CherryDjump
 		|CherryNoVerticle
 		|StopSwitchBlock
 		|MoveSwitchBlock
+		|StopSwitchBlockOff
+		|MoveSwitchBlockOff
+	+Outsourced
+		|KeyDraw
+		|KeyBlockWhite
+		|KeyWhite
+		|DownWater
+		|UpWater
 	|Jumper
 	|ShootPusher
 	|StickyBlock
@@ -580,8 +583,8 @@
 	|ExcursionFunnel
 	|DoorBlock
 	|AshGrowth
-	|BreakableBlock
 	|PushBlockExplosive
+	|CherryyrrehC
 |PlayerStart
 |Block
 |Platform

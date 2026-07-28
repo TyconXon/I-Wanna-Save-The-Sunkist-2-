@@ -10,6 +10,16 @@ t=0
 attach=noone
 anglechange=0
 vflip=1
+#define Collision_IceField
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(other.savedhspeed==999) exit
+hspeed=other.savedhspeed
+vspeed=other.savedvspeed
+gravity=0
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

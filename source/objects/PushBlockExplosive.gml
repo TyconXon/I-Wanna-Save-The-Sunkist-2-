@@ -61,11 +61,19 @@ with (ConveyorRight)
 
 with(instance_place(x,y+grav*2,MovingSolid)){
     with (other){
+
                 if (place_free(x+other.hspeed,y))
                     hspeed=other.hspeed
                 else
                     move_contact_solid(90-90*sign(other.hspeed),other.hspeed)
-                }
+
+
+                if (place_free(x,y+other.vspeed))
+                    vspeed=other.vspeed
+                else
+                    move_contact_solid(90-90*sign(other.vspeed),other.vspeed)
+    }
+
 }
 with(instance_place(x,y+grav*2,ConveyerStick)){
     with (other){

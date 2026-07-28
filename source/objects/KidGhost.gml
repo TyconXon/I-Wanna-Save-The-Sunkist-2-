@@ -459,12 +459,6 @@ if (instance_place(x,y,Water3) || swt=="Water1" || swt=="Water3") {
 if (instance_place(x,y,Water1) || instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater) || swt=="Water2" || swt=="CatharsisWater") {
     if (vspeed*vflip>2) vspeed=2*vflip
 }
-with(instance_place(x,y,IceField)){
-   if(savedvspeed==999) continue;
-   if(!noy)other.vspeed=savedvspeed
-   if(!nox)other.hspeed=savedhspeed
-   if(floorlessgravity) other.gravity = 0
-}
 with(instance_place(x,y,ExcursionFunnel)) other.hspeed=spd
 with(instance_place(x,y,AirStop)) {if(image_angle=0)other.hspeed=0 else other.vspeed=0}
 

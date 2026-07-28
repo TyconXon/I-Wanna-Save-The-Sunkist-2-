@@ -1,3 +1,3 @@
 //gm82 fields begin
-inst=rmOFF_37C0E5C9
+BGM="isolatedshowers"
 //gm82 fields end

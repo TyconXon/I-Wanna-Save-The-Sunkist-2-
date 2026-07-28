@@ -12,24 +12,26 @@
 		|rmOriginal2
 		|rmReOriginal
 	+StevenPath
-		|rmChanged
 		|rmWhiteKnuckle
 		|rmExp
 		|rmGuyFuture
+		|rmRippy
+	+ChangedPath
 		|rmReChanged
 		|rmReChangedA
 		|rmReChangedB
 		|rmReChangedC
-	+KnifePath
+		|rmAsAbove
+		|rmAstralAlley
+	+OldPath
 		|rmS1
 		|rmRoR
 		|rmSunkistSavior
+		|rmChanged
 	+Continuations
 		|rmPortal
 		|rmOFF
 		|rmHawaii
-		|rmAsAbove
-		|rmRippy
 		|rmSecret
 	|rmHallway
 	|rmFinale

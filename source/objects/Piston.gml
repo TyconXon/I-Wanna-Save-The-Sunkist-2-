@@ -11,11 +11,15 @@ method="line"
 
 xgoal=0
 ygoal=0
-width=16
+thisx=x
+thisy=y
+width=image_xscale
 stretch=false
 murderer=false
 weld_parent = noone
 stationary = false
+
+jitter=false
 
 
 xOffset=0
@@ -35,8 +39,15 @@ with (weld_parent) {
     other.y = self.y - other.yOffset
 }
 
-thisx=x
-thisy=y
+if(jitter){
+    thisx=y+irandom(2)-1
+    thisx=x+irandom(2)-1
+}else{
+    thisx=x
+    thisy=y
+}
+
+if(inst != noone){
 
  if(center=="x" || center=="both"){
     xgoal=inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2);
@@ -51,6 +62,12 @@ thisy=y
     if(method!="line")thisy-=sprite_height/2
  }
  else ygoal=inst.y
+} else {} //Keep previous x and y
+
+if(jitter){
+    xgoal+= irandom(2)-1
+    ygoal+= irandom(2)-1
+}
 
 if(!murderer) exit;
 
@@ -82,6 +99,8 @@ Connects an instance to this position visually
 //field murderer: false - carefull: strip doesn't like rotations.
 //field weld_parent: instance - Follows this instance as if it were welded from this position
 //field stationary: false - Skip certain calculations. only if both ends don't move + no murdering
+//field width: number - A pixel value. By default, this is the image_xscale.
+//field jitter: false
 
 with (weld_parent) {
     other.xOffset = self.x - other.x
@@ -128,7 +147,7 @@ switch(method){
 
      draw_set_color(image_blend)
      draw_set_alpha(image_alpha)
-     draw_line_width(x,y,xgoal,ygoal,image_xscale)
+     draw_line_width(x,y,xgoal,ygoal,width)
      draw_set_color(c_white)
      draw_set_alpha(1.0)
 

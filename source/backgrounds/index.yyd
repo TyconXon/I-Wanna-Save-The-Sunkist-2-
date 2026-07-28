@@ -174,7 +174,7 @@ tile_sunkist
 
 bgExtendedGuyRock16
 background_white_off
-background_purple_off
+background_trans_off
 tile_white_off
 background_Stars
 tile_portal32

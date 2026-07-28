@@ -123,6 +123,7 @@ input_consume()
 global.teleSickness = 0
 deathMessage = "GAME OVER"
 graze = 32592045
+holdingxframes = 0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -394,9 +395,11 @@ if (!frozen) {
     }
 
     //vertical speed limit
-    if(not (key_down() && theendisnigh)){
+    if(not (key_down() && theendisnigh) and not onfire){
             if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
             else if (vflip==1) vspeed=min(vspeed,maxVspeed)
+    }else{
+          make_afterimage() if(vspeed>maxVspeed*3.5) {onfire=true;}
     }
     
     //update ground and platform detection
@@ -423,6 +426,12 @@ if (!frozen) {
         }
         if (key_jump(vi_pressed)) {
             player_jump()
+        }
+        if(key_skip()){
+            holdingxframes+=1
+        }else{
+              if(holdingxframes>250/dt) instance_create(x-(sprite_width/2),y-(32-12),WarpToHub)
+              holdingxframes=0
         }
         if (oneframe_buffer) {
             //minimum jump is a 2f with cancels disabled
@@ -614,8 +623,9 @@ if (sw) {
 if (instance_place(x,y,GuyWater)) {
     if (vspeed*vflip>gravity) vspeed=gravity*vflip
     djump=maxjumps
-    onfire=false
 }
+if(instance_place(x,y,AnyWater)) onfire=false
+
 if (instance_place(x,y,Water3) || swt=="Water1" || swt=="Water3") {
     if (vspeed*vflip>2) vspeed=2*vflip
     djump=1
@@ -1299,7 +1309,9 @@ if (!dead) {
 
     //draw hp bar if the setting to draw it on the player is on
     if (drawhp && instance_exists(HPMode)) draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(HPMode.hp/HPMode.maxhp)*100,0,HPMode.mincol,HPMode.maxcol,0,1,1)
-
+    draw_set_alpha(holdingxframes/(250/dt))
+    draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(holdingxframes/(250/dt))*100,c_black,c_gray,c_white,0,1,1)
+    draw_set_alpha(1)
     //draw godmode & infjump special bows
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

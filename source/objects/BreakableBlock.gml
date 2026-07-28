@@ -20,6 +20,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+sound_play_auto(global.break_sfx, random_range(0.8,1.2))
 if (tile) {
     i=instance_create(x+16,y+16,DestroyedBlock)
     i.bg=tile_get_background(tile)
@@ -95,7 +96,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play_auto(global.break_sfx, random_range(0.8,1.2))
+
 hspeed=other.hspeed/2
 vspeed=other.vspeed/2
 instance_destroy()

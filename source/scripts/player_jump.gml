@@ -35,7 +35,7 @@ if (vvvvvv) {
             if (global.use_momentum_values) {
                 with (instance_place(x,y+vflip,Platform)) other.hspeed+=hspeed
             }
-            sound_play_auto("sndJump")
+            if(object_index != KidGhost) sound_play_auto("sndJump")
             djump=1
             image_index=0
             trigger_broadcast(tr_playerjump)
@@ -55,7 +55,7 @@ if (vvvvvv) {
 
             //if(instance_place(x,y+1*vflip,AnyWater)) sound_play_auto_range("wade",7)
 
-            sound_play_auto("sndDJump")
+            if(object_index != KidGhost) sound_play_auto("sndDJump")
 
             if (djump<maxjumps) djump+=1
             if (djump>2) {

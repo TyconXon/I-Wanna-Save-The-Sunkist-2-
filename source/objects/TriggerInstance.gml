@@ -10,6 +10,7 @@ inst=noone
 
 user_event=noone
 trap_is_triggered=noone
+untrigger=32
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -17,8 +18,8 @@ action_id=603
 applies_to=self
 */
 if (instance_place(x,y,TriggerLock)) exit
-if (user_event!=noone)
-    with (inst) event_user(other.user_event)
+if (user_event==untrigger)
+    with (inst) event_trigger(tr_trapuntriggered)
 else
     with (inst) event_trigger(tr_traptriggered)
 
@@ -32,7 +33,7 @@ applies_to=self
 //field inst: instance
 //field visible: false
 //field sprite_index: sprite
-//field user_event: enum(trap_is_triggered,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+//field user_event: enum(untrigger,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
 
 /*desc
     This trigger object will activate a specific instance instead of TNT.

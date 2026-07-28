@@ -1,4 +1,4 @@
 //gm82 fields begin
-BGM="peppersteak"
+BGM="peper"
 unsyncedDeathSong="coma"
 //gm82 fields end

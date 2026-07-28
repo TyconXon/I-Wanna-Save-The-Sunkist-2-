@@ -126,6 +126,7 @@ else if (!dead) {
                 ghost = instance_create(x,y,KidGhost)
                 ghost.hspeed = hspeed
                 ghost.vspeed = vspeed
+                ghost.facing = facing
                 ghost.djump = djump
             }
 

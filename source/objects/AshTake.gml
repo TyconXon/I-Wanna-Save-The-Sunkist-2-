@@ -14,5 +14,6 @@ applies_to=self
 if (other.theendisnigh) {
     sound_play_auto("sndVCoin")
     other.theendisnigh=false
+    with(other) savedata("theendisnigh",theendisnigh)
     change_skin(skin_default)
 }

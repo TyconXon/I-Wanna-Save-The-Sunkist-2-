@@ -2,6 +2,7 @@
 +Sunkist
 	+Aiwana
 		|sprPauseblock
+		|sprNotPauser
 		|sprPauser9slice
 		|sprBlockJumpRefresher
 		|sprJumper
@@ -618,3 +619,4 @@
 |sprWallhook
 |sprWireBlock
 |sprExplosiveCube
+|sprite657
