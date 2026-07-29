@@ -409,6 +409,8 @@
 		|MikuBigCherryBlue
 		|MikuBounceCherry
 	|BossIntroduction
+	+Batter
+		|BatterBoss
 	|BossHealthbarClassic
 	|BossHealthbarNew
 	|AvoidanceBullet
@@ -593,6 +595,11 @@
 |SpikeL
 |SpikeR
 |SpikeU
++PK SPIKE
+	|aSpikeD
+	|aSpikeL
+	|aSpikeR
+	|aSpikeU
 +Cursed spikes
 	|SpikeTR
 	|SpikeLT

@@ -310,6 +310,7 @@
 	|sprIWBTGWater
 	|sprIWBTGWater9slice
 	|sprRefreshingWater9slice
+	|sprRefreshingWaterWhite
 	|sprPastelWater2
 	|sprWallJUmpLEditor
 	|sprWallJumpL
@@ -619,4 +620,4 @@
 |sprWallhook
 |sprWireBlock
 |sprExplosiveCube
-|sprite657
+|sprMan

@@ -252,6 +252,7 @@
 		|wait_frames
 		|boss_initialize
 	|boss_Template
+	|boss_Batter
 	|boss_BigCherry
 	|boss_Utah
 +camera
