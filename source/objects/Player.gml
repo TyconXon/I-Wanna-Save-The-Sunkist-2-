@@ -880,7 +880,7 @@ if (iframes) {
     iframes-=1
 } else {
     with (instance_place(x,y,PlayerKiller)) kill_player()
-    if(distance_to_object(PlayerKiller)<2 and !sound_isplaying(graze) and (vspeed or hspeed)) graze = sound_play_auto("snd_graze")
+    if(sound_exists("snd_graze")) if(distance_to_object(PlayerKiller)<2 and !sound_isplaying(graze) and (vspeed or hspeed)) graze = sound_play_auto("snd_graze")
     with (instance_place(x,y,PlayerKillerActive)) {
         if (active) kill_player()
     }

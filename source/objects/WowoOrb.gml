@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(!sound_exists("prima") or !sound_exists("dog")) exit
+if(!sound_exists("prima") or !sound_exists("dog")) {instance_destroy() exit}
 
 if(!key_skip()) soundInd = sound_loop("prima")
 else soundInd = sound_loop("dog")
@@ -16,7 +16,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_stop(soundInd)
+if(variable_local_exists("soundInd")) sound_stop(soundInd)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
