@@ -51,3 +51,5 @@ applies_to=self
 //field owner: instance
 if(!loop) sound = sound_play_ex(sound,vol,pitch,pan)
 else sound = sound_loop_ex(sound,vol,pitch,pan)
+
+if (!sound_exists(sound)) instance_destroy();
