@@ -1,3 +1,4 @@
 //gm82 fields begin
-roomTo=rmChanged
+roomTo=rmReChanged
+hallway=true
 //gm82 fields end

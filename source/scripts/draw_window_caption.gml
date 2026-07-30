@@ -1,4 +1,4 @@
-if (settings("fullscreen") && !global.pause && is_ingame() && global.fullscreen_caption_visible && settings("caption visible")) {
+if (settings("fullscreen") && !global.pause && is_ingame() and global.gen_thumb == 0 and !instance_exists(NoCaptionHere) && global.fullscreen_caption_visible && settings("caption visible")) {
     if (abs(Player.y-view_yview)<48 && !Player.dead) caption_opacity=max(1/8,caption_opacity-(1/8)*dt)
     else caption_opacity=min(1,caption_opacity+(1/8)*dt)
     draw_set_alpha(caption_opacity)

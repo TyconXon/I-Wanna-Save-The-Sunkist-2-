@@ -14,6 +14,7 @@ savedatap("width",1)
 savedatap("height",1)
 savedatap("obj",Player)
 savedatap("itemcount",0)
+savedatap("coins",0)
 
 savedatap("room",global.first_room)
 
@@ -32,6 +33,7 @@ savedatap("slomof",0)
 savedatap("numjumps", 2)
 
 ds_map_clear(global.persistmap)
+ds_map_clear(global.instantpersistmap)
 
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1

@@ -54,6 +54,7 @@ with (Player) if (!dead || argument0) {
     savedata("weapon",global.player_weapon)
 
     savedata("persistent hashmap",ds_map_write(global.persistmap))
+    savedatap("instant persistent hashmap",ds_map_write(global.instantpersistmap))
 
     savedata("slomo",global.slomo)
     savedata("slomoto",global.slomoto)

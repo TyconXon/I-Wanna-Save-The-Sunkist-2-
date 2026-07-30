@@ -1,3 +1,4 @@
 //gm82 fields begin
-BGM="amb_future"
+type="Permanent"
+value=1
 //gm82 fields end

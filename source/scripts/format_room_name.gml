@@ -1,5 +1,6 @@
 ///format_room_name(room)
 var fin;
+if(!room_exists(argument0)) return "DESTINATION";
 fin = room_get_name(argument0) // get name
 fin = string_trim(fin, "rm") // remove rm
 

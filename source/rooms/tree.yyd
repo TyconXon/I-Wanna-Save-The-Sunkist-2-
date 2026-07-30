@@ -3,7 +3,7 @@
 |rmMenu
 |rmOptions
 |rmTemplate
-|rmForgotten
+|rmHallway
 +Sunkist
 	|rmPalace
 	|rmPathToTheDirectory
@@ -34,7 +34,7 @@
 		|rmOFF
 		|rmHawaii
 		|rmSecret
-	|rmHallway
+		|rmForgotten
 	|rmFinale
 +Examples
 	|rmDifficulty

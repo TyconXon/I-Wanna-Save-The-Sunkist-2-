@@ -11,7 +11,7 @@ image_blend=c_red
 dx=x+240*select+65
 
 asksel=0
-selectedCustomSave = 0
+selectedCustomSave = settings("selectedCustomSave")
 state=""
 
 thumb[0]=noone
@@ -170,6 +170,7 @@ applies_to=self
 */
 //remember the last file
 settings("lastfile",select)
+if(select==4) settings("selectedCustomSave",selectedCustomSave)
 settings_write()
 
 //disable any system messages when leaving the menu

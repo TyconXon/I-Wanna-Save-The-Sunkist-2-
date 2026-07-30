@@ -10,6 +10,7 @@ with (Player) {
     savedata("beamstate",beamstate)
     savedata("fox",fox)
     savedata("portalgun", portalgun)
+    //savedata("levelcoins",levelcoins)
 }
 
 savedata("dialog",de_save())

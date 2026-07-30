@@ -10,6 +10,7 @@ warpToPlayerstart=noone
 warpid=""
 warpsound="lowtele"
 autosave=false
+hallway=false
 roomTo=room
 transparent=0
 #define Collision_Player
@@ -31,7 +32,12 @@ if (warpToPlayerstart) {
         persistent=1
     }
     if (warpCoord[0]==noone && warpCoord[1]==noone) {
+        if(!hallway){
         warp_to(roomTo)
+        }else{
+        global.nextroom = roomTo
+        warp_to(rmHallway)
+        }
     } else {
         warp_to(roomTo,warpCoord[0],warpCoord[1])
     }
@@ -51,6 +57,7 @@ applies_to=self
 //field warpsound: string
 //field transparent: false
 //field autosave: false
+//field hallway: false
 
 if (persistent && warpsound!="") {
     //we are coming from a previous room, and we have to play a sound

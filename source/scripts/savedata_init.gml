@@ -36,6 +36,7 @@ global.savemap=ds_map_create()
 global.savemap_persistent=ds_map_create()
 
 global.persistmap=ds_map_create()
+global.instantpersistmap=ds_map_create()
 
 global.statgridh=1
 global.statgrid=ds_grid_create(3,1)

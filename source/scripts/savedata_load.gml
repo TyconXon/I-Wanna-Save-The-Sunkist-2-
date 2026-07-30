@@ -18,6 +18,7 @@ if (global.difficulty_room!=noone && room==rmMenu) {
 } else {
     if (savedata("saved")) {
         global.player_skin=savedata("skin")
+
         global.player_weapon=savedata("weapon")
 
         i=instance_create(savedata("x"),savedata("y"),savedata("obj"))
@@ -30,6 +31,8 @@ if (global.difficulty_room!=noone && room==rmMenu) {
         difficulty=savedata("diff")
 
         ds_map_read(global.persistmap,savedata("persistent hashmap"))
+        ds_map_read(global.instantpersistmap,savedatap("instant persistent hashmap"))
+
 
         global.onload_trigger=true
     }

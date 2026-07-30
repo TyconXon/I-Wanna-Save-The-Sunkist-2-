@@ -1,4 +1,3 @@
 //gm82 fields begin
-type="pipes"
-tileset=bgGuyPipes32
+visible=false
 //gm82 fields end

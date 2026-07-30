@@ -27,4 +27,6 @@ settings("hundredfps", false)
 settings("ghost", 1)
 settings("pause sounds", false)
 
+settings("selectedCustomSave", 4)
+
 input_default()

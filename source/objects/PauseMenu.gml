@@ -190,7 +190,15 @@ draw_set_halign(2)
         "Song: " + song_name(string(global.music)) +"#" +
         batt_info
     )
-draw_set_valign(0)
 draw_set_halign(0)
+draw_text(40,global.height-36,
+      "Money: "+string(savedatap("coins")) + "#" +
+      "RoomCoins: "+string(Player.levelcoins) + "#" +
+
+      "TempCoins: "+string(Player.temporarycoins)
+      )
+draw_set_valign(0)
+
+
 
 draw_set_color($ffffff)

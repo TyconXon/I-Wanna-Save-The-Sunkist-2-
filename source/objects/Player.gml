@@ -51,6 +51,8 @@ vvvvvv=false
 portalgun=false
 theendisnigh=false
 fox=false
+levelcoins=0
+temporarycoins=0
 
 custom_load()
 
@@ -1230,7 +1232,7 @@ if (instance_place(x,y,ScreenWrap)) {
             } else {
                 //death.
                 if not (!global.die_outside_top && y<0 && x=median(0,x,room_width)) 
-                    if (global.die_outside_room || instance_place(x,y,DieOutside)) kill_player()
+                    if ((global.die_outside_room and !instance_exists(DieOutside)) || instance_place(x,y,DieOutside)) kill_player()
             }
         }
     }

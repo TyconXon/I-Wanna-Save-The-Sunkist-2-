@@ -393,6 +393,7 @@
 	|TimerFreeze
 	|HitCount
 	|HPMode
+	|NoCaptionHere
 +Bosses
 	+Big Cherry
 		|BigCherry
