@@ -4,6 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if(!sound_exists("prima") or !sound_exists("dog")) exit
+
 if(!key_skip()) soundInd = sound_loop("prima")
 else soundInd = sound_loop("dog")
 doPlayer=true

@@ -214,6 +214,7 @@ global.debug_jump=false
 global.debug_hitbox=false
 global.debug_autofire=false
 global.debug_autofire_counter=0
+global.debug_messages_off=false
 
 profiler_setup()
 
