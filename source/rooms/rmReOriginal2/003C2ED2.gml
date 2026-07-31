@@ -1,4 +1,3 @@
 //gm82 fields begin
-hspeed=3
-vspeed=0
+BGM="Seasons"
 //gm82 fields end

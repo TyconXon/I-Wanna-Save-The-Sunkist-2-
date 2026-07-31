@@ -8,43 +8,23 @@ if (event_type==ev_other && event_number==ev_room_start) {
 
 if (event_type==ev_create) {
     //initialize the boss and create any resources needed by it
-    hp=30
-        
-        //Run with:
-        possibleAttacks[0] = "prep_courage" //'Metal'. Spike barrage.
-        possibleAttacks[1] = "prep_grace" //'Plastic'. Something with water
-        possibleAttacks[2] = "prep_dementia" //'Smoke'. 
-        possibleAttacks[3] = "prep_belief" //'Meat'. 
-        
-        possibleAttacks[4] = "prep_furious" //... Homerun
+    hp=15
     
     //set this to 0 to remove the popup subtitle
-    make_subtitle=1
-    name="The Batter"
+    make_subtitle=0
+    name="Alpha"
     subtitle="OFF" 
-
-    lock_controls()
-    sound_stop_music()
-    instance_create(x,y,NoCaptionHere)
     
     state="starting"
-    
     vulnerable=false
     flash=0
-    facing=1
     
-    image_speed=dt/3
+    image_speed=dt/10
     exit
 }
 
 if (event_type==ev_draw) {
-    if(state=="starting"){
-       draw_sign_text(0,0,fntFileBig,c_white,"Purification in progress...",true)
-    }    
-
-    image_xscale=facing*2
     draw_self()
-    
     exit
 }
 
@@ -67,21 +47,19 @@ if (event_type==ev_step) {
     }
 
     //take damage
-    with (instance_place(x,y,Bullet)) with (other) {
+    if (vulnerable) with (instance_place(x,y,Bullet)) with (other) {
+        hp-=1
+        if (hp<=0) {
+            //defeated
+            sound_play_auto("sndDeath")
+            instance_destroy()
+        } else {
+            sound_play_auto("sndBossHit")
+            vulnerable=false
+            flash=50
+            image_alpha=0.5                         
+        } 
         instance_destroy_other()
-        if (vulnerable){
-            hp-=1
-            if (hp<=0) {
-                //defeated
-                sound_play_auto("sndDeath")
-                instance_destroy()
-            } else {
-                sound_play_auto("sndBossHit")
-                vulnerable=false
-                flash=25
-                image_alpha=0.5                         
-            } 
-        }
     }
 
     //flashing
@@ -92,18 +70,13 @@ if (event_type==ev_step) {
             image_alpha=1
         }
     }     
-    if(direction_to_object(Player)<90 or direction_to_object(Player)>270) facing=-1
-    else facing = 1
 
     //main boss state machine
     {
         //first state
         if (state=="starting") {
             if (wait_frames(60)) {
-                unlock_controls()
-                sound_play_music("peper",1)
                 vulnerable=true
-                with(NoCaptionHere) instance_destroy()
                 state="active"
             }
         }

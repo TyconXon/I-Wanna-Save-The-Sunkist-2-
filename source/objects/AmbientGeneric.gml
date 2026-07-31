@@ -49,6 +49,10 @@ applies_to=self
         //field radius: radius
 //field loop: true
 //field owner: instance
+
+
+if (!sound_exists(sound)) instance_destroy();
+
 if(!loop) sound = sound_play_ex(sound,vol,pitch,pan)
 else sound = sound_loop_ex(sound,vol,pitch,pan)
 

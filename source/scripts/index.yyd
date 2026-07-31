@@ -392,3 +392,6 @@ resource_replace
 import_room
 import_object
 import_now
+boss_Alpha
+boss_Epsilon
+boss_Omega

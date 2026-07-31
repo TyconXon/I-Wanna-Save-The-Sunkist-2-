@@ -259,6 +259,9 @@
 		|wait_frames
 		|boss_initialize
 	|boss_Template
+	|boss_Alpha
+	|boss_Omega
+	|boss_Epsilon
 	|boss_Batter
 	|boss_BigCherry
 	|boss_Utah

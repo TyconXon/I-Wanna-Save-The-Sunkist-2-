@@ -6,6 +6,8 @@ var sound,vol,pitch,pan,xcenter,ycenter;
 
 if (argument_count==0) {show_error("Called sound_play_auto with no arguments.",0) exit}
 
+if (!sound_exists(argument0)) exit;
+
 sound=argument[0]
 
 if (instance_exists(Player)) {
