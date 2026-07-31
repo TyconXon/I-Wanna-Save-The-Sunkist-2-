@@ -47,7 +47,7 @@ if(jitter){
     thisy=y
 }
 
-if(inst != noone){
+if(instance_exists(inst)){
 
  if(center=="x" || center=="both"){
     xgoal=inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2);
@@ -143,7 +143,7 @@ if(inst == noone) exit;
 switch(method){
  case "line":
      //copy the color of sequenced lines
-     if(inst.object_index == Piston) with(inst) other.image_blend = image_blend
+     if(instance_exists(inst)) if(inst.object_index == Piston) with(inst) other.image_blend = image_blend
 
      draw_set_color(image_blend)
      draw_set_alpha(image_alpha)

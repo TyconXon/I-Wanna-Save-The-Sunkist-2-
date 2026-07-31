@@ -261,3 +261,4 @@ global.release_mode=false
     global.use_momentum_values=false
     
     global.wasDead = false
+    global.internetIndex = noone

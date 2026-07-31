@@ -15,6 +15,13 @@
 	|format_room_name
 	|song_name
 	|shifting_color
+	|truthy
+	+import
+		|import_room
+		|import_object
+		|resource_replace
+		|palace_getout
+		|import_now
 +CUSTOM
 	+game options
 		|custom_options

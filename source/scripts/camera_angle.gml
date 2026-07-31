@@ -1,4 +1,4 @@
-///camera_angle(value)
+///(value)
 ///camera_angle():value
 //change view angle
 

@@ -23,6 +23,9 @@ if(!global.pause){
             i.doPlayer=false
         }
     }
+    if(mouse_wheel_up() and !cutscene){if(camera_get_zoom()<32) camera_zoom(camera_get_zoom()+0.1*dt) show_message_right("zoom: "+string(camera_get_zoom()))
+    }else if(mouse_wheel_down() and !cutscene) {if(camera_get_zoom()>1) camera_zoom(max(1,camera_get_zoom()-0.1*dt)) show_message_right("zoom: "+string(camera_get_zoom()))
+    }else if(mouse_check_button(mb_middle) and !cutscene) camera_zoom(1)
 }
 
 //pause

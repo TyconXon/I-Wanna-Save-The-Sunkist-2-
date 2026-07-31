@@ -1,6 +1,7 @@
 //gm82 fields begin
 control=true
 trigger_on_create=true
+trigger_on_view=true
 sunkist=true
 bounceOffWalls=true
 randomize_field="hsp"

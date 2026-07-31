@@ -116,7 +116,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-
 if(variable_local_exists("weld_parent")){
     with (weld_parent) {
         other.x = self.x - other.xOffset
@@ -139,7 +138,24 @@ if(variable_local_exists("deactivate_behavior")){
 }
 
 if (!trg) exit
-else if (trap_delay) {
+
+if(truthy("trigger_on_view")) {
+    if(!inside_view()){
+       truthy("pHSP",hspeed)
+       truthy("pVSP",vspeed)
+       hspeed = 0
+       vspeed = 0
+       if(truthy("wasOnScreen")) wasOnScreen=undefined
+       exit
+    }else{
+      if(!truthy("wasOnScreen", true)){
+         event_trigger(tr_traptriggered)
+         if(variable_local_exists("pHSP")) {hspeed=pHSP;vspeed=pVSP;pHSP=undefined;pVSP=undefined}
+      }
+    }
+}
+
+if (trap_delay) {
     if(trap_shake){
         if (trap_delay mod 4 < 2) {
             if(vsp) x=xstart-1
@@ -457,6 +473,13 @@ applies_to=self
     //field emotion: enum(em_suprise,em_question,em_sing,em_love,em_mad,em_sad,em_bad,em_dots,em_idea,em_sleep)
     //field randomize_field: string - Numeric field to randomize
             //field rand_range: xy - The limites of said field
+
+            
+//Nothing defined? Turn into nothin.
+if(!truthy("preactiveMovement") and !truthy("sunkist")
+ and !truthy("control") and !truthy("movement")
+ and !truthy("scaling_rotation") and !truthy("advanced_movement")
+ and object_find(  "a"+object_get_name(object_index) ) !=noone   ) instance_change(object_find("a"+object_get_name(object_index)),false)
 
 if (!variable_local_exists("variables_defined")) {
     show_error("Error in instance "+string(id)+" of object "+object_get_name(object_index)+": Gizmo parent variables are not defined. Please use event_inherited()/Call Event on your object's Create event to correctly set up "+object_get_name(object_get_parent(object_index))+" inheritance.",1)

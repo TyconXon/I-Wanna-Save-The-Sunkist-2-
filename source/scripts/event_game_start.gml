@@ -37,10 +37,9 @@ if (is_in_temp) {
     }
 } else if (no_data) {
     show_error(
-        "Data folder not found. If you extracted the game from a compressed archive like 7z, zip or rar, make sure you extract all the files. If you continue, the game will not show any more errors!",
-        false
+        "Data folder not found. If you extracted the game from a compressed archive like 7z, zip or rar, make sure you extract all the files.",
+        true
     )
-    error_set_enabled(false)
 }
 
 io_set_roomend_clear(0)
@@ -214,7 +213,6 @@ global.debug_jump=false
 global.debug_hitbox=false
 global.debug_autofire=false
 global.debug_autofire_counter=0
-global.debug_messages_off=false
 
 profiler_setup()
 
