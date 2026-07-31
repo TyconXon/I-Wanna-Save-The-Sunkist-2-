@@ -18,6 +18,11 @@ if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control
     if(Player != noone) with(Player) {execute_string(other.debug_execute_code)}
     else execute_string(debug_execute_code)
 }
+if (!debug_mode && keyboard_check_pressed(ord("R")) && keyboard_check(vk_control)) {
+    debug_execute_code=get_string("Enter code to execute:",debug_execute_code)
+    if(Player != noone) with(Player) {alert(execute_string(other.debug_execute_code))}
+    else execute_string(debug_execute_code)
+}
 
 target_speed=global.game_speed
 
@@ -73,6 +78,12 @@ if (is_ingame()) {
         global.debug_jump=!global.debug_jump
         if (global.debug_jump) show_message_right("infinite jump on")
         else show_message_right("infinite jump off")
+    }
+    if (keyboard_check_pressed(vk_caps)){
+        global.debug_messages_off=!global.debug_messages_off
+        error_set_enabled(global.debug_messages_off)
+        if ( global.debug_messages_off) show_message_right("errors on")
+        else show_message_right("errors off")
     }
 
     if (keyboard_check_pressed(ord("H"))) {
