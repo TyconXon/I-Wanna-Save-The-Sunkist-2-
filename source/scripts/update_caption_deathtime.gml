@@ -1,6 +1,5 @@
 if (global.show_deathtime && room!=global.difficulty_room) {
     if (global.num_difficulties>1) diff=" - "+global.name_difficulties[difficulty] else diff=""
-
     room_caption=str_cat(
         global.game_title,
         " - "+global.savename,
@@ -12,3 +11,5 @@ if (global.show_deathtime && room!=global.difficulty_room) {
         pick(savedatap("clear"),""," - "+lang("fileclear"))
     )
 } else room_caption=global.game_title
+
+if (instance_exists(NoCaptionHere)) if(NoCaptionHere.caption_override != "") room_caption=NoCaptionHere.caption_override

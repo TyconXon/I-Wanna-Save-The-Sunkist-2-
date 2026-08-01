@@ -20,7 +20,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-kill_player()
+if(alarm[0]==0) kill_player()
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -41,9 +41,13 @@ action_id=603
 applies_to=self
 */
 if(alarm[0]!=-1) {
-     d3d_set_fog(1,$000000,0,0)
+     d3d_set_fog(1,c_black,0,0)
      image_alpha = 1-(alarm[0] / refreshTime)
      image_speed = 0
+     image_index = 1
+     draw_self()
      d3d_set_fog(0,0,0,0)
-}else{image_speed=1/15}
+     exit
+}
+image_speed=1/15
 draw_self()

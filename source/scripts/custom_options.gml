@@ -9,7 +9,7 @@ add_option(opt_screen_scale)
 add_option(opt_fullscreen_filter)
 add_option(opt_caption)
 //add_option(opt_screenshake)
-add_option(opt_left_right)
+//add_option(opt_left_right) //The player shouldn't have this changed
 add_option(opt_animation)
 //if (global.maker_vines) add_option(opt_makervine)
 add_option(opt_celeste)

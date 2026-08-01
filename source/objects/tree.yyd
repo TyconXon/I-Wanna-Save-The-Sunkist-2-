@@ -223,6 +223,7 @@
 	+Events
 		|onEventSave
 		|onEventLoad
+		|onPlayerJump
 	|TrapStop
 	|TriggerGroup
 	|TrapRedirect
@@ -560,7 +561,7 @@
 		|CheryStop
 		|CherryNoInput
 		|CherryDjump
-		|CherryNoVerticle
+		|CherryNoVertical
 		|StopSwitchBlock
 		|MoveSwitchBlock
 		|StopSwitchBlockOff

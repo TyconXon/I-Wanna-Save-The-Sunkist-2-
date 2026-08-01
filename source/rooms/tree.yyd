@@ -9,8 +9,6 @@
 	|rmPathToTheDirectory
 	|rmVent
 	+CrowbarPath
-		|rmOriginal
-		|rmOriginal2
 		|rmReOriginal
 		|rmReOriginal2
 	+StevenPath
@@ -25,15 +23,17 @@
 		|rmReChangedC
 		|rmAsAbove
 		|rmAstralAlley
+		|rmHawaii
 	+OldPath
 		|rmS1
 		|rmRoR
 		|rmSunkistSavior
 		|rmChanged
+		|rmOriginal
+		|rmOriginal2
 	+Continuations
 		|rmPortal
 		|rmOFF
-		|rmHawaii
 		|rmSecret
 		|rmForgotten
 	|rmFinale

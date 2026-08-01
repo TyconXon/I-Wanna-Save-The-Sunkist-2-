@@ -544,7 +544,7 @@ StopSwitchBlockOff
 MoveSwitchBlock
 MoveSwitchBlockOff
 CherryNoInput
-CherryNoVerticle
+CherryNoVertical
 FocusZone
 BlinkingCherry
 SpikeTR
@@ -613,3 +613,4 @@ aSpikeR
 aSpikeU
 BatterBoss
 NoCaptionHere
+onPlayerJump

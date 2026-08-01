@@ -38,6 +38,8 @@ applies_to=self
         //field image_speed: number
         //field image_index: number
 //field visible: true
+
+if(!visible) {visible=true;image_alpha=0}
 #define Trigger_Draw End
 /*"/*'/**//* YYD ACTION
 lib_id=1
