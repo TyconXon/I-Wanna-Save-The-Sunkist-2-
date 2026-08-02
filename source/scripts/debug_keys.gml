@@ -19,9 +19,9 @@ if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control
     else execute_string(debug_execute_code)
 }
 if (!debug_mode && keyboard_check_pressed(ord("R")) && keyboard_check(vk_control)) {
-    debug_execute_code=get_string("Enter code to execute:",debug_execute_code)
+    debug_execute_code=get_string("Enter code to alert:",debug_execute_code)
     if(Player != noone) with(Player) {alert(execute_string(other.debug_execute_code))}
-    else execute_string(debug_execute_code)
+    else alert(execute_string(debug_execute_code))
 }
 
 target_speed=global.game_speed

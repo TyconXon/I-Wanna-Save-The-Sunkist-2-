@@ -1,4 +1,4 @@
 //gm82 fields begin
-BGM="peper"
-unsyncedDeathSong="coma"
+movement=true
+grav=0.2
 //gm82 fields end

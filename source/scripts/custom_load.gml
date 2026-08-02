@@ -17,5 +17,5 @@ with (Player) {
 
 
 de_load(savedata("dialog"))
-
+camera_borders(savedata("cameraBorders"))
 //add your custom load code here

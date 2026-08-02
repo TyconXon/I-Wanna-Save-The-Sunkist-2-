@@ -691,6 +691,25 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///killer detection
+//must be done after collision to ensure fairness
+
+if (iframes) {
+    //invincible
+    flashing=iframes
+    iframes-=1
+} else {
+    image_blend=c_white
+    if (instance_place(x,y,PlayerKiller)) image_blend=c_red
+    with (instance_place(x,y,PlayerKillerActive)) {
+        if (active) with(other) image_blend=c_red
+    }
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 ///update sprite
 script_execute(global.player_skin,"step")
 
@@ -1005,7 +1024,7 @@ action_id=603
 applies_to=self
 */
 ///skin draw
-d3d_set_fog(1,c_white,0,0)
+d3d_set_fog(1,image_blend,0,0)
 draw_set_alpha(0.25)
 
 if(fox)draw_sprite_ext(sprKitsuneTail,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

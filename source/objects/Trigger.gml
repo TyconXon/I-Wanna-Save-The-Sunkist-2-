@@ -25,6 +25,12 @@ if (group) {
 } else {l=0 r=0 t=0 b=0}
 
 
+//destroy same color triggerlocks
+with (mylock)
+    if (group==instance_place(x,y,TriggerGroup))
+        if (x>=l && x<r && y>=t && y<b) or (!group)
+            instance_destroy()
+
 //fire same color triggers
 with (mytrig)
     if (group==instance_place(x,y,TriggerGroup))

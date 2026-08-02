@@ -76,6 +76,11 @@ i=0 repeat (music_count) {
     sound_add_directory_ext(avoid_dir,music_extensions[i],1,1,"layer2_")
 i+=1}
 
+avoid_dir=music_dir+"noloop\"
+i=0 repeat (music_count) {
+    sound_add_directory_ext(avoid_dir,music_extensions[i],1,1,"layer1_")
+    sound_add_directory_ext(avoid_dir,music_extensions[i],1,1,"layer2_")
+i+=1}
 //load some extra data to setup music
 custom_music_effects()
 custom_sound_properties()

@@ -12,6 +12,7 @@ applies_to=self
 t = 0
 direction = point_direction(x, y, Player.x, Player.y)
 speed=5
+turning=15
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -22,7 +23,7 @@ t+=1
 
 if(t<=50*2){
     if(t mod 10 != 0 )exit;
-    direction = approach_angle(direction,direction_to_object(Player),25)
+    direction = approach_angle(direction,direction_to_object(Player),turning)
     image_angle=direction
 }else{
     direction=270

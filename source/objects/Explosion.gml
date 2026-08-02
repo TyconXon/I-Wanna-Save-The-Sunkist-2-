@@ -17,7 +17,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(image_index>4) exit
+if(image_index> 13) exit
 with(other) if(!instance_place(x,y,AnyWater)) with(other) kill_player()
 #define Other_7
 /*"/*'/**//* YYD ACTION

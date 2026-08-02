@@ -401,7 +401,7 @@ if (!frozen) {
             if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
             else if (vflip==1) vspeed=min(vspeed,maxVspeed)
     }else{
-          make_afterimage() if(vspeed>maxVspeed*3.5) {onfire=true;}
+          make_afterimage() if(vspeed>maxVspeed*1.75) {onfire=true;}
     }
     
     //update ground and platform detection
@@ -556,9 +556,10 @@ if(theendisnigh){
     }else{hanging=false; }
 }else{hanging=false; }
 
+/*
 if(theendisnigh and key_down()){
   hitthing = instance_place(x-sign(hspeed),y+1,Block)
-  if(!key_jump() and hitthing!=noone and instance_place(approach(x,hitthing.x,1),hitthing.bbox_top-15,Block) == noone  ){
+  if(!key_jump() and hitthing!=noone) if (instance_place(approach(x,hitthing.x,1),hitthing.bbox_top-15,Block) == noone  ){
     if(bbox_top < hitthing.bbox_top){
                 y=hitthing.y
                 vspeed = 0
@@ -568,7 +569,7 @@ if(theendisnigh and key_down()){
 
     }else{hanging=false;}
   }
-}
+}*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -1224,6 +1225,7 @@ if (instance_place(x,y,ScreenWrap)) {
                 global.sectionwarp=true
                 global.warpfromx=x
                 global.warpfromy=y
+                if(roomTo==noone)roomTo=rmForgotten
                 room_goto(roomTo)
             }
         } else {
@@ -1234,6 +1236,7 @@ if (instance_place(x,y,ScreenWrap)) {
                         //warp isn't set up correctly
                         instance_destroy()
                     } else if (roomTo!=room) {
+                        if(roomTo == noone) roomTo = rmForgotten
                         //warp!
                         input_clear()
                         if (warpCoord[0]==noone && warpCoord[1]==noone) {

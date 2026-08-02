@@ -25,6 +25,7 @@ if (event_type==ev_create) {
 
     lock_controls()
     sound_stop_music()
+    
     instance_create(x,y,NoCaptionHere)
     
     state="starting"
@@ -32,6 +33,16 @@ if (event_type==ev_create) {
     vulnerable=false
     flash=0
     facing=1
+    
+    bpm=109
+    beat=4
+    
+    
+    increment=(beat*bpm)/(global.game_speed*60)
+    
+    store=0
+    timer=0
+    sound_play_synced("peper")
     
     image_speed=dt/3
     exit
@@ -55,6 +66,16 @@ if (event_type==ev_destroy) {
 }
 
 if (event_type==ev_step) {
+    //Avoidance
+    store+=increment
+    inc=round(store)
+    store-=inc
+    
+    oldtimer=timer
+    timer+=inc
+    
+    current_timer=0
+    
     //do damage
     with (instance_place(x,y,Player)) kill_player()
     
@@ -99,9 +120,8 @@ if (event_type==ev_step) {
     {
         //first state
         if (state=="starting") {
-            if (wait_frames(60)) {
+            if (wait_frames(9*50)) {
                 unlock_controls()
-                sound_play_music("peper",1)
                 vulnerable=true
                 with(NoCaptionHere) instance_destroy()
                 state="active"
@@ -109,10 +129,10 @@ if (event_type==ev_step) {
         }
         
         //attack!
-        if (state=="active") {
-            if (wait_frames(90)) {
-                o=instance_create_moving(x,y,Cherry,3*dt,point_direction(x,y,Player.x,Player.y))
-            }
+    
+        repeat(30) if (wait_timer(4)) if (state=="active"){
+            o=instance_create_moving(x,y,CherryHoming,6*dt,point_direction(x,y,Player.x,Player.y))
         }
     }
+    
 }

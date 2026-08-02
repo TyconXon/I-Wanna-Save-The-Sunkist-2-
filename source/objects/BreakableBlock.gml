@@ -9,6 +9,7 @@ myhealth=1
 doExplosions=true
 doBullets=false
 doPlayerKillers=true
+activateOnDeath =noone
 
 if (!tile) {
     show_error("BreakBlock at "+string(x)+","+string(y)+" doesn't have a tile to destroy",0)
@@ -35,6 +36,7 @@ if (tile) {
 
 with (instance_place(x,y,WallJumpR)) instance_destroy()
 with (instance_place(x,y,WallJumpL)) instance_destroy()
+with (activateOnDeath) event_trigger(tr_traptriggered)
 #define Collision_PlayerKiller
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -90,6 +92,7 @@ applies_to=self
 //field doPlayerKillers: true
 //field doBullets: false
         //field myhealth: number
+//field activateOnDeath: instance - Instance to activate when this is destroyed
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

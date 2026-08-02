@@ -14,5 +14,5 @@ with (Player) {
 }
 
 savedata("dialog",de_save())
-
+savedata("cameraBorders",camera_get_borders())
 //add your custom save code here

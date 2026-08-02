@@ -23,7 +23,6 @@
 		|rmReChangedC
 		|rmAsAbove
 		|rmAstralAlley
-		|rmHawaii
 	+OldPath
 		|rmS1
 		|rmRoR
@@ -36,6 +35,8 @@
 		|rmOFF
 		|rmSecret
 		|rmForgotten
+		|rmHawaii
+		|rmTrap
 	|rmFinale
 +Examples
 	|rmDifficulty

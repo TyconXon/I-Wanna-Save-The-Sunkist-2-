@@ -158,14 +158,14 @@ if(truthy("trigger_on_view")) {
 if (trap_delay) {
     if(trap_shake){
         if (trap_delay mod 4 < 2) {
-            if(vsp) x=xstart-1
-            if(hsp) y=ystart-1
+            if(abs(vsp)) x=xstart-1
+            if abs(hsp) y=ystart-1
         } else {
-            if(vsp) x=xstart+1
-            if(hsp) y=ystart+1
+            if abs(vsp) x=xstart+1
+            if abs(hsp) y=ystart+1
         }
     }
-    trap_delay-=1
+    if((!Player.dead and truthy("stopOnDeath")) or !variable_local_exists("stopOnDeath")) trap_delay-=1
     if (trap_delay<=0) event_trigger(tr_traptriggered)
     exit
 }
@@ -189,12 +189,14 @@ if(variable_local_exists("followCoordinate")){
 if (scaling) {
     sw=sprite_get_width(sprite_index)
     sh=sprite_get_height(sprite_index)
+    prx=x
+    pry=y
 
-    if (scaleh>0) {image_xscale+=(scaleh*dt)/sw x+=scaleh*(sprite_xoffset/sw/image_xscale)}
-    if (scalev>0) {image_yscale+=(scalev*dt)/sh y+=scalev*(sprite_yoffset/sh/image_yscale)}
+    if (scaleh>0) {image_xscale+=(scaleh*dt)/sw /*x+=scaleh*(sprite_xoffset/sw/image_xscale)*/}
+    if (scalev>0) {image_yscale+=(scalev*dt)/sh /*y+=scalev*(sprite_yoffset/sh/image_yscale)*/}
 
-    if (scaleh<0) {image_xscale+=-(scaleh*dt)/sw x+=scaleh*(1-sprite_xoffset/sw/image_xscale)}
-    if (scalev<0) {image_yscale+=-(scalev*dt)/sh y+=scalev*(1-sprite_yoffset/sh/image_yscale)}
+    if (scaleh<0) {image_xscale+=-(scaleh*dt)/sw /*x+=scaleh*(1-sprite_xoffset/sw/image_xscale)*/}
+    if (scalev<0) {image_yscale+=-(scalev*dt)/sh /*y+=scalev*(1-sprite_yoffset/sh/image_yscale)*/}
 }
 
 if (rotating) {
@@ -286,16 +288,18 @@ with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hsp
     if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
     speed=0
+    gravity=0
 
     if (scaling) {
         sw=sprite_get_width(sprite_index)
         sh=sprite_get_height(sprite_index)
 
+        /*
         if (scaleh>0) repeat (ceil( scaleh)) {x-=1*(  sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,coll)) break}
         if (scalev>0) repeat (ceil( scalev)) {y-=1*(  sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,coll)) break}
         if (scaleh<0) repeat (ceil(-scaleh)) {x-=-1*(1-sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,coll)) break}
         if (scalev<0) repeat (ceil(-scalev)) {y-=-1*(1-sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,coll)) break}
-
+        */
         scaling=false
     }
 
@@ -470,6 +474,7 @@ applies_to=self
     //field notVisibleTillThen: false - Visible is false until activation.
     //field explodeOnDeath: false
     //field allowChaining: false
+    //field stopOnDeath: false
     //field emotion: enum(em_suprise,em_question,em_sing,em_love,em_mad,em_sad,em_bad,em_dots,em_idea,em_sleep)
     //field randomize_field: string - Numeric field to randomize
             //field rand_range: xy - The limites of said field
@@ -546,6 +551,7 @@ applies_to=self
 trg=1
 
 if (trap_delay>0) exit
+
 
 move_t=0
 
@@ -624,6 +630,15 @@ if variable_local_exists("deactivate_behavior"){
        instance_change(initialInstance, false)
     }
 }
+#define Trigger_On Player Death
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(!truthy("stopOnDeath")) exit
+speed=0
+trg=false
 #define Trigger_Trap Deactivated
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -133,7 +133,7 @@ else if (!dead) {
             with (FireballCherry) if (active) instance_destroy()
 
             Player.dead=true
-
+            joystick_rumble(0,50,127)
             savedatap("deaths",savedatap("deaths")+1)
         }
     }
