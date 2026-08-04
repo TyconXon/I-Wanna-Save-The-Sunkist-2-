@@ -7,7 +7,20 @@ applies_to=self
 orangeNotBlue = false
 leftNotRight = false
 bulletIndex = noone
+myPhysParent = noone
+putLocation[0] = 0
+putLocation[1] = 0
 global.teleSickness = 0
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(myPhysParent == noone) {instance_destroy();exit}
+if(!object_is_ancestor(myPhysParent.object_index,MovingSolid)) exit
+x = myPhysParent.x + (xstart - putLocation[1]);
+y = myPhysParent.y + (ystart - putLocation[1]);
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -29,6 +42,7 @@ action_id=603
 applies_to=self
 */
 bulletIndex=other.id
+other.dead = false
 if(global.teleSickness == 0){
     with(Portal){
         if (self.id == other.id) continue;
@@ -37,6 +51,13 @@ if(global.teleSickness == 0){
     }
 }
 global.teleSickness = 5
+#define Collision_PropShrapnel
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=other
+invert=0
+*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

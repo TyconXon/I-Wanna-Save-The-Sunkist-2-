@@ -513,6 +513,7 @@
 		|Marker
 		|Piston
 		|PlayerClip
+		|MetalSurface
 		|NoKillZone
 		|FocusZone
 		|AmbientGeneric

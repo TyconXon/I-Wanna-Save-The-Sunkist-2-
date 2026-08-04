@@ -458,7 +458,6 @@ if (!frozen) {
                 i.direction+=sprite_angle
                 i.orangeNotBlue = true
                 
-                
                 sound_play_auto("portalgun_shoot_red1")
             }
             if(key_blue(vi_pressed)){
@@ -468,6 +467,7 @@ if (!frozen) {
                 i.hspeed=facing*16*dt
                 i.direction+=sprite_angle
                 i.orangeNotBlue = false
+                
                 
                 
                 sound_play_auto("portalgun_shoot_blue1")

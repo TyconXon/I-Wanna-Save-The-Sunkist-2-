@@ -51,13 +51,20 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock or other.object_index == MetalSurface) {event_user(0) exit}
 if (other.solid) {
+    var theY;
+    theY = floorto(y,32)
+
     dead=1
     xprevious=x+hspeed
     yprevious=y+vspeed
-    newPortal = instance_create(other.x, floorto(y,32), Portal)
+
+    newPortal = instance_create(other.x, theY, Portal)
     newPortal.orangeNotBlue = self.orangeNotBlue
+    newPortal.myPhysParent = other
+    newPortal.putLocation[0] = other.x
+    newPortal.putLocation[1] = other.y
 
     if (x>=other.bbox_right) {
         newPortal.leftNotRight = true;
@@ -69,13 +76,48 @@ if (other.solid) {
     }
 
     with (newPortal){
+        xstart = x; ystart = y;
         if(orangeNotBlue){sprite_index = sprOrangePortal}else{sprite_index = sprBluePortal}
         with (Portal) {
              if (self.id == other.id || self.orangeNotBlue != other.orangeNotBlue) {continue}
              instance_destroy()
         }
     }
+
+
 }
+#define Other_10
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///Portal orb is destroyed
+
+repeat (settings("blood")*2)
+    {
+        if (hspeed > 0)
+        {
+        eff = instance_create(xprevious, yprevious, PropShrapnel);
+            eff.speed = random_range(1, 3)*dt;
+            eff.direction = random_range(100, 190);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
+            if(orangeNotBlue) eff.image_blend = c_orange
+            else eff.image_blend = c_aqua
+        }
+
+        if (hspeed < 0)
+        {
+            eff = instance_create(xprevious, yprevious, PropShrapnel);
+            eff.speed = random_range(1, 3)*dt;
+            eff.direction = random_range(-10, 80);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
+            if(orangeNotBlue) eff.image_blend = c_orange
+            else eff.image_blend = c_aqua
+        }
+    }
+
+instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
