@@ -35,7 +35,7 @@ if (instance_exists(Player)) {
 }
 
 sound_pan(sound,median(-1,(x-(xcenter))/view_wview,1))
-if(point_distance(x,y,xcenter,ycenter)<radius) sound_volume(sound,min(  1, vol+ ( (view_wview*1/3)-point_distance(x,y,xcenter,ycenter) )/( view_wview*1/3 )  ) )
+if(point_distance(x,y,xcenter,ycenter)<radius) sound_volume(sound,min(  1, vol+ ( (view_wview*2/3)-point_distance(x,y,xcenter,ycenter) )/( view_wview*2/3 )  ) )
 else sound_volume(sound,0)
 #define Other_4
 /*"/*'/**//* YYD ACTION

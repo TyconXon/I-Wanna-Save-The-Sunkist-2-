@@ -1,0 +1,13 @@
+/*gm82room flag*/background_vspeed[0]=0.2
+/*gm82room flag*/background_blend[0]=4868682
+/*gm82room flag*/background_blend[1]=16711758
+/*gm82room flag*/background_blend[2]=16731392
+/*gm82room flag*/background_blend[3]=7471125
+/*gm82room flag*/background_alpha[3]=0.1
+/*gm82room flag*/background_xscale[3]=3
+/*gm82room flag*/background_yscale[3]=3
+/*gm82room flag*/background_blend[4]=5046272
+/*gm82room flag*/background_alpha[4]=0.4
+/*gm82room flag*/background_yscale[4]=-1
+/*gm82room flag*/background_blend[5]=4194304
+/*gm82room flag*/background_yscale[5]=-1
