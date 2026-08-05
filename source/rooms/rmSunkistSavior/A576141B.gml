@@ -1,4 +1,4 @@
 //gm82 fields begin
-movement=true
-vsp=4
+smooth=true
+smooth_rate=3
 //gm82 fields end

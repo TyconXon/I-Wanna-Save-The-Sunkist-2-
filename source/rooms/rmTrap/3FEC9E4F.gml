@@ -1,4 +1,3 @@
 //gm82 fields begin
-movement=true
-vsp=4
+instWhile=rmTrap_BC793E7E
 //gm82 fields end

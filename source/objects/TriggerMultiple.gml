@@ -33,6 +33,13 @@ if(!wasTouching) if(instWhile!=noone) with (instStart) event_trigger(tr_traptrig
 if(wasTouching) if(instWhile!=noone) with (instWhile) event_trigger(tr_traptriggered)
 
 wasTouching = true
+#define Collision_Player
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=605
+invert=0
+arg0=n
+*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

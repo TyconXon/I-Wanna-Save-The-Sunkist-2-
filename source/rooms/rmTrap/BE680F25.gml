@@ -1,5 +1,4 @@
 //gm82 fields begin
-inst=rmTrap_FFFCF23B
 method="line"
 center="both"
 murderer=true
