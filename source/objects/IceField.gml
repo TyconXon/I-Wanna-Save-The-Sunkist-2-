@@ -43,7 +43,8 @@ if(savedhspeed==999 or savedvspeed == 999 ){
                     if(!floorlessgravity || !Player.onGround) savedvspeed=other.vspeed
                     else if(Player.onGround) savedvspeed=0
 }
-if ((!sound_isplaying(slip) or slip == 11344) and (other.vspeed!=0 or other.hspeed!=0) and !Player.dead) slip = sound_play_auto("Jump1",  1 + (-0.06 * (savedvspeed/6.10) ) )
+if !sound_exists("Jump1") exit
+if ((slip == 0 or slip == 11344) and (other.vspeed!=0 or other.hspeed!=0) and !Player.dead) if (!sound_isplaying(slip)) slip = sound_play_auto("Jump1",  1 + (-0.06 * (savedvspeed/6.10) ) )
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
