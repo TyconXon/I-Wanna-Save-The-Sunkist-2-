@@ -230,11 +230,14 @@
 	|TrapDestroy
 	|AddTrigger
 	|TriggerFree
+	|TriggeredFree
+	|LockedTriggerFree
 	|TriggerRelay
 	|TriggerTransformer
-	|TriggeredFree
+	|TriggerCounter
 	|TriggerInstance
 	|TriggerMultiple
+	|TriggerConditional
 	|TrapTrigger
 	|SwitchAny
 +Gimmicks
@@ -536,6 +539,8 @@
 		|WowoOrb
 		|AshGrowthChild
 		|CherryHoming
+		|MoveSwitchBlockOff
+		|StopSwitchBlockOff
 	+Prefabs
 		|Dog
 		|RiskOfRain
@@ -565,8 +570,6 @@
 		|CherryNoVertical
 		|StopSwitchBlock
 		|MoveSwitchBlock
-		|StopSwitchBlockOff
-		|MoveSwitchBlockOff
 	+Outsourced
 		|KeyDraw
 		|KeyBlockWhite

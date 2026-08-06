@@ -22,6 +22,7 @@
 		|resource_replace
 		|palace_getout
 		|import_now
+	|arr_push
 +CUSTOM
 	+game options
 		|custom_options

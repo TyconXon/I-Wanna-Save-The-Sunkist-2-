@@ -615,3 +615,7 @@ BatterBoss
 NoCaptionHere
 onPlayerJump
 MetalSurface
+
+TriggerConditional
+TriggerCounter
+LockedTriggerFree
