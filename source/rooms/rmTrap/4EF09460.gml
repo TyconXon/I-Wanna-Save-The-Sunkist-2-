@@ -1,6 +1,6 @@
 //gm82 fields begin
 doExplosions=false
 doPlayerKillers=false
-activateOnDeath=rmTrap_59F1B259
+activateOnDeath=rmTrap_C275CB71
 //gm82 fields end
 visible=false

@@ -1,5 +1,6 @@
 //gm82 fields begin
 movement=true
-vsp=3
-grav=0.4
+vsp=9
+control=true
+trap_delay=15
 //gm82 fields end

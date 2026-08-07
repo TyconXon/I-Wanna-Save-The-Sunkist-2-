@@ -1,5 +1,4 @@
 //gm82 fields begin
-movement=true
-vsp=3
-grav=0.4
+context=rmTrap_701F43CE
+delay=50
 //gm82 fields end

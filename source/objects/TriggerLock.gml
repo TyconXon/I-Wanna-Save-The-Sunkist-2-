@@ -11,3 +11,10 @@ applies_to=self
     from activating, until they are activated by the corresponding color.
     useful for backtrack traps.
 */
+#define Trigger_Trap is Triggered
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=self
+invert=0
+*/

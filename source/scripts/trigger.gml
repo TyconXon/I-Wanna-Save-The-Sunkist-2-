@@ -5,7 +5,7 @@ if(argument_count==0){event_trigger(tr_traptriggered)}
 else{
      if(instance_exists(argument[0])) with(argument[0]) event_trigger(tr_traptriggered)
      else if(argument[0]>=0) {
-        index=argument[0]
+        index=real(argument[0])
 
         group=instance_place(x,y,TriggerGroup)
 

@@ -1,5 +1,3 @@
 //gm82 fields begin
-movement=true
-vsp=3
-grav=0.4
+inst=rmTrap_CAE379DA
 //gm82 fields end
