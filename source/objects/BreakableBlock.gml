@@ -103,3 +103,10 @@ applies_to=self
 hspeed=other.hspeed/2
 vspeed=other.vspeed/2
 instance_destroy()
+#define Trigger_Trap is Triggered
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=203
+applies_to=self
+invert=0
+*/

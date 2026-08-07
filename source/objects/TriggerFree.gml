@@ -17,6 +17,9 @@ with (TriggeredFree) if (index==other.index) instance_destroy()
 with (LockedTriggerFree) if (index==other.index) instance_destroy()
 with (object_index) if (index==other.index) instance_destroy()
 with (TriggerRelay) if (index==other.index) event_trigger(tr_traptriggered)
+
+with (object_find("Triggered"+string(index))) instance_destroy()
+with (object_find("LockedTrigger"+string(index))) instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

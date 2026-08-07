@@ -1,0 +1,5 @@
+object_set_sprite(SpikeD,sprSpike)
+object_set_sprite(SpikeL,sprSpikeLeft)
+object_set_sprite(SpikeR,sprSpikeRight)
+object_set_sprite(SpikeU,sprSpikeUp)
+savedatap("brave",false)

@@ -59,3 +59,7 @@ if (global.onload_trigger) {
 }
 
 check_engine_parenting()
+
+brave = savedatap("brave")
+if(brave) brave_spikes()
+else scared_spikes()

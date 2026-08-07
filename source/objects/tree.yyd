@@ -237,7 +237,6 @@
 	|TriggerCounter
 	|TriggerInstance
 	|TriggerMultiple
-	|TriggerConditional
 	|TrapTrigger
 	|SwitchAny
 +Gimmicks

@@ -38,6 +38,10 @@ if (trigger_type=="hard") {
         path_scaling=other.path_scaling
         sound=other.sound
         
+        //patch for things movin outta control
+        xstart=x
+        ystart=y
+        
         scaleh=other.scaleh
         scalev=other.scalev
         scaling=other.scaling
@@ -76,5 +80,9 @@ if (trigger_type=="hard") {
         trap_delay=other.trap_delay
         
         trg=other.trg
+        
+        if(variable_instance_exists(other,"weld_parent")) weld_parent = other.weld_parent
+        if(variable_instance_exists(other,"extending")){ extending = other.extending; extendingWith = other.extendingWith; extendingMiddle = true }
+        if(variable_instance_exists(other,"followCoordinate")) followCoordinate = other.followCoordinate
     }
 }

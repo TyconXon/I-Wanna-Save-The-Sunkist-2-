@@ -10,11 +10,14 @@ with (Player) {
     beamstate=savedata("beamstate")
     fox=savedata("fox")
     portalgun=savedata("portalgun")
+
     //levelcoins=savedata("levelcoins")
     if(global.player_skin == skin_ash and !theendisnigh) global.player_skin = skin_default
 
 }
-
+brave = savedatap("brave")
+if(brave) brave_spikes()
+else scared_spikes()
 
 de_load(savedata("dialog"))
 camera_borders(savedata("cameraBorders"))

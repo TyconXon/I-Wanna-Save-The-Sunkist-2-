@@ -23,6 +23,9 @@
 		|palace_getout
 		|import_now
 	|arr_push
+	|trigger
+	|brave_spikes
+	|scared_spikes
 +CUSTOM
 	+game options
 		|custom_options

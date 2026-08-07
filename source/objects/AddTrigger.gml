@@ -8,14 +8,17 @@ event_inherited()
 instance=noone
 trigger_type="soft"
 retrigger=0
+already_triggered=false
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+if(!already_triggered) exit;
+
 if (trigger_type=="soft") {
-    with (instance) event_perform_object(Gizmo,ev_step,ev_step_normal)
+    if (!object_is_ancestor(instance.object_index,Gizmo) and !object_is_ancestor(instance.object_index,Trap)) with (instance) event_perform_object(Gizmo,ev_step,ev_step_normal)
 } else event_inherited()
 #define Other_0
 /*"/*'/**//* YYD ACTION
@@ -63,7 +66,7 @@ if (!instance) {
 }
 y=ystart
 
-addtrigger_vars()
+if (!retrigger) addtrigger_vars()
 
 if (trigger_on_create) event_trigger(tr_traptriggered)
 #define Other_8
@@ -120,6 +123,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+already_triggered=true
 if (trigger_type=="soft") {
     if (retrigger) addtrigger_vars()
     with (instance) event_perform_object(Gizmo,ev_trigger,tr_traptriggered)

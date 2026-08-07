@@ -37,6 +37,9 @@ with(instance_place(x,y+1,TimedBreakable)) event_perform(ev_collision,Player)
 with(instance_place(x,y,IceField)) {
     if(wallstop) savedvspeed=0
 }
+with(instance_place(x,y,TriggerMultiple)){
+event_step();
+}
 
 with (JumpRefresher) active=1
 
