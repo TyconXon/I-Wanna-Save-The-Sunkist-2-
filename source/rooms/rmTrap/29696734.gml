@@ -1,3 +1,5 @@
 //gm82 fields begin
-inst=rmTrap_B481EB38
+movement=true
+dir=270
+spd=5
 //gm82 fields end

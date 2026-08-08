@@ -1,4 +1,4 @@
 //gm82 fields begin
-movement=true
-hsp=6
+sunkist=true
+weld_parent=rmTrap_6762E405
 //gm82 fields end

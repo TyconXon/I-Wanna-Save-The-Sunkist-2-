@@ -1,7 +1,5 @@
 //gm82 fields begin
-instStart=rmTrap_11876288
-instStop=rmTrap_A800FC00
+instStart=rmTrap_D237D6B1
 conditionals=true
 mustBeOnGround="yes"
-destroyAfter=true
 //gm82 fields end

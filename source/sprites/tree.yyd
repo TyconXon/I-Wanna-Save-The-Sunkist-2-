@@ -111,6 +111,8 @@
 	|sprASingleRain
 	|sprLuckBeACoin
 	|sprChain
+	|sprLaserBlock
+	|sprBattery
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip

@@ -575,6 +575,7 @@
 		|KeyWhite
 		|DownWater
 		|UpWater
+	+BBT
 	|Jumper
 	|ShootPusher
 	|StickyBlock
