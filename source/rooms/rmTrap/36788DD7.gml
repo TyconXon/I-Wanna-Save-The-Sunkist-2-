@@ -1,3 +1,3 @@
 //gm82 fields begin
-inst=rmTrap_8A3B5E24
+index=67
 //gm82 fields end

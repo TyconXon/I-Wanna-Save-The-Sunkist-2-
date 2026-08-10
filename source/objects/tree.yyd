@@ -525,7 +525,6 @@
 		|TriggerDrawCode
 		|TimerTimerTimer
 		|SunkitRain
-		|TimedBreakable
 		|BuildingBlock
 		|BreakableBlock
 	+Component
@@ -593,6 +592,7 @@
 	|AshGrowth
 	|PushBlockExplosive
 	|CherryyrrehC
+	|TimedBreakable
 |PlayerStart
 |Block
 |Platform
