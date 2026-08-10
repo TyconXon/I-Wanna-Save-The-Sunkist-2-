@@ -1,5 +1,5 @@
 //gm82 fields begin
 movement=true
-vsp=-6.5
+vsp=-6
 grav=0.1
 //gm82 fields end

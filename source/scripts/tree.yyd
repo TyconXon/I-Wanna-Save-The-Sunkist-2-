@@ -26,6 +26,8 @@
 	|trigger
 	|brave_spikes
 	|scared_spikes
+	+oneshots
+		|shuffle_me_spikes
 +CUSTOM
 	+game options
 		|custom_options

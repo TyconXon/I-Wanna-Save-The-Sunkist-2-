@@ -89,7 +89,7 @@ applies_to=self
 
 /*preview
     if (!FieldDefined("sprite_index")) exit
-    draw_sprite_stretched(sprite_index,0,x,y,image_xscale,image_yscale)
+    draw_sprite_stretched(Field("sprite_index"),0,x,y,image_xscale,image_yscale)
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -98,7 +98,6 @@ applies_to=self
 //field hspeed: number
 //field vspeed: number
 //field destroy_time: number - frames to destroy platform after player walks off
-//field pulledSprite: sprite
 
 hspeed*=dt
 vspeed*=dt
@@ -111,6 +110,8 @@ if (snap=="never") snap_type=3
 if (path!=noone) {
     path_start(path,path_speed,path_action,path_absolute)
 }
+
+if(image_blend==c_white) {pulledSprite = sprPlatform9slice;sprite_index=sprDynamicPlatform}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -118,16 +119,11 @@ action_id=603
 applies_to=self
 */
 
-if (global.platform_9slice) {
-    if (image_xscale==1 && image_yscale==1) {
-        if(!sprite_exists(sprite_index)) exit
-        draw_self()
-    } else {
-        //i feel like renex has better things to do with their time than make an
-        //auto platform script that only like, 2 people will use for practical uses
-        draw_sprite_9slice(pulledSprite,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
-    }
-} else if (sprite_index!=-1) {
-if(!sprite_exists(sprite_index)) exit
-draw_self()
+if (image_xscale==1 && image_yscale==1) {
+    if(!sprite_exists(sprite_index)) exit
+    draw_self()
+} else {
+    //i feel like renex has better things to do with their time than make an
+    //auto platform script that only like, 2 people will use for practical uses
+    draw_sprite_9slice(pulledSprite,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
 }

@@ -1,4 +1,5 @@
 //gm82 fields begin
+sound="snd_spearappear"
 advanced_movement=true
 move_to_xy[0]=272 move_to_xy[1]=1712
 move_spd=12

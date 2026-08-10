@@ -1,5 +1,5 @@
 //gm82 fields begin
-sound=""
+sound="ping"
 advanced_movement=true
 path=path58_SpikeL_DABA8A57
 path_speed=5

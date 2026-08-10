@@ -118,8 +118,8 @@ applies_to=self
 */
 if(variable_local_exists("weld_parent")){
     with (weld_parent) {
-        other.x = self.x - other.xOffset
-        other.y = self.y - other.yOffset
+        other.x = self.x + hspeed - other.xOffset
+        other.y = self.y + vspeed - other.yOffset
     }
 }
 if(variable_local_exists("followCoordinate")){
@@ -156,7 +156,7 @@ if(truthy("trigger_on_view")) {
 }
 
 if (trap_delay) {
-    if(trap_shake){
+    if(truthy("trap_shake") and trap_delay<=truthy("when_shake",trap_delay)){
         if (trap_delay mod 4 < 2) {
             if(abs(vsp)) x=xstart-1
             if abs(hsp) y=ystart-1
@@ -452,6 +452,7 @@ applies_to=self
     //field trigger_on_touch: false
     //field trap_delay: number
             //field trap_shake: false
+                    //field when_shake: number - delay to shaking
     //field trap_redir_index: number
     //field trap_stop_index: number
     //field trap_destroy_index: number
@@ -518,6 +519,8 @@ if(variable_local_exists("weld_parent")){
 }
 if(notVisibleTillThen) visible=false
 if (trigger_on_create) sound=""
+
+//if(variable_local_exists("when_shake")) when_shake = trap_delay-when_shake
 
 trap_delay/=dt
 
