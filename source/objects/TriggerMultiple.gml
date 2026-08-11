@@ -90,6 +90,7 @@ applies_to=self
         // field mustBeTouchingWall: enum("dont care", "no", "yes")
         // field mustDoubleJumpState: enum("dont care", "no", "yes")
         //field customConditional: string
+//field retriggerDelay: number - delay in frames until this can be activated again
 //field destroyAfter: false - After stop has been called. Could make this closer to a more traditional trigger
 //field visible: false
 //field sprite_index: sprite

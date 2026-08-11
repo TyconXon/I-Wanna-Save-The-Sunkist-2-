@@ -1,3 +1,4 @@
 //gm82 fields begin
-text="or i could have the spikes in randomly chosen positon"
+text="sponsored by spikemaker studio"
+font=fntFunny
 //gm82 fields end

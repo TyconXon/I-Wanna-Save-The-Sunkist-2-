@@ -375,7 +375,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(!variable_local_exists("trigger_on_touch") or !trigger_on_touch)exit;
+if(!variable_local_exists("trigger_on_touch") or !trigger_on_touch or trg)exit;
 event_trigger(tr_traptriggered)
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
