@@ -51,14 +51,24 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock or other.object_index == MetalSurface) {event_user(0) exit}
+if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock or other.object_index == MetalSurface or dead) {event_user(0) exit}
+//if(instance_place(x,y,Portal)) if((instance_place(x,y,Portal)).orangeNotBlue != orangeNotBlue) event_user(0) exit
+
 if (other.solid) {
     var theY;
-    theY = floorto(y,32)
+
+    if(other.sprite_height == 32) theY = other.y
+    else if(other.sprite_height < 32) {event_user(0) exit}
+    else {
+       theY = floorto(y,8)-16
+       if(theY<other.bbox_top) theY=other.y
+    }
 
     dead=1
     xprevious=x+hspeed
     yprevious=y+vspeed
+
+    if(instance_place(other.x,theY, Portal) != noone) {if((instance_place(other.x,theY,Portal)).orangeNotBlue != orangeNotBlue) {event_user(0) exit}}
 
     newPortal = instance_create(other.x, theY, Portal)
     newPortal.orangeNotBlue = self.orangeNotBlue
@@ -86,6 +96,13 @@ if (other.solid) {
 
 
 }
+#define Collision_Portal
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(other.orangeNotBlue != orangeNotBlue) event_user(0)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -98,18 +115,24 @@ repeat (settings("blood")*2)
     {
         if (hspeed > 0)
         {
-        eff = instance_create(xprevious, yprevious, PropShrapnel);
+        eff = instance_create(x-8, yprevious, PropShrapnel);
             eff.speed = random_range(1, 3)*dt;
             eff.direction = random_range(100, 190);
             eff.gravity = random_range(0.1, 0.2)*dt*dt;
+            eff.sprite_index = sprWhiteDot;
+            eff.image_xscale = 2;
+            eff.image_yscale = 2;
             if(orangeNotBlue) eff.image_blend = c_orange
             else eff.image_blend = c_aqua
         }
 
         if (hspeed < 0)
         {
-            eff = instance_create(xprevious, yprevious, PropShrapnel);
+            eff = instance_create(x+8, yprevious, PropShrapnel);
             eff.speed = random_range(1, 3)*dt;
+            eff.sprite_index = sprWhiteDot;
+            eff.image_xscale = 2;
+            eff.image_yscale = 2;
             eff.direction = random_range(-10, 80);
             eff.gravity = random_range(0.1, 0.2)*dt*dt;
             if(orangeNotBlue) eff.image_blend = c_orange

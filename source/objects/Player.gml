@@ -454,8 +454,15 @@ if (!frozen) {
             if(key_orange(vi_pressed)){
                 i=instance_create(x,y-2*vflip,PortalOrb)
                 i.owner=id
-                i.hspeed=facing*16*dt
-                i.direction+=sprite_angle
+                
+                if (input_h!=0 || input_v!=0) {
+                    i.speed=16*dt
+                    i.direction=point_direction(0,0,input_h,input_v)
+                } else {
+                    i.hspeed=facing*16*dt
+                    i.direction+=sprite_angle
+                }
+                
                 i.orangeNotBlue = true
                 
                 sound_play_auto("portalgun_shoot_red1")
@@ -464,8 +471,13 @@ if (!frozen) {
             
                 i=instance_create(x,y-2*vflip,PortalOrb)
                 i.owner=id
-                i.hspeed=facing*16*dt
-                i.direction+=sprite_angle
+                if (input_h!=0 || input_v!=0) {
+                    i.speed=16*dt
+                    i.direction=point_direction(0,0,input_h,input_v)
+                } else {
+                    i.hspeed=facing*16*dt
+                    i.direction+=sprite_angle
+                }
                 i.orangeNotBlue = false
                 
                 

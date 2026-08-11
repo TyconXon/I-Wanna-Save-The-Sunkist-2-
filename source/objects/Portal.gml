@@ -11,6 +11,7 @@ myPhysParent = noone
 putLocation[0] = 0
 putLocation[1] = 0
 global.teleSickness = 0
+t=0
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -18,6 +19,7 @@ action_id=603
 applies_to=self
 */
 if(myPhysParent == noone) {instance_destroy();exit}
+if(t<5) t+=1 else t=5
 if(!object_is_ancestor(myPhysParent.object_index,MovingSolid)) exit
 x = myPhysParent.x + (xstart - putLocation[1]);
 y = myPhysParent.y + (ystart - putLocation[1]);
@@ -51,13 +53,13 @@ if(global.teleSickness == 0){
     }
 }
 global.teleSickness = 5
-#define Collision_PropShrapnel
+#define Collision_PortalOrb
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=203
+action_id=603
 applies_to=other
-invert=0
 */
+if(other.orangeNotBlue != orangeNotBlue) {event_user(0)}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -77,3 +79,10 @@ with (Portal) {
      if (self.id == other.id || self.orangeNotBlue != other.orangeNotBlue) {continue}
      instance_destroy()
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_self_ext(image_xscale,(t/5)*image_yscale,image_angle,image_blend,image_alpha)

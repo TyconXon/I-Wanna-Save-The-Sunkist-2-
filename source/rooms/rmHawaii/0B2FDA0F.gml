@@ -1,4 +1,3 @@
 //gm82 fields begin
-type="Permanent"
-value=1
+depth=999
 //gm82 fields end
