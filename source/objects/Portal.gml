@@ -18,7 +18,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if(myPhysParent == noone) {instance_destroy();exit}
+if(!instance_exists(myPhysParent)) {event_user(0);exit}
 if(t<5) t+=1 else t=5
 if(!object_is_ancestor(myPhysParent.object_index,MovingSolid)) exit
 x = myPhysParent.x + (xstart - putLocation[1]);
@@ -79,6 +79,15 @@ with (Portal) {
      if (self.id == other.id || self.orangeNotBlue != other.orangeNotBlue) {continue}
      instance_destroy()
 }
+#define Other_10
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///Fizzle effects (when parent is destroyed or player goes through fizzler)
+
+instance_destroy();
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

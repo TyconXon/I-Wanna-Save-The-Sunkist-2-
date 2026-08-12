@@ -72,7 +72,7 @@ if (other.solid) {
 
     newPortal = instance_create(other.x, theY, Portal)
     newPortal.orangeNotBlue = self.orangeNotBlue
-    newPortal.myPhysParent = other
+    newPortal.myPhysParent = other.id
     newPortal.putLocation[0] = other.x
     newPortal.putLocation[1] = other.y
 
