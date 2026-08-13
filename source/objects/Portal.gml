@@ -33,7 +33,7 @@ applies_to=self
 if(global.teleSickness == 0){
     with(Portal){
         if (self.id == other.id) continue;
-        move_player(self.x + (16*image_xscale), self.y + 16, 1)
+        move_player(self.x + (23*image_xscale), self.y + 23, 1)
     }
 }
 global.teleSickness = 5

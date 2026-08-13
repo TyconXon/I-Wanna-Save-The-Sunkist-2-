@@ -62,6 +62,8 @@ if (other.solid) {
     else {
        theY = floorto(y,8)-16
        if(theY<other.bbox_top) theY=other.y
+       if(theY+32>other.bbox_bottom) theY=other.bbox_bottom-32
+       if(instance_position(x,y+4,Block)) theY-=4
     }
 
     dead=1
