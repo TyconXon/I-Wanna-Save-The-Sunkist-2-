@@ -74,6 +74,8 @@
 		|sprKitsuneBigTail
 	+Sunkigimmick
 		|sprIce
+		|sprFizzler9
+		|sprFizzler1
 		|sprIceOne
 		|sprThrowHook
 		|sprHook
@@ -167,6 +169,12 @@
 		|sprPlayerJumpAsh
 		|sprPlayerRunningAsh
 		|sprPlayerIdleAsh
+	+PortalGun
+		|sprPlayerIdlePG
+		|sprPlayerRunningPG
+		|sprPlayerJumpPG
+		|sprPlayerFallPG
+		|sprPlayerSlidingPG
 +System
 	|spr1x1
 	|spr32x32

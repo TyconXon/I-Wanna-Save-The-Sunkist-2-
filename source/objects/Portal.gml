@@ -17,6 +17,8 @@ edgeMask = instance_create(x,y,PortalEdge)
 edgeMask.image_xscale = image_xscale
 edgeMask.x=x
 edgeMask.solid=false
+
+sound_play_auto_range("portal_open",2)
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -55,10 +57,11 @@ if(!(bbox_bottom+5 < other.bbox_bottom xor bbox_top-5 > other.bbox_top)){
 
 if(global.teleSickness == 0 /*and ( (leftNotRight and other.bbox_left < bbox_left) or (!leftNotRight and other.bbox_right > bbox_right) ) */){
     with(Player) make_afterimage();
-
+    sound_play_auto("portal_exit1")
     with(Portal){
         if (self.id == other.id) continue;
         move_player(self.x + (23*image_xscale), self.y + 23, 1)
+        sound_play_auto("portal_enter1")
     }
 }
 global.teleSickness = 5
@@ -85,6 +88,8 @@ action_id=603
 applies_to=other
 */
 truthy("teleSickness",0)
+if(vspeed==0 and hspeed==0) exit;
+
 //var theID;
 theID = id
 
@@ -127,6 +132,13 @@ action_id=603
 applies_to=other
 */
 if(other.orangeNotBlue != orangeNotBlue) {event_user(0)}
+#define Collision_PropShrapnel
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=other
+*/
+if(image_blend==c_white) instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -154,7 +166,33 @@ applies_to=self
 */
 ///Fizzle effects (when parent is destroyed or player goes through fizzler)
 
-instance_destroy();
+repeat (settings("blood")*2)
+    {
+        if (!leftNotRight)
+        {
+        eff = instance_create(x+32, yprevious+16, PropShrapnel);
+            eff.speed = random_range(1, 3)*dt;
+            eff.direction = random_range(100, 190);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
+            eff.sprite_index = sprWhiteDot;
+            eff.image_xscale = 2;
+            eff.image_yscale = 2;
+            if(orangeNotBlue) eff.image_blend = c_orange
+            else eff.image_blend = c_aqua
+        }else {
+            eff = instance_create(x-32, yprevious+16, PropShrapnel);
+            eff.speed = random_range(1, 3)*dt;
+            eff.sprite_index = sprWhiteDot;
+            eff.image_xscale = 2;
+            eff.image_yscale = 2;
+            eff.direction = random_range(-10, 80);
+            eff.gravity = random_range(0.1, 0.2)*dt*dt;
+            if(orangeNotBlue) eff.image_blend = c_orange
+            else eff.image_blend = c_aqua
+        }
+    }
+
+instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

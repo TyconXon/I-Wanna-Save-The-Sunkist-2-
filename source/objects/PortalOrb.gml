@@ -112,6 +112,7 @@ action_id=603
 applies_to=self
 */
 ///Portal orb is destroyed
+sound_play_auto("portal_invalid_surface3")
 
 repeat (settings("blood")*2)
     {

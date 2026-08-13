@@ -664,3 +664,10 @@ sprLockFree
 sprLaserBlock
 sprBattery
 PortalEdgeMask
+sprFizzler9
+sprFizzler1
+sprPlayerIdlePG
+sprPlayerRunningPG
+sprPlayerJumpPG
+sprPlayerFallPG
+sprPlayerSlidingPG

@@ -455,13 +455,14 @@ if (!frozen) {
                 i=instance_create(x,y-2*vflip,PortalOrb)
                 i.owner=id
                 
+                /*
                 if (input_h!=0 || input_v!=0) {
                     i.speed=16*dt
                     i.direction=point_direction(0,0,input_h,input_v)
-                } else {
+                } else {*/
                     i.hspeed=facing*16*dt
                     i.direction+=sprite_angle
-                }
+                //}
                 
                 i.orangeNotBlue = true
                 
@@ -471,13 +472,13 @@ if (!frozen) {
             
                 i=instance_create(x,y-2*vflip,PortalOrb)
                 i.owner=id
-                if (input_h!=0 || input_v!=0) {
+                /*if (input_h!=0 || input_v!=0) {
                     i.speed=16*dt
                     i.direction=point_direction(0,0,input_h,input_v)
-                } else {
+                } else {*/
                     i.hspeed=facing*16*dt
                     i.direction+=sprite_angle
-                }
+                //}
                 i.orangeNotBlue = false
                 
                 
