@@ -12,12 +12,28 @@ putLocation[0] = 0
 putLocation[1] = 0
 global.teleSickness = 0
 t=0
+
+edgeMask = instance_create(x,y,PortalEdge)
+edgeMask.image_xscale = image_xscale
+edgeMask.x=x
+edgeMask.solid=false
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+with(edgeMask) instance_destroy()
+
+make_afterimage()
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+with(Platform) if(truthy("teleSickness")) teleSickness-=1;
+
 if(!instance_exists(myPhysParent)) {event_user(0);exit}
 if(t<5) t+=1 else t=5
 if(!object_is_ancestor(myPhysParent.object_index,MovingSolid)) exit
@@ -29,8 +45,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+// not hit the lip
+/*
+if(!(bbox_bottom+5 < other.bbox_bottom xor bbox_top-5 > other.bbox_top)){
+   myPhysParent.solid = false
+   edgeMask.solid = true
+} else {myPhysParent.solid = true; edgeMask.solid=false}
+*/
 
-if(global.teleSickness == 0){
+if(global.teleSickness == 0 /*and ( (leftNotRight and other.bbox_left < bbox_left) or (!leftNotRight and other.bbox_right > bbox_right) ) */){
+    with(Player) make_afterimage();
+
     with(Portal){
         if (self.id == other.id) continue;
         move_player(self.x + (23*image_xscale), self.y + 23, 1)
@@ -53,6 +78,48 @@ if(global.teleSickness == 0){
     }
 }
 global.teleSickness = 5
+#define Collision_Platform
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=other
+*/
+truthy("teleSickness",0)
+//var theID;
+theID = id
+
+// hit the lip
+//if(bbox_bottom > other.bbox_bottom+5 xor bbox_top < other.bbox_top-5) exit;
+//if((other.hspeed>0 and other.bbox_right > bbox_right) or (other.hspeed<0 and other.bbox_left < bbox_left)) exit
+
+
+if(teleSickness == 0){ with(other) { /*var theID;*/ theID = other.theID;
+    with(Portal){ /*var theID;*/ theID = other.theID;
+        if (self.id == other.id) continue;
+
+        with(theID){
+            with (Player) if (instance_place(x,y+2*vflip,other.id) and onPlatform) {
+                other.wannaTelePlayer = true
+            }
+        }
+
+        if(sign(image_xscale) == -1) (theID).x = self.x - ((theID).sprite_width)
+        else {(theID).x = self.x}
+        (theID).y = self.y - (other.bbox_top-(theID).bbox_top)//self.y + (32-(theID).sprite_height)
+
+        with(theID){
+           if(truthy("wannaTelePlayer")) {move_player(x+(sprite_width/2),bbox_top-2,1); wannaTelePlayer = false}
+        }
+    }
+} }
+teleSickness = 5
+#define Collision_Portal
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(other.t<5) instance_destroy_other()
 #define Collision_PortalOrb
 /*"/*'/**//* YYD ACTION
 lib_id=1

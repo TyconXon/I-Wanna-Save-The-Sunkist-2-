@@ -530,6 +530,7 @@
 	+Component
 		|KnifeProjectile
 		|PortalOrb
+		|PortalEdge
 		|Portal
 		|Emotion
 		|Explosion
