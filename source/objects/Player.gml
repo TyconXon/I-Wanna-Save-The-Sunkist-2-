@@ -465,7 +465,7 @@ if (!frozen) {
                 //}
                 
                 i.orangeNotBlue = true
-                
+                trigger_broadcast(tr_playershoot)
                 sound_play_auto("portalgun_shoot_red1")
             }
             if(key_blue(vi_pressed)){
@@ -482,7 +482,7 @@ if (!frozen) {
                 i.orangeNotBlue = false
                 
                 
-                
+                trigger_broadcast(tr_playershoot)
                 sound_play_auto("portalgun_shoot_blue1")
             }
         }

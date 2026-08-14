@@ -225,6 +225,7 @@
 		|onEventSave
 		|onEventLoad
 		|onPlayerJump
+		|onPlayerShoot
 	|TrapStop
 	|TriggerGroup
 	|TrapRedirect

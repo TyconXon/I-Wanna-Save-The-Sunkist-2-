@@ -495,14 +495,17 @@ if (variable_local_exists("randomize_field") && variable_local_exists("rand_rang
    variable_local_set(randomize_field,random_range(rand_range[0],rand_range[1]))
 }
 if(variable_local_exists("extendingWith")){
-                extWithDimen[0] = sprite_get_width(object_get_sprite(extendingWith))*image_xscale
-                extWithDimen[1] = sprite_get_height(object_get_sprite(extendingWith))*image_yscale
+                
                 if(image_angle == 90||image_angle=270) {
                                extMiddle[1] = ( (image_xscale * sprite_get_width(image_index))  )
                                extMiddle[0] = ( (image_yscale * sprite_get_height(image_index))  )
+                               extWithDimen[1] = sprite_get_width(object_get_sprite(extendingWith))*image_xscale
+                               extWithDimen[0] = sprite_get_height(object_get_sprite(extendingWith))*image_yscale
                 }else{
                                extMiddle[1] = ( (image_yscale * sprite_get_height(image_index))  )
                                extMiddle[0] = ( (image_xscale * sprite_get_width(image_index))  )
+                               extWithDimen[0] = sprite_get_width(object_get_sprite(extendingWith))*image_xscale
+                               extWithDimen[1] = sprite_get_height(object_get_sprite(extendingWith))*image_yscale
                 }
 }
 
