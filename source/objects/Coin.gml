@@ -36,6 +36,7 @@ if (!collected) {
         Player.temporarycoins+=value
         image_alpha=0.05
     }
+    trigger_broadcast(tr_coin)
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

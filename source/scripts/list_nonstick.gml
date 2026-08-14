@@ -2,7 +2,7 @@
 
 switch (argument0) {
     //example
-    //case Platform: return 1
+    case Platform: return 1
     case RiskOfOcean: return 1
 
     default: return 0

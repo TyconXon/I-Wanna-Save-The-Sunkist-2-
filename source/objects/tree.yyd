@@ -17,6 +17,7 @@
 	|Avoidance
 	|Gizmo
 	|Trap
+	|Spike
 	|TrapSave
 	|Item
 	|GlobalItem
@@ -70,7 +71,7 @@
 			|CherryGray
 			|CherryBlack
 			|CherryFuture
-			|sprCherryAsh
+			|CherryAsh
 			|CherryRainbow
 		|MegaCherry
 		|CherryBounce
@@ -472,6 +473,7 @@
 	|GlobalItem3
 	|GlobalItem4
 	|ItemCountBlock
+	|CoinCountBlock
 	|Coin
 +System
 	+User Interface

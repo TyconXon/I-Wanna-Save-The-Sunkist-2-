@@ -588,7 +588,7 @@ Piston
 TriggerDrawCode
 
 CherryFuture
-sprCherryAsh
+CherryAsh
 
 onEventSave
 onEventLoad
@@ -621,3 +621,5 @@ TriggerCounter
 LockedTriggerFree
 PortalEdge
 Fizzler
+Spike
+CoinCountBlock

@@ -28,6 +28,7 @@
 	|scared_spikes
 	+oneshots
 		|shuffle_me_spikes
+	|coins
 +CUSTOM
 	+game options
 		|custom_options

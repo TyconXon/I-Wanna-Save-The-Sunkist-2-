@@ -12,6 +12,7 @@ mini_spike_down = noone
 mini_spike_right = noone
 mini_spike_left = noone
 mini_spike_up = noone
+spike_tall = noone
 
 fruit = noone
 
@@ -39,6 +40,7 @@ An example is provided in rmExtra.
 //field spike_right: sprite
 //field spike_left: sprite
 //field spike_up: sprite
+//field spike_tall: sprite
 //field mini_spike_down: sprite
 //field mini_spike_right: sprite
 //field mini_spike_left: sprite
@@ -54,15 +56,22 @@ An example is provided in rmExtra.
 //spikes
 if (spike_down!=noone) {
     with (SpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
+    with (aSpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
 }
 if (spike_left!=noone) {
     with (SpikeL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
+    with (aSpikeL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
 }
 if (spike_right!=noone) {
     with (SpikeR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
+    with (aSpikeR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
 }
 if (spike_up!=noone) {
     with (SpikeU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
+    with (aSpikeU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
+}
+if(spike_tall!=noone) {
+    with (SpikeTall) {sprite_index=other.spike_tall image_blend=other.blend image_alpha=other.alpha}
 }
 
 // minispikes

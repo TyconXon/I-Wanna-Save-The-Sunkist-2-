@@ -483,7 +483,7 @@ sprPlayerFallAsh
 sprPlayerSlidingAsh
 sprHook
 
-TallSpike
+sprTallSpike
 sprKillerBlock
 sprConveyerRight
 sprConveyerLeft
@@ -671,3 +671,7 @@ sprPlayerRunningPG
 sprPlayerJumpPG
 sprPlayerFallPG
 sprPlayerSlidingPG
+sprPastelSpikeBlackL
+sprPastelSpikeBlackR
+sprTallBlackSpike
+sprIsaacCoins
