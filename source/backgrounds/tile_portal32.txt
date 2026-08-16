@@ -1,5 +1,4 @@
 exists=1
-gm82room_tilesmart=00|,,1,1
 tile_height=16
 tile_hoffset=0
 tile_hsep=0
