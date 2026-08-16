@@ -17,5 +17,5 @@ action_id=603
 applies_to=self
 */
 /*desc
-Portals can't be places on these surfaces.
+Portals can't be placed on these surfaces.
 */

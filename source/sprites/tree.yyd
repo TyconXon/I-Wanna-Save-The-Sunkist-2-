@@ -311,6 +311,7 @@
 	|sprHashigo_yoko
 	|sprKanban
 	|sprKanbanMedium
+	|sprKanbanHint
 	|sprWater1
 	|sprWater2
 	|sprWater3
@@ -637,3 +638,4 @@
 |sprExplosiveCube
 |sprMan
 |PortalEdgeMask
+|sprHintMan
