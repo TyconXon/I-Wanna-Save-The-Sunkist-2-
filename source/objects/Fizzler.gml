@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 with(Portal) event_user(0)
+with(PortalOrb) event_user(0)
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
