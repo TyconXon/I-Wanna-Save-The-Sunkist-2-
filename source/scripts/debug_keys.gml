@@ -135,7 +135,11 @@ if (is_ingame()) {
         }
         if (func=5) {global.debug_autofire=!global.debug_autofire}
         if (func=6) {savedata_save(true,"debug")}
-        if (func==7) {clipboard_set_text(string(thething.id))}
+        if (func==7) {
+            debug_execute_code = get_string("Enter code to execute:",debug_execute_code)
+            if(thething.id != noone) with(thething.id) {execute_string(other.debug_execute_code)}
+            else execute_string(debug_execute_code)
+        }
     }
 
     if (global.debug_autofire) {
