@@ -1,4 +1,4 @@
 //gm82 fields begin
-index=12
-inst=rmPortalSprint_CEB71EAA
+font=fntCoral
+filter=false
 //gm82 fields end

@@ -1,4 +1,3 @@
 //gm82 fields begin
-index=12
-inst=rmPortalSprint_CEB71EAA
+hspeed=3
 //gm82 fields end
