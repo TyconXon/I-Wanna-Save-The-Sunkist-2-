@@ -78,6 +78,7 @@ if(global.teleSickness == 0){
         if (self.id == other.id) continue;
         other.bulletIndex.x = self.x + (16*image_xscale)
         other.bulletIndex.y = self.y - (other.y-other.bulletIndex.y)
+        if(self.image_xscale==other.image_xscale) other.bulletIndex.hspeed *= -1
     }
 }
 global.teleSickness = 5
@@ -103,7 +104,7 @@ if(teleSickness == 0){ with(other) { /*var theID;*/ theID = other.theID;
         if (self.id == other.id) continue;
 
         with(theID){
-            with (Player) if (instance_place(x,y+2*vflip,other.id) and onPlatform) {
+            with (Player) if (place_meeting(x,y+2*vflip,other.id) and onPlatform) {
                 other.wannaTelePlayer = true
             }
         }
@@ -113,6 +114,7 @@ if(teleSickness == 0){ with(other) { /*var theID;*/ theID = other.theID;
         (theID).y = self.y - (other.bbox_top-(theID).bbox_top)//self.y + (32-(theID).sprite_height)
 
         with(theID){
+           if(place_meeting(x,y,Block)) {y-=1} //No jittery intersecting-floor bug
            if(truthy("wannaTelePlayer")) {move_player(x+(sprite_width/2),bbox_top-2,1); wannaTelePlayer = false}
         }
     }

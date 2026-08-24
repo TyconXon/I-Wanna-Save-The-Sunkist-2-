@@ -5,4 +5,5 @@ time_to_wait=450
 sprite_index=sprWarp
 roomTo=rmVent
 autosave=true
+depth=0
 //gm82 fields end

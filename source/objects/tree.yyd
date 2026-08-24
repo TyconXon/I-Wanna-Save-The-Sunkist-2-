@@ -384,6 +384,7 @@
 		|DropShadow
 		|SkyGradient
 		|PersistentBackgrounds
+		|BackgroundHandle
 		|ParallaxBackgroundLayer
 	|CameraFull
 	|CameraOverride

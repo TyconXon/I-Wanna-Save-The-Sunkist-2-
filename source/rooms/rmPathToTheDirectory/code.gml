@@ -1,1 +1,17 @@
 /*gm82room flag*/background_blend[0]=3145856
+/*gm82room flag*/background_blend[1]=64
+/*gm82room flag*/background_alpha[1]=0.2
+/*gm82room flag*/background_blend[2]=26
+/*gm82room flag*/background_alpha[2]=0.25
+/*gm82room flag*/background_blend[3]=64
+/*gm82room flag*/background_alpha[3]=0.2
+/*gm82room flag*/background_xscale[3]=5
+/*gm82room flag*/background_yscale[3]=5
+/*gm82room flag*/background_blend[4]=0
+/*gm82room flag*/background_alpha[4]=0.3
+/*gm82room flag*/background_blend[5]=64
+/*gm82room flag*/background_alpha[5]=0.1
+/*gm82room flag*/background_blend[6]=255
+/*gm82room flag*/background_alpha[6]=0.4
+/*gm82room flag*/background_xscale[6]=-1
+/*gm82room flag*/background_yscale[6]=-1
