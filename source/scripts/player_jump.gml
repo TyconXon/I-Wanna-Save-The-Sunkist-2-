@@ -49,6 +49,7 @@ if (vvvvvv) {
         || (instance_place(x,y+1*vflip,Water1) || djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
         || infjump
         && !(beamstate&beam_onejump)) {
+            if(instance_place(x+hspeed,y,StickyBlock))exit
             //double jump
             vspeed=-jump2*vflip
             if(instance_place(x,y,IceField)) if(instance_place(x,y-1,Block)) vspeed*=-1
