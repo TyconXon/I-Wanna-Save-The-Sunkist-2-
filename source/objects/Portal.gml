@@ -56,7 +56,7 @@ if(!(bbox_bottom+5 < other.bbox_bottom xor bbox_top-5 > other.bbox_top)){
 */
 
 if(global.teleSickness == 0 /*and ( (leftNotRight and other.bbox_left < bbox_left) or (!leftNotRight and other.bbox_right > bbox_right) ) */){
-    with(Player) make_afterimage();
+    with(Player) {make_afterimage();try_unstuck();}
     sound_play_auto("portal_exit1")
     with(Portal){
         if (self.id == other.id) continue;
@@ -66,6 +66,23 @@ if(global.teleSickness == 0 /*and ( (leftNotRight and other.bbox_left < bbox_lef
 }
 global.teleSickness = 5
 #define Collision_Bullet
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+bulletIndex=other.id
+other.dead = false
+if(global.teleSickness == 0){
+    with(Portal){
+        if (self.id == other.id) continue;
+        other.bulletIndex.x = self.x + (16*image_xscale)
+        other.bulletIndex.y = self.y - (other.y-other.bulletIndex.y)
+        if(self.image_xscale==other.image_xscale) other.bulletIndex.hspeed *= -1
+    }
+}
+global.teleSickness = 5
+#define Collision_TeleKid
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

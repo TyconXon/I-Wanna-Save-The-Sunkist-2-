@@ -54,6 +54,7 @@
 		|BulletBlock
 	+Cherries
 		|Cherry
+		|object629
 		|BlinkingCherry
 		+more cherry colors
 			|CherryOrange
@@ -520,6 +521,7 @@
 		|Piston
 		|PlayerClip
 		|MetalSurface
+		|BulletSurface
 		|NoKillZone
 		|FocusZone
 		|AmbientGeneric

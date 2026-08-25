@@ -69,7 +69,7 @@ applies_to=self
 */
 if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock) instance_destroy_id(other)
 if (instance_place(x,y,Portal)) exit;
-if (other.solid) {
+if (other.solid or other.object_index == BulletSurface) {
     dead=1
     xprevious=x+hspeed
     yprevious=y+vspeed

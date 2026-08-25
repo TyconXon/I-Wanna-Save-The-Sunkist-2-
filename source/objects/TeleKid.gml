@@ -30,7 +30,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (other.solid) {
+if (other.solid or other.object_index == BulletSurface) {
     move_player(x-hspeed,y-vspeed,0)
 
     with (Player) {

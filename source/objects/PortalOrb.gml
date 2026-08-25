@@ -54,7 +54,7 @@ applies_to=self
 if (object_is_ancestor(other.object_index,ShootBlock) or other.object_index == ShootBlock or other.object_index == MetalSurface or dead) {event_user(0) exit}
 //if(instance_place(x,y,Portal)) if((instance_place(x,y,Portal)).orangeNotBlue != orangeNotBlue) event_user(0) exit
 
-if (other.solid) {
+if (other.solid or other.object_index == BulletSurface) {
     var theY;
 
     if(other.sprite_height == 32) theY = other.y
