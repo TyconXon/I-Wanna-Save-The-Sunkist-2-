@@ -54,7 +54,7 @@
 		|BulletBlock
 	+Cherries
 		|Cherry
-		|object629
+		|Squarry
 		|BlinkingCherry
 		+more cherry colors
 			|CherryOrange

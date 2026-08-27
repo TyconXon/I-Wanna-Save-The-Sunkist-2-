@@ -91,7 +91,7 @@ applies_to=self
 */
 if (!image_index) {
     image_index=1
-    if(other!=MovingSolid) sound_play_auto(pressSound)
+    if((!timer) or (other!=MovingSolid and other!=Player and timer)) sound_play_auto(pressSound)
     with (mytarget) event_trigger(tr_traptriggered)
     if(mytrig!=noone) event_perform_object(Trigger,ev_other,ev_user0)
     if(timer) alarm[0] = timer/dt

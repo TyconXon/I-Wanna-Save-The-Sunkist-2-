@@ -1,3 +1,10 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+alsoTeleplayer = false
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -13,6 +20,16 @@ action_id=203
 applies_to=other
 invert=0
 */
+#define Collision_TeleKid
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if(alsoTeleplayer){
+    with(Portal) event_user(0)
+    with(PortalOrb) event_user(0)
+}
 #define Collision_PortalOrb
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -21,6 +38,14 @@ applies_to=other
 invert=0
 arg0=0
 */
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field alsoTeleplayer: false - Also removes portals if a teleplayer passes the gate
+if(alsoTeleplayer and image_blend == c_white) image_blend = c_yellow
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
