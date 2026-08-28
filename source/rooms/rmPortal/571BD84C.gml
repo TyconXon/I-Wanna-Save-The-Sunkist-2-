@@ -1,3 +1,3 @@
 //gm82 fields begin
-msg="Check options for the buttons!"
+msg="Default buttons: Q and W"
 //gm82 fields end

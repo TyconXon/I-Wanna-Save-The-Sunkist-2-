@@ -1,4 +1,3 @@
 //gm82 fields begin
-roomTo=rmPortal
-hallway=true
+inst=rmVent_E45AF257
 //gm82 fields end

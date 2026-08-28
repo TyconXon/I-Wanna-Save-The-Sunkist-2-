@@ -1,4 +1,3 @@
 //gm82 fields begin
-roomTo=rmPortal
-hallway=true
+dialogue=dialog_example
 //gm82 fields end

@@ -1,4 +1,3 @@
 //gm82 fields begin
-roomTo=rmPortal
-hallway=true
+roomTo=rmTrap
 //gm82 fields end
