@@ -1,4 +1,3 @@
 //gm82 fields begin
-sunkist=true
-sprite_index=TallSpike
+smooth=true
 //gm82 fields end

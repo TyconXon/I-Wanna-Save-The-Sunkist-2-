@@ -1,6 +1,11 @@
 #define Create_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=604
+invert=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */
@@ -14,6 +19,11 @@ murderer=false
 
 timer = 25
 #define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -31,14 +41,17 @@ applies_to=self
 image_index = sprCherry
 murderer=true
 alarm[0]=timer
-#define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=603
-applies_to=self
+action_id=604
+invert=0
 */
-if (murderer) if (instance_place(x,y,Player)) kill_player()
 #define Other_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

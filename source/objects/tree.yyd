@@ -546,6 +546,7 @@
 		|CherryHoming
 		|MoveSwitchBlockOff
 		|StopSwitchBlockOff
+		|Laser
 	+Prefabs
 		|Dog
 		|RiskOfRain
