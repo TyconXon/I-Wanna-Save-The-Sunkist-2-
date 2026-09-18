@@ -63,6 +63,7 @@ action_id=603
 applies_to=self
 */
 if(!doBullets) exit;
+event_user(0);
 #define Collision_Explosion
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -93,6 +94,8 @@ applies_to=self
 //field doBullets: false
         //field myhealth: number
 //field activateOnDeath: instance - Instance to activate when this is destroyed
+
+if(doBullets) sprite_index = sprCracks;
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

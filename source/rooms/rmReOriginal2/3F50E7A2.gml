@@ -1,5 +1,4 @@
 //gm82 fields begin
-hsp=0
-vsp=5
-depth=1001
+shaketime=25
+respawntime=100
 //gm82 fields end
