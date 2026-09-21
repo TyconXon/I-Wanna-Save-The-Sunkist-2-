@@ -21,7 +21,7 @@ if(hitthing) with(instance_place(hitthing.x,hitthing.y,TimedBreakable)) event_pe
 if(instance_place(x+hspeed,y,StickyBlock)){
     //other.vsp = vkUp?0:Math.min(other.vsp, 1);
     if key_jump() {vspeed = 0}
-    else {vspeed = min(vspeed, 1)}
+    else {vspeed = sign(vspeed) * min(abs(vspeed),1)}
 }
 with(instance_place(x,y,IceField)){
    if(wallstop) savedhspeed=0

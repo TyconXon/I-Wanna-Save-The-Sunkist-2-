@@ -30,6 +30,8 @@
 		|rmChanged
 		|rmOriginal
 		|rmOriginal2
+		|rmOriginal2Original
+		|rmOriginalSamePart
 	+Continuations
 		|rmPortal
 		|rmPortalSprint
