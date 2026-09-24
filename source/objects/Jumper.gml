@@ -42,6 +42,9 @@ applies_to=self
 */
 //field gSpeed : number
 //field addJump : true
+//field fullCollision: false
+
+if(fullCollision) mask_index = sprEngineBlock
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604

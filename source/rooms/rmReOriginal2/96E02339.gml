@@ -1,4 +1,3 @@
 //gm82 fields begin
-fullCollision=true
-depth=1001
+roomTo=rmOriginalSamePart
 //gm82 fields end
