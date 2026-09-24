@@ -2,4 +2,5 @@
 movement=true
 dir=90
 spd=10
+depth=1004
 //gm82 fields end

@@ -5,4 +5,5 @@ spd=10
 scaling_rotation=true
 scaleh=2
 scalev=2
+depth=1004
 //gm82 fields end
