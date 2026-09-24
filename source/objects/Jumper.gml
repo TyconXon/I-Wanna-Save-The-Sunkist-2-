@@ -6,6 +6,7 @@ applies_to=self
 */
 gSpeed = 20
 addJump = true
+fullCollision=false
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
