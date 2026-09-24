@@ -45,7 +45,7 @@ applies_to=self
 //field addJump : true
 //field fullCollision: false
 
-if(fullCollision) mask_index = sprEngineBlock
+if(fullCollision) mask_index = sprJumperMask
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=604
