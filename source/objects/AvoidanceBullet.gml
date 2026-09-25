@@ -9,7 +9,7 @@ image_speed=0 //don't change this if you're using the default avoidance bullet s
 
 active=1 //whether to kill or not
 outside_destroy=1 //destroy outside room
-angle_direction=1 //rotate the bullet to the direction it's going in
+angle_direction=0 //rotate the bullet to the direction it's going in
 t=0 //general-purpose timer that increments each frame
 
 hue=255 //hue value for color (0-255)
@@ -63,6 +63,26 @@ switch (tag) {
             i.tag="good design" //:^)
         }
     }break //don't forget to add a break to the end!
+    case "courage":{
+         angle_direction = 0;
+         addsat=6;
+         addhue=4;
+
+
+    }
+    break;
+    case "dementia":
+         sprite_index = sprBomb
+         color = c_white
+         if(t mod 5 == 0){
+              sillhouette = 1
+         }else{ sillhouette = 0}
+
+         if(t == 50){
+              explode_me();
+              instance_destroy();
+         }
+    break;
 }
 #define Other_0
 /*"/*'/**//* YYD ACTION
