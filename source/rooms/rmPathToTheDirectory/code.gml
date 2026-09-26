@@ -15,3 +15,5 @@
 /*gm82room flag*/background_alpha[6]=0.4
 /*gm82room flag*/background_xscale[6]=-1
 /*gm82room flag*/background_yscale[6]=-1
+/*gm82room flag*/background_blend[7]=255
+/*gm82room flag*/background_alpha[7]=0.1
