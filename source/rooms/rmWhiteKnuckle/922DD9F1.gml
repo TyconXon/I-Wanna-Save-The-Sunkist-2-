@@ -1,3 +1,3 @@
 //gm82 fields begin
-font=fntBalatro
+font=fntSignpost
 //gm82 fields end

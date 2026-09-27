@@ -60,6 +60,18 @@ if(collected){
    image_blend=$404040
    image_alpha=0.2
 }
+
+if(sprite_index == sprIsaacCoins){
+   image_speed = 0
+   switch (value)
+   {
+       case 2: image_index = 1; break;
+       case 5: image_index = 2; break;
+       case 10: image_index = 3; break;
+       default: image_index = 4 break;
+   }
+
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
