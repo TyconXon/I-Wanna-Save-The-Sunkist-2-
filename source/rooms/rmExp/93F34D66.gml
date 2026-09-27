@@ -1,5 +1,5 @@
 //gm82 fields begin
 type="Permanent"
-value=10
+value=1
 sprite_index=sprIsaacCoins
 //gm82 fields end

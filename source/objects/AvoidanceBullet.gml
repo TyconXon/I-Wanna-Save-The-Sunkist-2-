@@ -65,22 +65,43 @@ switch (tag) {
     }break //don't forget to add a break to the end!
     case "courage":{
          angle_direction = 0;
-         addsat=6;
-         addhue=4;
-
+         sat=0;
+    }
+    break;
+    case "cloud":{
+         angle_direction=1;
+         image_xscale += 0.01 * dt
+         image_yscale = image_xscale
 
     }
     break;
     case "dementia":
-         sprite_index = sprBomb
-         color = c_white
+         speed = approach(speed,0,0.1*dt)
+         active=false
          if(t mod 5 == 0){
               sillhouette = 1
          }else{ sillhouette = 0}
 
-         if(t == 50){
+         if(t >= 50 or instance_place(x,y,Bullet)){
               explode_me();
               instance_destroy();
+
+              repeat(8){
+                        var i;
+                        i=instance_create(x,y,AvoidanceBullet)
+                        i.addhue=5
+                        i.hue=irandom(255)
+                        i.direction=random(360)
+                        i.speed=2
+                        i.depth=-20
+                        i.sprite_index=sprCloud
+                        i.image_xscale = random(2) + 1
+                        i.image_yscale = i.image_xscale
+                        i.image_index=0
+                        i.image_speed=0.2
+                        i.gravity = -0.05
+                        i.tag = "cloud"
+              }
          }
     break;
 }

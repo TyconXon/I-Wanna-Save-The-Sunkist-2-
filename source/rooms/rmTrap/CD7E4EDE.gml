@@ -1,3 +1,5 @@
 //gm82 fields begin
-BGM="spewer"
+sound=""
+movement=true
+grav=0.2
 //gm82 fields end

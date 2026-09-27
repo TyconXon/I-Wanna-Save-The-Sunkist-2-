@@ -1,3 +1,4 @@
 //gm82 fields begin
-index=12
+type="Permanent"
+value=1
 //gm82 fields end

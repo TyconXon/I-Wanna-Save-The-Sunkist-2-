@@ -1,3 +1,4 @@
 //gm82 fields begin
-context=PlayerKiller
+type="Permanent"
+value=10
 //gm82 fields end

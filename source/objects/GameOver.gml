@@ -26,6 +26,8 @@ applies_to=self
 draw_set_font(fntGameover)
 draw_set_halign(1)
 draw_text_transformed_color(x,y-105,Player.deathMessage,4.5,4.5,0,image_blend,image_blend,image_blend,image_blend,image_alpha)
+if(room==rmOFF) exit
+
 draw_text_color(x,y+45,"PRESS ´"+key_restart(vi_keyname)+"´ TO TRY AGAIN",image_blend,image_blend,image_blend,image_blend,image_alpha)
 draw_text_color(x,y+90,"You will never experience:",image_blend,image_blend,image_blend,image_blend,image_alpha)
 draw_text_transformed_color(x,y+125,thisone, 0.5,1,0,image_blend,image_blend,image_blend,image_blend,image_alpha)

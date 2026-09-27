@@ -1,5 +1,5 @@
 //gm82 fields begin
 text="You are traveling to..."
-font=fntUltrakill
+font=fntCoral
 depth=1005
 //gm82 fields end

@@ -1,4 +1,4 @@
 //gm82 fields begin
 text="Jump refresher v^"
-font=fntNotes
+font=fntTommy
 //gm82 fields end
