@@ -1,3 +1,3 @@
 //gm82 fields begin
-roomTo=rmExp
+roomTo=rmAstralAlley
 //gm82 fields end

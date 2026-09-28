@@ -35,7 +35,7 @@ if (event_type==ev_create) {
     bpm=109
     beat=4
 
-    oldthing = 0
+    oldthing = 4
 
 
     alreadydid = false

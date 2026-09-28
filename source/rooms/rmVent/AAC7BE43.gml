@@ -1,5 +1,5 @@
 //gm82 fields begin
-msg="rmChanged. #Most recent designs. 4 screens"
+msg="Ash path"
 sprite_index=sprTestChamberPanel
 image_speed=0
 image_index=2

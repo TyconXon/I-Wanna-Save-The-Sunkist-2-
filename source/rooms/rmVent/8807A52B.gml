@@ -1,5 +1,5 @@
 //gm82 fields begin
-msg="rmOriginal.#Remastered levels of IWSTS1#6 screens"
+msg="ReOriginal path"
 sprite_index=sprTestChamberPanel
 image_speed=0
 image_index=1
