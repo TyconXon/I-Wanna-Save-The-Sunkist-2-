@@ -14,6 +14,8 @@ reachy = -1
 
 middlex = x
 middley = y
+visualwidth=8
+curwidth = visualwidth
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -24,6 +26,8 @@ var did;
 did=false;
 var iteration;
 iteration = 0;
+
+curwidth = visualwidth + (irandom(3)-2)
 
 offsetx = ((image_xscale * sprite_get_width(image_index)) / 2 ) - sprite_xoffset
 offsety = ((image_yscale * sprite_get_height(image_index)) / 2 ) - sprite_yoffset
@@ -47,7 +51,7 @@ if(traveltime == 0){
 
                 if(coll != noone) {
                         did=true;
-                        if (x < coll.bbox_left && reachx > coll.bbox_left) {
+                        if (x < coll.bbox_left && reachx > coll.bbox_left ) {
                            reachx = coll.bbox_left
                         }else if(x > coll.bbox_right && reachx < coll.bbox_right) {
                            reachx = coll.bbox_right
@@ -77,12 +81,13 @@ applies_to=self
         //field intervalOFF: number - off period duration. Default is interval.
 //field traveltime: number - how fast the laser travels, zero for instant
 //field collisioninterval: number - how many units this travels before checking for collisions each iteration
+//field visualwidth: number
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-draw_self()
+draw_line_width_color(middlex,middley,reachx,reachy,curwidth,color_blend(c_yellow,c_orange),c_orange)
 
-draw_line(middlex,middley,reachx,reachy)
+draw_self()
