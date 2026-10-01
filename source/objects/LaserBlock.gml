@@ -16,6 +16,8 @@ middlex = x
 middley = y
 visualwidth=8
 curwidth = visualwidth
+
+dontattemptfix=false
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -51,15 +53,17 @@ if(traveltime == 0){
 
                 if(coll != noone) {
                         did=true;
-                        if (x < coll.bbox_left && reachx > coll.bbox_left ) {
-                           reachx = coll.bbox_left
-                        }else if(x > coll.bbox_right && reachx < coll.bbox_right) {
-                           reachx = coll.bbox_right
-                        } //weird things happen and the line snaps to the corner of hit objects
-                        if(y > coll.bbox_bottom && reachy < coll.bbox_bottom) {
-                           reachy = coll.bbox_bottom
-                        } else if(y < coll.bbox_top && reachy > coll.bbox_top) {
-                           reachy = coll.bbox_top
+                        if(!dontattemptfix){
+                            if (bbox_left < coll.bbox_left && reachx > coll.bbox_left ) {
+                               reachx = coll.bbox_left
+                            }else if(bbox_right > coll.bbox_right && reachx < coll.bbox_right ) {
+                               reachx = coll.bbox_right
+                            } //weird things happen and the line snaps to the corner of hit objects
+                            if(bbox_bottom > coll.bbox_bottom && reachy < coll.bbox_bottom ) {
+                               reachy = coll.bbox_bottom
+                            } else if(bbox_top < coll.bbox_top && reachy > coll.bbox_top) {
+                               reachy = coll.bbox_top
+                            }
                         }
                         break;
                 }
@@ -82,6 +86,7 @@ applies_to=self
 //field traveltime: number - how fast the laser travels, zero for instant
 //field collisioninterval: number - how many units this travels before checking for collisions each iteration
 //field visualwidth: number
+//field dontattemptfix: false - stop the laser from going inside blocks that its hitting
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
