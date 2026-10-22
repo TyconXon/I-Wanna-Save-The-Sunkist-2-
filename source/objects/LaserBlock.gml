@@ -18,6 +18,7 @@ visualwidth=8
 curwidth = visualwidth
 
 dontattemptfix=false
+murderer = false
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -73,6 +74,12 @@ if(traveltime == 0){
                 if(reachx > room_width || reachy > room_height || reachx < 0 || reachy < 0) did=true;
     }
 
+    if(murderer){
+                 if(collision_line(middlex,middley,reachx,reachy,Player,false,true)){
+                     kill_player();
+                 }
+    }
+
 
 }
 #define Other_4
@@ -86,6 +93,7 @@ applies_to=self
 //field traveltime: number - how fast the laser travels, zero for instant
 //field collisioninterval: number - how many units this travels before checking for collisions each iteration
 //field visualwidth: number
+//field murderer: false
 //field dontattemptfix: false - stop the laser from going inside blocks that its hitting
 #define Draw_0
 /*"/*'/**//* YYD ACTION

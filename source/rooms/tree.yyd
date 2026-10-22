@@ -3,7 +3,6 @@
 |rmMenu
 |rmOptions
 |rmTemplate
-|rmBlockTest
 |rmHallway
 +Sunkist
 	|rmPalace
@@ -43,6 +42,8 @@
 		|rmTrap
 		|rmWilderness
 		|rmTeleMadness
+		|rmBlockTest
+		|rmLasersAreCool
 	|rmFinale
 +Examples
 	|rmDifficulty

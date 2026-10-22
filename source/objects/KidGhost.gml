@@ -431,13 +431,13 @@ conveyor=instance_place(x,y+4*vflip,Conveyor) if (conveyor) hspeed+=conveyor.spd
 if(instance_place(x,y+4*vflip,ConveyerStick)) hspeed = 0
 
 //push blocks
-with (PushBlock) if (vspeed=0) if (instance_place(x-sign(other.hspeed)*2,y,other.id)) {
+/*with (PushBlock) if (vspeed=0) if (instance_place(x-sign(other.hspeed)*2,y,other.id)) {
     solid=0
     if (place_free(x+sign(other.hspeed)*push_speed,y)) {
         hspeed=sign(other.hspeed)*push_speed
     }
     solid=1
-}
+}*/
 
 //get shape water type
 var sw,swt;
