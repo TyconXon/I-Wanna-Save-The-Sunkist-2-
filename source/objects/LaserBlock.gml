@@ -55,14 +55,14 @@ if(traveltime == 0){
                 if(coll != noone) {
                         did=true;
                         if(!dontattemptfix){
-                            if (bbox_left < coll.bbox_left && reachx > coll.bbox_left ) {
+                            if (bbox_left < coll.bbox_left && reachx > coll.bbox_left && (image_angle != 270 and image_angle != 90)) { // further left than the coll
                                reachx = coll.bbox_left
-                            }else if(bbox_right > coll.bbox_right && reachx < coll.bbox_right ) {
+                            }else if(bbox_right > coll.bbox_right && reachx < coll.bbox_right && (image_angle != 270 and image_angle != 90)) { // further right than the coll
                                reachx = coll.bbox_right
                             } //weird things happen and the line snaps to the corner of hit objects
-                            if(bbox_bottom > coll.bbox_bottom && reachy < coll.bbox_bottom ) {
+                            if(bbox_bottom > coll.bbox_bottom && reachy < coll.bbox_bottom && (image_angle != 0 and image_angle != 180)) { //lower than the bottom of the coll
                                reachy = coll.bbox_bottom
-                            } else if(bbox_top < coll.bbox_top && reachy > coll.bbox_top) {
+                            } else if(bbox_top < coll.bbox_top && reachy > coll.bbox_top && (image_angle != 0 and image_angle != 180)) { //higher than the top of the coll
                                reachy = coll.bbox_top
                             }
                         }
