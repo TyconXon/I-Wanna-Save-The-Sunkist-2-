@@ -1,4 +1,5 @@
 //gm82 fields begin
-type="pipes"
-tileset=bgGuyPipes32
+type="grass"
+tileset=bgUntexturedInv
+grid=16
 //gm82 fields end
