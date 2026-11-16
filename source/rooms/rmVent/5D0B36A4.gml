@@ -1,4 +1,4 @@
 //gm82 fields begin
-text="levels..."
+text="links..."
 font=fntSignpost
 //gm82 fields end

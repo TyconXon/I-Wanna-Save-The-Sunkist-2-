@@ -8,6 +8,7 @@
 |tile_GameMakerBlock
 +IWBTG
 	|bgMegaman
+	|bgMegamanInverted
 	|background_Stars
 	|bgFortress
 	|bgFortressInverted
